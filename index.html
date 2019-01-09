@@ -67,6 +67,24 @@
             <div class="col-8" id="main">
                 <div class="res-cons">
                     
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://fredgan.github.io/posts/redis/" title="Redis的使用" >Redis的使用</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年1月3日
+                            </date>
+                            
+                            <div class="post-content">
+                                redis的使用 一、 直接使用redisClients软件查看 二、 命令行 redis-cli -h 127.0.0.1 -p 6379
+基础命令 keys * // 列举所有的key expire key seconds // 设置某个key的过期时间 秒 ttl key // 显示key的过期时间 单位秒 -1为永久 -2为该key不存在 persist key // 将key的时间设置为永久 set getset 都会将key设置为永久 expireat key 1540000000 // 在某个时间点过期 pexpire pttl pexpireat 跟上面一样，只是单位是毫秒 事务和watch  redis有五种数据类型： 1 string 用法：
+set a 100 // 设置a的值 get a // 获取a的值，不存在则返回nil del a // 删除a getset a // 设置并且获取之前的a值 incr a // a增加1 incrby a 2 // a增加2 exists a // a是否存在，1为存在，0为不存在 decr a // a减1 decrby a 2 // a减少2 append a &quot;bbb&quot; // 在a后面拼接字符串，a变成了100bbb strlen a // 获取a的长度 mget a b.……
+                            </div>
+                            <p class="readmore"><a href="https://fredgan.github.io/posts/redis/">阅读全文</a></p>
+                        </article>
+                    
 
                     
 
@@ -89,6 +107,10 @@
     <section class="widget">
         <h3 class="widget-title">最近文章</h3>
 <ul class="widget-list">
+    
+    <li>
+        <a href="https://fredgan.github.io/posts/redis/" title="Redis的使用">Redis的使用</a>
+    </li>
     
 </ul>
     </section>

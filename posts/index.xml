@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Fred&#39;s Blog</title>
-    <link>https://fredgan.github.io/</link>
-    <description>Recent content on Fred&#39;s Blog</description>
+    <title>Posts on Fred&#39;s Blog</title>
+    <link>https://fredgan.github.io/posts/</link>
+    <description>Recent content in Posts on Fred&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 03 Jan 2019 11:33:01 +0800</lastBuildDate>
     
-	<atom:link href="https://fredgan.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fredgan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,15 +20,6 @@
       <description>redis的使用 一、 直接使用redisClients软件查看 二、 命令行 redis-cli -h 127.0.0.1 -p 6379
 基础命令 keys * // 列举所有的key expire key seconds // 设置某个key的过期时间 秒 ttl key // 显示key的过期时间 单位秒 -1为永久 -2为该key不存在 persist key // 将key的时间设置为永久 set getset 都会将key设置为永久 expireat key 1540000000 // 在某个时间点过期 pexpire pttl pexpireat 跟上面一样，只是单位是毫秒 事务和watch  redis有五种数据类型： 1 string 用法：
 set a 100 // 设置a的值 get a // 获取a的值，不存在则返回nil del a // 删除a getset a // 设置并且获取之前的a值 incr a // a增加1 incrby a 2 // a增加2 exists a // a是否存在，1为存在，0为不存在 decr a // a减1 decrby a 2 // a减少2 append a &amp;quot;bbb&amp;quot; // 在a后面拼接字符串，a变成了100bbb strlen a // 获取a的长度 mget a b.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://fredgan.github.io/archives/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fredgan.github.io/archives/</guid>
-      <description>title: &amp;ldquo;归档&amp;rdquo; description: Android资深工程师 ，Go和Java打杂师，《Android Gradle权威指南》作者，Android官方技术文档译者 type: archives</description>
     </item>
     
   </channel>
