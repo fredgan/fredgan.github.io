@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://fredgan.github.io/posts/a-letter-to-university-student/</loc>
+    <lastmod>2019-09-05T09:14:03+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://fredgan.github.io/posts/redis/</loc>
     <lastmod>2019-01-03T11:33:01+08:00</lastmod>
   </url>
@@ -18,13 +23,13 @@
   
   <url>
     <loc>https://fredgan.github.io/</loc>
-    <lastmod>2019-01-03T11:33:01+08:00</lastmod>
+    <lastmod>2019-09-05T09:14:03+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://fredgan.github.io/posts/</loc>
-    <lastmod>2019-01-03T11:33:01+08:00</lastmod>
+    <lastmod>2019-09-05T09:14:03+08:00</lastmod>
     <priority>0</priority>
   </url>
   
