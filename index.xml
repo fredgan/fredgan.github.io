@@ -6,10 +6,29 @@
     <description>Recent content on Fred&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 05 Sep 2019 09:14:03 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jul 2020 14:08:05 +0800</lastBuildDate>
     
 	<atom:link href="https://fredgan.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Gdb 调试</title>
+      <link>https://fredgan.github.io/posts/gdb/</link>
+      <pubDate>Mon, 06 Jul 2020 14:08:05 +0800</pubDate>
+      
+      <guid>https://fredgan.github.io/posts/gdb/</guid>
+      <description>一、直接调试 step / next 下一行（不进入函数）/ （进入函数） disassemble 查看汇编命令 stepi / nexti 汇编代码的下一条指令 还可以使用jmp指令 info r 查看寄存器。info可以简写为i
+堆栈用途： rdi rsi rdx rcx r8 r9 参数。剩下的参数放在栈中，函数返回值保存在rax中
+看内存： x/8gx addr x/b x/c x/w
+bt 查看调用路径
+二、Attach调试
+1 本机attach进程 gdb program pid gdb program 进入gdb后attach pid
+如果没有权限 - 如果uid相同，运行程序之后看看有没有改变uid，例如passwd程序 - root权限 echo 0 &amp;gt; /proc/sys/kernel/yama/ptrace_scope
+2 gdb_server远程调试
+ gdb_server运行在target上 gdb运行在host上 GDB Remote serial protocol/RSP协议  三、CoreDump调试
+程序异常终止产生了core文件
+ 保存路径：保存在程序执行路径，修改 /proc/sys/kernel/core_pattern可以修改 文件名： 默认core, root权限修改： echo 1 &amp;gt; /proc/sys/kernel/core_uses_pid 后变为core.pid 文件格式：ELF 包含信息：内存状态、寄存器状态、堆栈指针、内存管理信息、函数调用堆栈信息  程序异常终止不产生core文件原因： - 资源限制 ulimit -c unlimited修改 - 权限问题 core文件生成目录没有写权限，要注意程序运行过程中有没有降权或者改变权限</description>
+    </item>
     
     <item>
       <title>致震波的一封信</title>

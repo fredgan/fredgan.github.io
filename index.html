@@ -36,7 +36,7 @@
             <div class="site-name ">
                 
                     <h1>
-                        <a id="logo" href="https://fredgan.github.io">
+                        <a id="logo" href="https://fredgan.github.io/">
                             Fred&#39;s Blog
                         </a>
                     </h1>
@@ -45,7 +45,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="https://fredgan.github.io">首页</a>
+                    <a class="current" href="https://fredgan.github.io/">首页</a>
                     
                     <a  href="https://fredgan.github.io/books/" title="新书">新书</a>
                     
@@ -66,6 +66,32 @@
 
             <div class="col-8" id="main">
                 <div class="res-cons">
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://fredgan.github.io/posts/gdb/" title="Gdb 调试" >Gdb 调试</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2020年7月6日
+                            </date>
+                            
+                            <div class="post-content">
+                                一、直接调试 step / next 下一行（不进入函数）/ （进入函数） disassemble 查看汇编命令 stepi / nexti 汇编代码的下一条指令 还可以使用jmp指令 info r 查看寄存器。info可以简写为i
+堆栈用途： rdi rsi rdx rcx r8 r9 参数。剩下的参数放在栈中，函数返回值保存在rax中
+看内存： x/8gx addr x/b x/c x/w
+bt 查看调用路径
+二、Attach调试
+1 本机attach进程 gdb program pid gdb program 进入gdb后attach pid
+如果没有权限 - 如果uid相同，运行程序之后看看有没有改变uid，例如passwd程序 - root权限 echo 0 &gt; /proc/sys/kernel/yama/ptrace_scope
+2 gdb_server远程调试
+ gdb_server运行在target上 gdb运行在host上 GDB Remote serial protocol/RSP协议  三、CoreDump调试
+程序异常终止产生了core文件
+ 保存路径：保存在程序执行路径，修改 /proc/sys/kernel/core_pattern可以修改 文件名： 默认core, root权限修改： echo 1 &gt; /proc/sys/kernel/core_uses_pid 后变为core.pid 文件格式：ELF 包含信息：内存状态、寄存器状态、堆栈指针、内存管理信息、函数调用堆栈信息  程序异常终止不产生core文件原因： - 资源限制 ulimit -c unlimited修改 - 权限问题 core文件生成目录没有写权限，要注意程序运行过程中有没有降权或者改变权限……
+                            </div>
+                            <p class="readmore"><a href="https://fredgan.github.io/posts/gdb/">阅读全文</a></p>
+                        </article>
                     
                         <article class="post">
                             <header>
@@ -137,7 +163,7 @@ set a 100 // 设置a的值 get a // 获取a的值，不存在则返回nil del a 
         <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
       <input type="text" name="q" maxlength="20" placeholder="Search">
-      <input type="hidden" name="sitesearch" value="https://fredgan.github.io">
+      <input type="hidden" name="sitesearch" value="https://fredgan.github.io/">
       <button type="submit" class="submit icon-search"></button>
 </form>
     </section>
@@ -145,6 +171,10 @@ set a 100 // 设置a的值 get a // 获取a的值，不存在则返回nil del a 
     <section class="widget">
         <h3 class="widget-title">最近文章</h3>
 <ul class="widget-list">
+    
+    <li>
+        <a href="https://fredgan.github.io/posts/gdb/" title="Gdb 调试">Gdb 调试</a>
+    </li>
     
     <li>
         <a href="https://fredgan.github.io/posts/a-letter-to-university-student/" title="致震波的一封信">致震波的一封信</a>
@@ -202,7 +232,7 @@ set a 100 // 设置a的值 get a // 获取a的值，不存在则返回nil del a 
 </div>
 <footer id="footer">
     <div class="container">
-        &copy; 2018 <a href="https://fredgan.github.io">Fred&#39;s Blog By 黑化花叔</a>.
+        &copy; 2018 <a href="https://fredgan.github.io/">Fred&#39;s Blog By 黑化花叔</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
         <a href="http://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
         
