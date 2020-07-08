@@ -6,10 +6,25 @@
     <description>Recent content in Posts on Fred&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 06 Jul 2020 14:08:05 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2020 14:21:58 +0800</lastBuildDate>
     
 	<atom:link href="https://fredgan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Good_software</title>
+      <link>https://fredgan.github.io/posts/good_software/</link>
+      <pubDate>Wed, 08 Jul 2020 14:21:58 +0800</pubDate>
+      
+      <guid>https://fredgan.github.io/posts/good_software/</guid>
+      <description> 优质软件列表 经过多年实践，总结的优质软件列表。持续更新中&amp;hellip;
+Windows软件  Directory Opus（收费） 功能超强的资源管理器。比Windows自带的资源管理器好用太多，多Tab，正则表达式批量重命名，FTP连接器，多窗口操作，图片文本文件预览等。
+ SQLyog 连接数据库的软件。软件小巧，功能强大，界面清晰。
+ Mind Master 思维导图工具。最好用的思维导图工具，国产骄傲。同时具有Mac 移动端版本。
+ snipaste 剪贴板增强工具。F1快速截图，截图工具功能强大，F3贴图到桌面。可用于内容对比，或者复杂截图。
+ XShell SSH远程工具。虽然多年前暴露曾经有后台上传隐私数据问题，但就软件体验而言，确实是一款体验超好的SSH工具
+  Mac软件  Mind Master 参考Windows Mind Master  iPhone App </description>
+    </item>
     
     <item>
       <title>Gdb 调试</title>
