@@ -1,51 +1,48 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://fredgan.github.io/posts/good_software/</loc>
+    <loc>https://fredgan.github.io/</loc>
     <lastmod>2020-07-08T14:21:58+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fredgan.github.io/posts/gdb/</loc>
+    <loc>https://fredgan.github.io/post/</loc>
+    <lastmod>2020-07-08T14:21:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fredgan.github.io/post/good_software/</loc>
+    <lastmod>2020-07-08T14:21:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fredgan.github.io/post/gdb/</loc>
     <lastmod>2020-07-06T14:08:05+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fredgan.github.io/posts/a-letter-to-university-student/</loc>
+    <loc>https://fredgan.github.io/post/a-letter-to-university-student/</loc>
     <lastmod>2019-09-05T09:14:03+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fredgan.github.io/posts/redis/</loc>
+    <loc>https://fredgan.github.io/post/redis/</loc>
     <lastmod>2019-01-03T11:33:01+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://fredgan.github.io/archives/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://fredgan.github.io/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://fredgan.github.io/</loc>
-    <lastmod>2020-07-08T14:21:58+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://fredgan.github.io/posts/</loc>
-    <lastmod>2020-07-08T14:21:58+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://fredgan.github.io/tags/</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>

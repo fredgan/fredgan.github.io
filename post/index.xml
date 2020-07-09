@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>FredGan&#39;s Blog</title>
-    <link>https://fredgan.github.io/</link>
-    <description>Recent content on FredGan&#39;s Blog</description>
+    <title>Posts on FredGan&#39;s Blog</title>
+    <link>https://fredgan.github.io/post/</link>
+    <description>Recent content in Posts on FredGan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 08 Jul 2020 14:21:58 +0800</lastBuildDate>
     
-	<atom:link href="https://fredgan.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fredgan.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -45,15 +45,6 @@
       
       <guid>https://fredgan.github.io/post/redis/</guid>
       <description>Redis的使用方法 一、 工具查看 可以直接使用 redisClients 软件界面操作查看 二、 命令行 redis-cli -h 127.0.0.1 -p 6379 2.1 基础命令 keys * // 列举所有的key expire &amp;lt;key&amp;gt; &amp;lt;seconds&amp;gt; // 设置某个key的过期时间（单位：秒） ttl &amp;lt;key&amp;gt; // 显示key的过期时间（单位：秒）【返回-1表示永久 -2表示key不存在】 persist &amp;lt;key&amp;gt; // 将key的时间设置为永久 set getset 都会将ke</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://fredgan.github.io/archives/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fredgan.github.io/archives/</guid>
-      <description>title: &amp;ldquo;简介&amp;rdquo; description: C/C++/Python/Go资深工程师，pyang maintainer，擅长爬虫、编译器、序列化等领域 type: archives</description>
     </item>
     
   </channel>

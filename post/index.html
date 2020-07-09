@@ -6,20 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>404 Page not found | FredGan&#39;s Blog</title>
-    <meta property="og:title" content="404 Page not found - FredGan&#39;s Blog">
+    <title>Posts | FredGan&#39;s Blog</title>
+    <meta property="og:title" content="Posts - FredGan&#39;s Blog">
     <meta property="og:type" content="article">
         
         
     <meta name="Keywords" content="c,c&#43;&#43;,go,ios,python,yang,netconf,软件架构,网络爬虫,项目管理,cleancode">
-    <meta name="description" content="404 Page not found">
+    <meta name="description" content="Posts">
         
     <meta name="author" content="FredGan">
-    <meta property="og:url" content="https://fredgan.github.io/404.html">
+    <meta property="og:url" content="https://fredgan.github.io/post/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
+    <link rel="alternate" type="application/rss+xml+xml" href="https://fredgan.github.io/post/index.xml" title="FredGan's Blog" />
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -48,7 +49,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="https://fredgan.github.io">首页</a>
+                    <a class="current" href="https://fredgan.github.io">首页</a>
                     
                     <a  href="https://fredgan.github.io/books/" title="新书">新书</a>
                     
@@ -68,37 +69,86 @@
 
                 <div class="col-8" id="main">
                     
-<div class="body404">
-    <div class="info404">
-        <header id="header404" class="clearfix">
-            <div class="site-name404"><i>404</i></div>
+<div class="res-cons">
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://fredgan.github.io/post/good_software/" title="优质软件列表">优质软件列表</a>
+            </h1>
         </header>
-        <section>
-            <div class="title404">
-                <p>每一个平凡的日常<br />都是连续发生中的奇迹</p>
-            </div>
-            
+        <date class="post-meta meta-date">
+            2020年7月8日
+        </date>
+        
+        <div class="post-content">
+            优质软件列表 经过多年实践，总结的优质软件列表。持续更新中&hellip; 一、Windows 1.1 Directory Opus（收费） 功能超强的资源管理器。比Windows自带的资源管理器好用太多，多Tab，正则表达式批量重命名，FTP连接器，多窗口操作，图片文本文件预览等。 1.2 SQLyog 连接MySQL数据库的客……
+        </div>
+        <p class="readmore"><a href="https://fredgan.github.io/post/good_software/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://fredgan.github.io/post/gdb/" title="GDB调试技巧">GDB调试技巧</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年7月6日
+        </date>
+        
+        <div class="post-content">
+            GDB 调试技巧 一、直接调试 1.1 启动与停止 run / r 启动程序 set args &lt;arg1&gt; &lt;arg2&gt; 设置程序运行参数 finish 结束当前函数的运行，函数剩余部分会执行完毕 return 立即结束当前函数执行并返回，可带参数返回 1.2 调试指令： step / next 执行下一行（进入函数）/（不进入函数） disassemble 查看汇编命令 stepi / nexti 执行下一条汇编指令 (进入函数)/（不进入函数）……
+        </div>
+        <p class="readmore"><a href="https://fredgan.github.io/post/gdb/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://fredgan.github.io/post/a-letter-to-university-student/" title="致震波的一封信">致震波的一封信</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年9月5日
+        </date>
+        
+        <div class="post-content">
+            致震波的一封信 这封信是在你考上大学准备进入校园的时候写的，有点长，耐心读下去，写这封信也是自己这些年来的一些感悟和体会。 恭喜考入大学 首先，恭喜震波考入大学！从今以后，你就是一名光荣的大学生了，成为了一名独立、自主的个体，可以有自己的想法，自己的行为，并且自己为自己的所作所为负责，……
+        </div>
+        <p class="readmore"><a href="https://fredgan.github.io/post/a-letter-to-university-student/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://fredgan.github.io/post/redis/" title="Redis的使用">Redis的使用</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年1月3日
+        </date>
+        
+        <div class="post-content">
+            Redis的使用方法 一、 工具查看 可以直接使用 redisClients 软件界面操作查看 二、 命令行 redis-cli -h 127.0.0.1 -p 6379 2.1 基础命令 keys * // 列举所有的key expire &lt;key&gt; &lt;seconds&gt; // 设置某个key的过期时间（单位：秒） ttl &lt;key&gt; // 显示key的过期时间（单位：秒）【返回-1表示永久 -2表示key不存在】 persist &lt;key&gt; // 将key的时间设置为永久 set getset 都会将ke……
+        </div>
+        <p class="readmore"><a href="https://fredgan.github.io/post/redis/">阅读全文</a></p>
+    </article>
+    
+    
+    
 
-<div class="post-archive">
-    <h2>See Also</h2>
-    <ul class="listing">
-        
-        <li><a href="/post/good_software/">优质软件列表</a></li>
-        
-        <li><a href="/post/gdb/">GDB调试技巧</a></li>
-        
-        <li><a href="/post/a-letter-to-university-student/">致震波的一封信</a></li>
-        
-        <li><a href="/post/redis/">Redis的使用</a></li>
-        
-        <li><a href="/archives/"></a></li>
-        
-    </ul>
-</div>
 
-            <a rel="nofollow" href="https://fredgan.github.io" class="index404">回首页看看</a>
-        </section>
-    </div>
+
+
+
 </div>
 
                 </div>
