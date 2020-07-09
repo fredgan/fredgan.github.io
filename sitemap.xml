@@ -33,16 +33,23 @@
   </url>
   
   <url>
-    <loc>https://fredgan.github.io/archives/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://fredgan.github.io/categories/</loc>
   </url>
   
   <url>
+    <loc>https://fredgan.github.io/projects/</loc>
+  </url>
+  
+  <url>
     <loc>https://fredgan.github.io/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>https://fredgan.github.io/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://fredgan.github.io/archives/</loc>
   </url>
   
 </urlset>
