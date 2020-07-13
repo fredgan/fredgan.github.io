@@ -3,18 +3,73 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://fredgan.github.io/categories/C/</loc>
+    <lastmod>2020-07-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fredgan.github.io/tags/C/</loc>
+    <lastmod>2020-07-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fredgan.github.io/categories/</loc>
+    <lastmod>2020-07-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://fredgan.github.io/</loc>
-    <lastmod>2020-07-12T22:21:58+08:00</lastmod>
+    <lastmod>2020-07-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fredgan.github.io/tags/language/</loc>
+    <lastmod>2020-07-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://fredgan.github.io/post/</loc>
-    <lastmod>2020-07-12T22:21:58+08:00</lastmod>
+    <lastmod>2020-07-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fredgan.github.io/tags/</loc>
+    <lastmod>2020-07-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fredgan.github.io/post/c-traps/c-traps-chapter-one/</loc>
+    <lastmod>2020-07-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fredgan.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2020-07-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fredgan.github.io/tags/Markdown/</loc>
+    <lastmod>2020-07-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://fredgan.github.io/post/how-to-write-a-beautiful-markdown/</loc>
-    <lastmod>2020-07-12T22:21:58+08:00</lastmod>
+    <lastmod>2020-07-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fredgan.github.io/categories/%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2020-07-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fredgan.github.io/tags/%E6%95%88%E7%8E%87/</loc>
+    <lastmod>2020-07-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fredgan.github.io/categories/%E6%95%88%E7%8E%87/</loc>
+    <lastmod>2020-07-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -38,15 +93,7 @@
   </url>
   
   <url>
-    <loc>https://fredgan.github.io/categories/</loc>
-  </url>
-  
-  <url>
     <loc>https://fredgan.github.io/projects/</loc>
-  </url>
-  
-  <url>
-    <loc>https://fredgan.github.io/tags/</loc>
   </url>
   
   <url>
