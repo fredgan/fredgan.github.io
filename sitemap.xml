@@ -3,8 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://fredgan.github.io/categories/C/</loc>
-    <lastmod>2020-07-15T00:00:00+00:00</lastmod>
+    <loc>https://fredgan.github.io/categories/</loc>
+    <lastmod>2020-07-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fredgan.github.io/</loc>
+    <lastmod>2020-07-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fredgan.github.io/post/</loc>
+    <lastmod>2020-07-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fredgan.github.io/categories/%E5%BC%80%E6%BA%90/</loc>
+    <lastmod>2020-07-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fredgan.github.io/post/thinking-to-open-source/</loc>
+    <lastmod>2020-07-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fredgan.github.io/categories/%E6%84%9F%E6%82%9F/</loc>
+    <lastmod>2020-07-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -13,22 +38,12 @@
   </url>
   
   <url>
-    <loc>https://fredgan.github.io/categories/</loc>
-    <lastmod>2020-07-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://fredgan.github.io/</loc>
+    <loc>https://fredgan.github.io/categories/C/</loc>
     <lastmod>2020-07-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://fredgan.github.io/tags/language/</loc>
-    <lastmod>2020-07-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://fredgan.github.io/post/</loc>
     <lastmod>2020-07-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -68,12 +83,12 @@
   </url>
   
   <url>
-    <loc>https://fredgan.github.io/categories/%E6%95%88%E7%8E%87/</loc>
+    <loc>https://fredgan.github.io/tags/%E6%95%88%E7%8E%87/</loc>
     <lastmod>2020-07-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fredgan.github.io/tags/%E6%95%88%E7%8E%87/</loc>
+    <loc>https://fredgan.github.io/categories/%E6%95%88%E7%8E%87/</loc>
     <lastmod>2020-07-13T00:00:00+00:00</lastmod>
   </url>
   

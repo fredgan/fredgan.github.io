@@ -6,10 +6,19 @@
     <description>Recent content on FredGan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 15 Jul 2020 22:21:58 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jul 2020 00:21:58 +0800</lastBuildDate>
     
 	<atom:link href="https://fredgan.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>开源的感悟</title>
+      <link>https://fredgan.github.io/post/thinking-to-open-source/</link>
+      <pubDate>Fri, 17 Jul 2020 00:21:58 +0800</pubDate>
+      
+      <guid>https://fredgan.github.io/post/thinking-to-open-source/</guid>
+      <description>开源的一些感悟 从事开源软件开发已经有一年多了。从原来对开源一无所知，甚至是一些错误的认知，到现在已经能够深入参与到开源社区，并成为一些软件的Committer，走过了许许多多的弯路，也对开源有了许多的新的认识。突然对开源有了一些感悟，所以紧急插入一篇感悟。 “开源” ≠ “免费” 这是几</description>
+    </item>
     
     <item>
       <title>《C陷阱和缺陷》读书笔记（2）- 语法”陷阱“</title>

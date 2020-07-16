@@ -287,8 +287,8 @@ int b = x/*p;
 <p>（答案参见<a href="#%E9%99%84%E5%BD%95">附录</a>）</p>
 <h3 id="14-整型常量">1.4 整型常量</h3>
 <p>在 C语言程序中，整数表示有二进制、八进制、十进制和十六进制等多种表示方法。
-<code>0b01010101</code> <code>1234</code> <code>010</code> <code>0xffff</code></p>
-<p>格外需要注意 <code>010</code> 不是我们通常意义上的10，而是八进制的，表达的数字其实就是8。 我猜测，原本应该写为 <code>0o10</code>，但怎么看一个字母小写<code>o</code> 在数字钟都显得比较奇怪，因为跟 <code>0</code> 比较接近，因此直接禁掉这种写法比较干脆。 但没有了这个小欧，有些人在代码对其的时候就可能忽视掉这个0开头导致数字弄错。这个需要格外注意！</p>
+<code>0b01010101</code> <code>010</code> <code>1234</code> <code>0xffff</code></p>
+<p>格外需要注意 <code>010</code> 不是我们通常意义上的10，而是八进制的，表达的数字其实就是8。 我猜测，原本应该写为 <code>0o10</code>，但怎么看一个字母小写<code>o</code> 在数字钟都显得比较奇怪，因为跟 <code>0</code> 比较接近，因此直接禁掉这种写法比较干脆。 但没有了这个小欧，有些人在 <strong>代码对齐</strong> 的时候就可能忽视掉这个0开头导致数字弄错。这个需要格外注意！</p>
 <h3 id="15-字符和字符串">1.5 字符和字符串</h3>
 <p>在C语言中，单引号引起的字符跟这个字符代表的ASCII码数字完全等价！ 比如， <code>char a = 'a';</code> 和 <code>char a = 97;</code> 是完全一样的。 <code>'a' + 'd'</code> 就完全等于 <code>197</code> 。</p>
 <p>而 双引号引起的字符串，代表的是一个 字符数组常量的 <strong>指针</strong>。其实，也就是一个地址。</p>
@@ -372,6 +372,10 @@ int b = x/*p;
 <ul class="widget-list">
     
     <li>
+        <a href="https://fredgan.github.io/post/thinking-to-open-source/" title="开源的感悟">开源的感悟</a>
+    </li>
+    
+    <li>
         <a href="https://fredgan.github.io/post/c-traps/c-traps-chapter-two/" title="《C陷阱和缺陷》读书笔记（2）- 语法”陷阱“">《C陷阱和缺陷》读书笔记（2）- 语法”陷阱“</a>
     </li>
     
@@ -411,6 +415,10 @@ int b = x/*p;
     <li><a href="https://fredgan.github.io/categories/C/">C (2)</a></li>
     
     <li><a href="https://fredgan.github.io/categories/%E5%B7%A5%E5%85%B7/">工具 (1)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%BC%80%E6%BA%90/">开源 (1)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%84%9F%E6%82%9F/">感悟 (1)</a></li>
     
     <li><a href="https://fredgan.github.io/categories/%E6%95%88%E7%8E%87/">效率 (1)</a></li>
     
