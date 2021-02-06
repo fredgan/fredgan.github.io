@@ -3,133 +3,135 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://fredgan.com/categories/</loc>
+    <loc>http://fredgan.com/</loc>
+    <lastmod>2020-08-19T14:08:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://fredgan.com/post/</loc>
+    <lastmod>2020-08-19T14:08:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://fredgan.com/post/database-software/</loc>
+    <lastmod>2020-08-19T14:08:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://fredgan.com/post/english-grammar/</loc>
+    <lastmod>2020-08-18T14:08:05+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://fredgan.com/categories/</loc>
     <lastmod>2020-07-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fredgan.com/</loc>
+    <loc>http://fredgan.com/categories/%E5%BC%80%E6%BA%90/</loc>
     <lastmod>2020-07-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fredgan.com/post/</loc>
+    <loc>http://fredgan.com/post/thinking-to-open-source/</loc>
     <lastmod>2020-07-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fredgan.com/categories/%E5%BC%80%E6%BA%90/</loc>
+    <loc>http://fredgan.com/categories/%E6%84%9F%E6%82%9F/</loc>
     <lastmod>2020-07-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fredgan.com/post/thinking-to-open-source/</loc>
-    <lastmod>2020-07-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://fredgan.com/categories/%E6%84%9F%E6%82%9F/</loc>
-    <lastmod>2020-07-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://fredgan.com/tags/C/</loc>
+    <loc>http://fredgan.com/tags/C/</loc>
     <lastmod>2020-07-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fredgan.com/categories/C/</loc>
+    <loc>http://fredgan.com/categories/C/</loc>
     <lastmod>2020-07-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fredgan.com/tags/language/</loc>
+    <loc>http://fredgan.com/tags/language/</loc>
     <lastmod>2020-07-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fredgan.com/tags/</loc>
+    <loc>http://fredgan.com/tags/</loc>
     <lastmod>2020-07-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fredgan.com/post/c-traps/c-traps-chapter-two/</loc>
+    <loc>http://fredgan.com/post/c-traps/c-traps-chapter-two/</loc>
     <lastmod>2020-07-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fredgan.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
+    <loc>http://fredgan.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2020-07-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fredgan.com/post/c-traps/c-traps-chapter-one/</loc>
+    <loc>http://fredgan.com/post/c-traps/c-traps-chapter-one/</loc>
     <lastmod>2020-07-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fredgan.com/tags/Markdown/</loc>
+    <loc>http://fredgan.com/tags/Markdown/</loc>
     <lastmod>2020-07-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fredgan.com/post/how-to-write-a-beautiful-markdown/</loc>
+    <loc>http://fredgan.com/post/how-to-write-a-beautiful-markdown/</loc>
     <lastmod>2020-07-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fredgan.com/categories/%E5%B7%A5%E5%85%B7/</loc>
+    <loc>http://fredgan.com/categories/%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2020-07-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fredgan.com/tags/%E6%95%88%E7%8E%87/</loc>
+    <loc>http://fredgan.com/tags/%E6%95%88%E7%8E%87/</loc>
     <lastmod>2020-07-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fredgan.com/categories/%E6%95%88%E7%8E%87/</loc>
+    <loc>http://fredgan.com/categories/%E6%95%88%E7%8E%87/</loc>
     <lastmod>2020-07-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fredgan.com/post/good_software/</loc>
+    <loc>http://fredgan.com/post/good_software/</loc>
     <lastmod>2020-07-08T14:21:58+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fredgan.com/post/gdb/</loc>
+    <loc>http://fredgan.com/post/gdb/</loc>
     <lastmod>2020-07-06T14:08:05+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fredgan.com/post/a-letter-to-university-student/</loc>
+    <loc>http://fredgan.com/post/a-letter-to-university-student/</loc>
     <lastmod>2019-09-05T09:14:03+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fredgan.com/post/redis/</loc>
+    <loc>http://fredgan.com/post/redis/</loc>
     <lastmod>2019-01-03T11:33:01+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://fredgan.com/post/database-sorftware/</loc>
+    <loc>http://fredgan.com/projects/</loc>
   </url>
   
   <url>
-    <loc>https://fredgan.com/post/english-grammar/</loc>
+    <loc>http://fredgan.com/about/</loc>
   </url>
   
   <url>
-    <loc>https://fredgan.com/projects/</loc>
-  </url>
-  
-  <url>
-    <loc>https://fredgan.com/about/</loc>
-  </url>
-  
-  <url>
-    <loc>https://fredgan.com/archives/</loc>
+    <loc>http://fredgan.com/archives/</loc>
   </url>
   
 </urlset>
