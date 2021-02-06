@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on FredGan&#39;s Blog</title>
-    <link>https://fredgan.github.io/tags/</link>
+    <link>https://fredgan.com/tags/</link>
     <description>Recent content in Tags on FredGan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 15 Jul 2020 22:21:58 +0800</lastBuildDate>
     
-	<atom:link href="https://fredgan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fredgan.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>C</title>
-      <link>https://fredgan.github.io/tags/C/</link>
+      <link>https://fredgan.com/tags/C/</link>
       <pubDate>Wed, 15 Jul 2020 22:21:58 +0800</pubDate>
       
-      <guid>https://fredgan.github.io/tags/C/</guid>
+      <guid>https://fredgan.com/tags/C/</guid>
       <description></description>
     </item>
     
     <item>
       <title>language</title>
-      <link>https://fredgan.github.io/tags/language/</link>
+      <link>https://fredgan.com/tags/language/</link>
       <pubDate>Wed, 15 Jul 2020 22:21:58 +0800</pubDate>
       
-      <guid>https://fredgan.github.io/tags/language/</guid>
+      <guid>https://fredgan.com/tags/language/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Markdown</title>
-      <link>https://fredgan.github.io/tags/Markdown/</link>
+      <link>https://fredgan.com/tags/Markdown/</link>
       <pubDate>Sun, 12 Jul 2020 22:21:58 +0800</pubDate>
       
-      <guid>https://fredgan.github.io/tags/Markdown/</guid>
+      <guid>https://fredgan.com/tags/Markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>效率</title>
-      <link>https://fredgan.github.io/tags/%E6%95%88%E7%8E%87/</link>
+      <link>https://fredgan.com/tags/%E6%95%88%E7%8E%87/</link>
       <pubDate>Sun, 12 Jul 2020 22:21:58 +0800</pubDate>
       
-      <guid>https://fredgan.github.io/tags/%E6%95%88%E7%8E%87/</guid>
+      <guid>https://fredgan.com/tags/%E6%95%88%E7%8E%87/</guid>
       <description></description>
     </item>
     

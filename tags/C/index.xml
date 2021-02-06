@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C on FredGan&#39;s Blog</title>
-    <link>https://fredgan.github.io/tags/C/</link>
+    <link>https://fredgan.com/tags/C/</link>
     <description>Recent content in C on FredGan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 15 Jul 2020 22:21:58 +0800</lastBuildDate>
     
-	<atom:link href="https://fredgan.github.io/tags/C/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fredgan.com/tags/C/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>《C陷阱和缺陷》读书笔记（2）- 语法”陷阱“</title>
-      <link>https://fredgan.github.io/post/c-traps/c-traps-chapter-two/</link>
+      <link>https://fredgan.com/post/c-traps/c-traps-chapter-two/</link>
       <pubDate>Wed, 15 Jul 2020 22:21:58 +0800</pubDate>
       
-      <guid>https://fredgan.github.io/post/c-traps/c-traps-chapter-two/</guid>
+      <guid>https://fredgan.com/post/c-traps/c-traps-chapter-two/</guid>
       <description>《C陷阱和缺陷》读书笔记（2）- 语法“陷阱” 词法、语法构成语言的一个基本条件。光有一个个的单词符号是不够的，这些符号的不同组合可以表达不同的含义。 例如，声明是什么，表达式什么，语句是什么，程序是什么等等。 理解函数声明 看看下面一个语句： 1 (*(void(*)())0)(); 乍一看到这个语句，肯定当场吓尿！啥鬼玩儿意</description>
     </item>
     
     <item>
       <title>《C陷阱和缺陷》读书笔记（1）- 词法”陷阱“</title>
-      <link>https://fredgan.github.io/post/c-traps/c-traps-chapter-one/</link>
+      <link>https://fredgan.com/post/c-traps/c-traps-chapter-one/</link>
       <pubDate>Mon, 13 Jul 2020 22:21:58 +0800</pubDate>
       
-      <guid>https://fredgan.github.io/post/c-traps/c-traps-chapter-one/</guid>
+      <guid>https://fredgan.com/post/c-traps/c-traps-chapter-one/</guid>
       <description>《C陷阱和缺陷》读书笔记（1）- 词法“陷阱” 为了敦促自己读书，特地开了一个读书笔记系列。 自上大学学习了谭浩强版本的《C程序设计》以来，以及经过这么多年遭受的C/C++面试和工作的毒打，就有一个感觉，C/C++语言的设计处处充满了陷阱。编译器设计之复杂，条目细则之多，感觉远远超出了</description>
     </item>
     

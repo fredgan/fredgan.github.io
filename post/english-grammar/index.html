@@ -9,20 +9,16 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
     
 
-    <title>GDB调试技巧 | FredGan&#39;s Blog</title>
-    <meta property="og:title" content="GDB调试技巧 - FredGan&#39;s Blog">
+    <title> | FredGan&#39;s Blog</title>
+    <meta property="og:title" content=" - FredGan&#39;s Blog">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content='2020-07-06T14:08:05&#43;08:00'>
-        
-        
-    <meta property="article:modified_time" content='2020-07-06T14:08:05&#43;08:00'>
         
     <meta name="Keywords" content="c,c&#43;&#43;,go,ios,python,yang,netconf,软件架构,网络爬虫,项目管理,cleancode">
-    <meta name="description" content="GDB调试技巧">
+    <meta name="description" content="">
         
     <meta name="author" content="FredGan">
-    <meta property="og:url" content="https://fredgan.com/post/gdb/">
+    <meta property="og:url" content="https://fredgan.com/post/english-grammar/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
@@ -141,32 +137,7 @@
 <div class="post-toc" style="position: absolute; top: 188px;">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#一直接调试">一、直接调试</a>
-      <ul>
-        <li><a href="#11-启动与停止">1.1 启动与停止</a></li>
-        <li><a href="#12-调试指令">1.2 调试指令：</a></li>
-        <li><a href="#13-查看变量内存">1.3 查看变量内存</a></li>
-      </ul>
-    </li>
-    <li><a href="#二attach调试">二、Attach调试</a>
-      <ul>
-        <li><a href="#21-本机attach进程">2.1 本机attach进程</a></li>
-        <li><a href="#22-gdb_server远程调试">2.2 gdb_server远程调试</a></li>
-      </ul>
-    </li>
-    <li><a href="#三coredump调试">三、CoreDump调试</a>
-      <ul>
-        <li><a href="#31-程序异常终止产生了core文件">3.1 程序异常终止产生了core文件</a></li>
-        <li><a href="#32-程序异常终止不产生core文件原因">3.2 程序异常终止不产生core文件原因</a></li>
-        <li><a href="#33-调试方法">3.3 调试方法</a></li>
-      </ul>
-    </li>
-    <li><a href="#四辅助脚本">四、辅助脚本：</a></li>
-    <li><a href="#五参考资料">五、参考资料</a></li>
-  </ul>
-</nav>
+        <nav id="TableOfContents"></nav>
     </div>
 </div>
 <script type="text/javascript">
@@ -198,10 +169,10 @@
 </script>
     <article class="post">
         <header>
-            <h1 class="post-title">GDB调试技巧</h1>
+            <h1 class="post-title"></h1>
         </header>
         <date class="post-meta meta-date">
-            2020年7月6日
+            1年1月1日
         </date>
         
         
@@ -212,108 +183,71 @@
         
         
         <div class="post-content">
-            <h1 id="gdb-调试技巧">GDB 调试技巧</h1>
-<h2 id="一直接调试">一、直接调试</h2>
-<h3 id="11-启动与停止">1.1 启动与停止</h3>
+            <h1 id="英语语法核心体系">英语语法核心体系</h1>
+<p>造句</p>
 <ul>
-<li><code>run</code> / <code>r</code>  启动程序</li>
-<li><code>set args &lt;arg1&gt; &lt;arg2&gt;</code> 设置程序运行参数</li>
-<li><code>finish</code> 结束当前函数的运行，函数剩余部分会执行完毕</li>
-<li><code>return</code> 立即结束当前函数执行并返回，可带参数返回</li>
-</ul>
-<h3 id="12-调试指令">1.2 调试指令：</h3>
+<li>Simple Sentence 什么怎么样
 <ul>
-<li><code>step</code> / <code>next</code> 执行下一行（进入函数）/（不进入函数）</li>
-<li><code>disassemble</code> 查看汇编命令</li>
-<li><code>stepi</code> / <code>nexti</code> 执行下一条汇编指令 (进入函数)/（不进入函数）</li>
-<li><code>jmp</code> 跳转指令</li>
-<li><code>info r</code> 查看寄存器值。<code>info</code> 可以简写为 <code>i</code></li>
-<li><code>bt</code> 查看调用路径</li>
-</ul>
-<blockquote>
-<p><strong>堆栈用途:</strong></p>
+<li>substract
 <ul>
-<li>rdi rsi rdx rcx r8 r9 寄存器依次存放函数前6个参数</li>
-<li>更多的参数放在栈中</li>
-<li>函数返回值保存在 rax 中</li>
-</ul>
-</blockquote>
-<h3 id="13-查看变量内存">1.3 查看变量内存</h3>
-<ol>
-<li><code>p &lt;var&gt;</code> 查看变量值</li>
-<li><code>p/x &lt;var&gt;</code> 查看变量二进制值值</li>
-<li><code>x/nfu &lt;addr&gt;</code> 查看内存值。<code>x</code> 是 <code>examine</code> 的缩写</li>
-</ol>
-<ul>
-<li>
-<p>n表示要显示的内存单元的个数</p>
-</li>
-<li>
-<p>f表示显示方式, 可取如下值：</p>
-<ul>
-<li>x 按十六进制格式显示变量。</li>
-<li>d 按十进制格式显示变量。</li>
-<li>u 按十进制格式显示无符号整型。</li>
-<li>o 按八进制格式显示变量。</li>
-<li>t 按二进制格式显示变量。</li>
-<li>a 按十六进制格式显示变量。</li>
-<li>i 指令地址格式</li>
-<li>c 按字符格式显示变量。</li>
-<li>f 按浮点数格式显示变量。</li>
+<li>名词（人或者物体）</li>
+<li>代词</li>
 </ul>
 </li>
-<li>
-<p>u表示一个地址单元的长度</p>
+<li>predicate
 <ul>
-<li>b表示单字节，</li>
-<li>h表示双字节，</li>
-<li>w表示四字节，</li>
-<li>g表示八字节</li>
+<li>可以独立完成的动作(不及物动词)</li>
+<li>有一个动作的承受者(单及物动词+宾语)</li>
+<li>两个动作承受者(双及物动词+ 间接宾语 + 直接宾语)</li>
+<li>只有一个动作承受者(复杂及物动词+宾语+宾语补语)</li>
+<li>不是个动作 (连系动词 + 主语补语(表语))</li>
 </ul>
 </li>
 </ul>
-<h2 id="二attach调试">二、Attach调试</h2>
-<h3 id="21-本机attach进程">2.1 本机attach进程</h3>
-<p>gdb program pid</p>
-<p>gdb program 进入gdb后attach pid</p>
-<p>如果没有权限</p>
-<ul>
-<li>如果uid相同，运行程序之后看看有没有改变uid，例如passwd程序</li>
-<li>root权限 echo 0 &gt; /proc/sys/kernel/yama/ptrace_scope</li>
+</li>
 </ul>
-<h3 id="22-gdb_server远程调试">2.2 gdb_server远程调试</h3>
+<p>句子成分</p>
 <ul>
-<li>gdb_server运行在target上</li>
-<li>gdb运行在host上</li>
-<li>GDB Remote serial protocol/RSP协议</li>
+<li>定语 Attributive 修饰主语或者宾语</li>
+<li>状语 Adverbial 修饰动作</li>
+<li>同位语 Appositive 将主语、宾语再说一遍</li>
 </ul>
-<h2 id="三coredump调试">三、CoreDump调试</h2>
-<h3 id="31-程序异常终止产生了core文件">3.1 程序异常终止产生了core文件</h3>
+<p>复合句 Compound Sentence
+并列连接</p>
+<p>复杂句 Complex Sentence</p>
 <ul>
-<li>保存路径：保存在程序执行路径，修改 /proc/sys/kernel/core_pattern可以修改</li>
-<li>文件名： 默认core, root权限修改： <code>echo 1 &gt; /proc/sys/kernel/core_uses_pid</code> 后变为core.pid</li>
-<li>文件格式：ELF</li>
-<li>包含信息：内存状态、寄存器状态、堆栈指针、内存管理信息、函数调用堆栈信息</li>
-</ul>
-<h3 id="32-程序异常终止不产生core文件原因">3.2 程序异常终止不产生core文件原因</h3>
+<li>名语从句
 <ul>
-<li>资源限制 ulimit -c unlimited修改</li>
-<li>权限问题 core文件生成目录没有写权限，要注意程序运行过程中有没有降权或者改变权限</li>
+<li>主语从句</li>
+<li>宾语从句</li>
+<li>同位语从句</li>
 </ul>
-<h3 id="33-调试方法">3.3 调试方法</h3>
+</li>
+</ul>
+<p>词类(词性)</p>
 <ul>
-<li>gdb program &lt;core_file_name&gt;</li>
-<li>bt 查看调用栈</li>
+<li>名词 Noun</li>
+<li>冠词 Atricle</li>
+<li>代词</li>
+<li>动词</li>
+<li>形容词</li>
+<li>连接词</li>
 </ul>
-<h2 id="四辅助脚本">四、辅助脚本：</h2>
-<p>gdb init + 高级脚本提高调试效率</p>
+<p>谓语动词的三大本领（时体气）</p>
 <ul>
-<li>peda</li>
-<li>pwndbg</li>
-<li>gef</li>
+<li>表示动作的时间(时)：现在、过去、将来</li>
+<li>表示动作的变化(态)：一般、完成、进行、完成进行</li>
+<li>表示动作的假设、情感等：虚拟语气、陈述语气、祈使语气</li>
 </ul>
-<h2 id="五参考资料">五、参考资料</h2>
-<p><a href="https://lldb.llvm.org/use/map.html">GDB vs LLDB</a></p>
+<p>助动词：have eaten、is eating、must eat、do not eat、can eat、might eat、is eaten</p>
+<p>非谓语动词（代替各种身份）</p>
+<ul>
+<li>动词不定式</li>
+<li>现在分词</li>
+<li>动名词</li>
+<li>过去分词</li>
+</ul>
+<p><strong>英语语法的核心就是动词</strong></p>
 
         </div>
 
@@ -326,15 +260,15 @@
     <h2>See Also</h2>
     <ul class="listing">
         
+        <li><a href="/post/good_software/">优质软件列表</a></li>
+        
+        <li><a href="/post/gdb/">GDB调试技巧</a></li>
+        
         <li><a href="/post/a-letter-to-university-student/">致震波的一封信</a></li>
         
         <li><a href="/post/redis/">Redis的使用</a></li>
         
-        <li><a href="/post/english-grammar/"></a></li>
-        
         <li><a href="/post/database-sorftware/"></a></li>
-        
-        <li><a href="/projects/">Github项目列表</a></li>
         
     </ul>
 </div>
