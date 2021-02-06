@@ -6,11 +6,7 @@
     <description>Recent content in C on FredGan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 15 Jul 2020 22:21:58 +0800</lastBuildDate>
-    
-	<atom:link href="https://fredgan.com/categories/C/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 15 Jul 2020 22:21:58 +0800</lastBuildDate><atom:link href="https://fredgan.com/categories/C/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>《C陷阱和缺陷》读书笔记（2）- 语法”陷阱“</title>
       <link>https://fredgan.com/post/c-traps/c-traps-chapter-two/</link>
