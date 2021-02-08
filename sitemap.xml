@@ -3,18 +3,58 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://fredgan.com/categories/</loc>
+    <lastmod>2021-02-08T18:57:23+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://fredgan.com/</loc>
-    <lastmod>2021-02-08T10:21:58+08:00</lastmod>
+    <lastmod>2021-02-08T18:57:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://fredgan.com/post/</loc>
+    <lastmod>2021-02-08T18:57:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://fredgan.com/tags/</loc>
+    <lastmod>2021-02-08T18:57:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://fredgan.com/categories/%E5%B0%8F%E8%AF%B4/</loc>
+    <lastmod>2021-02-08T18:57:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://fredgan.com/post/my-like/</loc>
+    <lastmod>2021-02-08T18:57:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://fredgan.com/tags/%E6%8E%A8%E8%8D%90/</loc>
+    <lastmod>2021-02-08T18:57:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://fredgan.com/categories/%E6%8E%A8%E8%8D%90/</loc>
+    <lastmod>2021-02-08T18:57:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://fredgan.com/categories/%E7%94%B5%E5%BD%B1/</loc>
+    <lastmod>2021-02-08T18:57:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://fredgan.com/categories/%E7%94%B5%E8%A7%86%E5%89%A7/</loc>
+    <lastmod>2021-02-08T18:57:23+08:00</lastmod>
   </url>
   
   <url>
     <loc>http://fredgan.com/projects/</loc>
     <lastmod>2020-08-19T14:08:05+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://fredgan.com/post/</loc>
-    <lastmod>2021-02-08T10:21:58+08:00</lastmod>
   </url>
   
   <url>
@@ -30,11 +70,6 @@
   <url>
     <loc>http://fredgan.com/post/english-grammar/</loc>
     <lastmod>2020-08-18T14:08:05+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://fredgan.com/categories/</loc>
-    <lastmod>2021-02-08T10:21:58+08:00</lastmod>
   </url>
   
   <url>
@@ -65,11 +100,6 @@
   <url>
     <loc>http://fredgan.com/tags/language/</loc>
     <lastmod>2020-07-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://fredgan.com/tags/</loc>
-    <lastmod>2021-02-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
