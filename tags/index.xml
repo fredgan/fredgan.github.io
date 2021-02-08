@@ -43,5 +43,32 @@
       <description></description>
     </item>
     
+    <item>
+      <title>redis</title>
+      <link>http://fredgan.com/tags/redis/</link>
+      <pubDate>Thu, 03 Jan 2019 11:33:01 +0800</pubDate>
+      
+      <guid>http://fredgan.com/tags/redis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>中间件</title>
+      <link>http://fredgan.com/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/</link>
+      <pubDate>Thu, 03 Jan 2019 11:33:01 +0800</pubDate>
+      
+      <guid>http://fredgan.com/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>工具</title>
+      <link>http://fredgan.com/tags/%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Thu, 03 Jan 2019 11:33:01 +0800</pubDate>
+      
+      <guid>http://fredgan.com/tags/%E5%B7%A5%E5%85%B7/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

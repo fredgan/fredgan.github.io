@@ -61,5 +61,32 @@
       <description></description>
     </item>
     
+    <item>
+      <title>软件</title>
+      <link>http://fredgan.com/categories/%E8%BD%AF%E4%BB%B6/</link>
+      <pubDate>Wed, 08 Jul 2020 14:21:58 +0800</pubDate>
+      
+      <guid>http://fredgan.com/categories/%E8%BD%AF%E4%BB%B6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>redis</title>
+      <link>http://fredgan.com/categories/redis/</link>
+      <pubDate>Thu, 03 Jan 2019 11:33:01 +0800</pubDate>
+      
+      <guid>http://fredgan.com/categories/redis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>中间件</title>
+      <link>http://fredgan.com/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/</link>
+      <pubDate>Thu, 03 Jan 2019 11:33:01 +0800</pubDate>
+      
+      <guid>http://fredgan.com/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

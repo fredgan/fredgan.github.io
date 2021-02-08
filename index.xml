@@ -8,12 +8,30 @@
     <language>zh-CN</language>
     <lastBuildDate>Wed, 19 Aug 2020 14:08:05 +0800</lastBuildDate><atom:link href="http://fredgan.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Github项目列表</title>
+      <link>http://fredgan.com/projects/</link>
+      <pubDate>Wed, 19 Aug 2020 14:08:05 +0800</pubDate>
+      
+      <guid>http://fredgan.com/projects/</guid>
+      <description>参与项目 pyang libyang ncclient sysrepo arrow 资源类 HelloGithub Design Resource 书籍 机器学习 李笑来 - 人人都能用英语</description>
+    </item>
+    
+    <item>
       <title>数据库软件简介</title>
       <link>http://fredgan.com/post/database-software/</link>
       <pubDate>Wed, 19 Aug 2020 14:08:05 +0800</pubDate>
       
       <guid>http://fredgan.com/post/database-software/</guid>
       <description>数据库软件简介 Question 科普类型：美国的数据库软件在什么地方先进，我们差距在哪？有什么卡脖子的？现在全球竞争格局是怎样的？ 1 数据类型 数据库是用来存储数据的，先简单介绍一下数据有哪些类型。 常见的数据类型有： 1.1 关系型数据 其实就类似于Excel表格通常所呈现的数据那样，每一行每一列整整齐齐，井</description>
+    </item>
+    
+    <item>
+      <title>关于自己</title>
+      <link>http://fredgan.com/about/</link>
+      <pubDate>Tue, 18 Aug 2020 14:08:05 +0800</pubDate>
+      
+      <guid>http://fredgan.com/about/</guid>
+      <description>TODO 技术专题类 Vim手册 网络抓包过滤器(Chrome &amp;amp; Wireshark) Jira查询语言(JQL) 网络爬虫入门和XPath 数据格式汇总 二进制格式和压缩 开源License分类 五大基金会 三十分钟入门正则表达式 内存布局 Fuzz测试 MySQL优化 Docker原理 Git原理 技术拆书类 《C陷阱和缺陷》 《编译原</description>
     </item>
     
     <item>
@@ -89,39 +107,21 @@
     </item>
     
     <item>
+      <title>归档</title>
+      <link>http://fredgan.com/archives/</link>
+      <pubDate>Wed, 09 Jan 2019 14:08:05 +0800</pubDate>
+      
+      <guid>http://fredgan.com/archives/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Redis的使用</title>
       <link>http://fredgan.com/post/redis/</link>
       <pubDate>Thu, 03 Jan 2019 11:33:01 +0800</pubDate>
       
       <guid>http://fredgan.com/post/redis/</guid>
       <description>Redis的使用方法 一、 工具查看 可以直接使用 redisClients 软件界面操作查看 二、 命令行 redis-cli -h 127.0.0.1 -p 6379 2.1 基础命令 keys * // 列举所有的key expire &amp;lt;key&amp;gt; &amp;lt;seconds&amp;gt; // 设置某个key的过期时间（单位：秒） ttl &amp;lt;key&amp;gt; // 显示key的过期时间（单位：秒）【返回-1表示永久 -2表示key不存在】 persist &amp;lt;key&amp;gt; // 将key的时间设置为永久 set getset 都会将ke</description>
-    </item>
-    
-    <item>
-      <title>Github项目列表</title>
-      <link>http://fredgan.com/projects/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://fredgan.com/projects/</guid>
-      <description>参与项目 pyang libyang ncclient sysrepo arrow 资源类 HelloGithub Design Resource 书籍 机器学习 李笑来 - 人人都能用英语</description>
-    </item>
-    
-    <item>
-      <title>关于自己</title>
-      <link>http://fredgan.com/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://fredgan.com/about/</guid>
-      <description>TODO 技术专题类 Vim手册 网络抓包过滤器(Chrome &amp;amp; Wireshark) Jira查询语言(JQL) 网络爬虫入门和XPath 数据格式汇总 二进制格式和压缩 开源License分类 五大基金会 三十分钟入门正则表达式 内存布局 Fuzz测试 MySQL优化 Docker原理 Git原理 技术拆书类 《C陷阱和缺陷》 《编译原</description>
-    </item>
-    
-    <item>
-      <title>简介</title>
-      <link>http://fredgan.com/archives/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://fredgan.com/archives/</guid>
-      <description></description>
     </item>
     
   </channel>
