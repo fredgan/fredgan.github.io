@@ -4,17 +4,32 @@
   
   <url>
     <loc>http://fredgan.com/categories/</loc>
-    <lastmod>2021-02-08T18:57:23+08:00</lastmod>
+    <lastmod>2021-03-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://fredgan.com/</loc>
-    <lastmod>2021-02-08T18:57:23+08:00</lastmod>
+    <lastmod>2021-03-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://fredgan.com/post/</loc>
-    <lastmod>2021-02-08T18:57:23+08:00</lastmod>
+    <lastmod>2021-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://fredgan.com/post/aging/</loc>
+    <lastmod>2021-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://fredgan.com/categories/%E6%84%9F%E6%82%9F/</loc>
+    <lastmod>2021-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://fredgan.com/categories/%E7%94%9F%E6%B4%BB/</loc>
+    <lastmod>2021-03-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -79,11 +94,6 @@
   
   <url>
     <loc>http://fredgan.com/post/thinking-to-open-source/</loc>
-    <lastmod>2020-07-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://fredgan.com/categories/%E6%84%9F%E6%82%9F/</loc>
     <lastmod>2020-07-18T00:00:00+00:00</lastmod>
   </url>
   

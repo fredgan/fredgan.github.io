@@ -9,21 +9,24 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
     
 
-    <title>中间件 | FredGan&#39;s Blog</title>
-    <meta property="og:title" content="中间件 - FredGan&#39;s Blog">
+    <title>从衰老说开去 | FredGan&#39;s Blog</title>
+    <meta property="og:title" content="从衰老说开去 - FredGan&#39;s Blog">
     <meta property="og:type" content="article">
         
+    <meta property="article:published_time" content='2021-03-02T00:21:58&#43;08:00'>
         
-    <meta name="Keywords" content="c,c&#43;&#43;,go,ios,python,yang,netconf,软件架构,网络爬虫,项目管理,cleancode">
-    <meta name="description" content="中间件">
+        
+    <meta property="article:modified_time" content='2021-03-02T00:00:00&#43;08:00'>
+        
+    <meta name="Keywords" content="[衰老]">
+    <meta name="description" content="从衰老说开去">
         
     <meta name="author" content="FredGan">
-    <meta property="og:url" content="http://fredgan.com/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/">
+    <meta property="og:url" content="http://fredgan.com/post/aging/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
-    <link rel="alternate" type="application/rss+xml+xml" href="http://fredgan.com/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/index.xml" title="FredGan's Blog" />
     <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -53,7 +56,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="http://fredgan.com">首页</a>
+                    <a class="current" href="http://fredgan.com">首页</a>
                     
                     <a  href="http://fredgan.com/projects/" title="GitHub">GitHub</a>
                     
@@ -74,49 +77,161 @@
                 <div class="col-8" id="main">
                     
 <div class="res-cons">
-    
-    <h3 class="archive-title">
-        包含标签
-        <span class="keyword">中间件</span>
-        的文章
-    </h3>
-    
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
 
-    
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents"></nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
     <article class="post">
         <header>
-            <h1 class="post-title">
-                <a href="http://fredgan.com/post/redis/">Redis的使用</a>
-            </h1>
+            <h1 class="post-title">从衰老说开去</h1>
         </header>
         <date class="post-meta meta-date">
-            2019年1月3日
+            2021年3月2日
         </date>
         
-        <div class="post-meta meta-category">
-            |
+        <div class="post-meta">
+            <span>|</span>
             
-            <a href='/categories/%E5%B7%A5%E5%85%B7'>工具</a>
+            <span class="meta-category"><a href='/categories/%E7%94%9F%E6%B4%BB'>生活</a></span>
             
-            <a href='/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6'>中间件</a>
-            
-            <a href='/categories/redis'>redis</a>
+            <span class="meta-category"><a href='/categories/%E6%84%9F%E6%82%9F'>感悟</a></span>
             
         </div>
         
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
         <div class="post-content">
-            Redis的使用方法 一、 工具查看 可以直接使用 redisClients 软件界面操作查看 二、 命令行 redis-cli -h 127.0.0.1 -p 6379 2.1 基础命令 keys * // 列举所有的key expire &lt;key&gt; &lt;seconds&gt; // 设置某个key的过期时间（单位：秒） ttl &lt;key&gt; // 显示key的过期时间（单位：秒）【返回-1表示永久 -2表示key不存在】 persist &lt;key&gt; // 将key的时间设置为永久 set getset 都会将ke……
-            <p class="readmore"><a href="http://fredgan.com/post/redis/">阅读全文</a></p>
+            <h1 id="从衰老说开去">从衰老说开去</h1>
+<p>随着年纪慢慢的增加，会慢慢关注到越来越多的事情。有些事情会在一些很不经意的瞬间突然发现，比如照镜子的时候突然发现自己的头上冒出好多白头发；又比如好久不运动，突然心血来潮运动一下，发现自己的身体居然要长达四五天才能恢复；再比如，晚上熬夜后，第二天一整天都昏昏沉沉，胸口也疼痛，要到第三天才能恢复。而就在那么一瞬间，我们会发现，原来自己已经不再年轻，身体已经老了。这样的次数多了以后，也就慢慢见怪不怪了，慢慢地接受了这一切，心理也看淡了人生的许多事情。身体的衰老，常常会带给我们心理的衰老。</p>
+<p>我们人类衰老的过程，很表面上看，刚出生的宝宝，细皮嫩肉，仿佛有一点点外力就可能受伤。成长为少年，皮肤慢慢变得结实，已经能承受一些风吹雨打了。再过些年头，经过岁月的洗礼，我们慢慢地变得皮糙肉厚，各种器官都在老化蜕变。皮肤慢慢的变得褶皱，头发发白，牙齿掉落，骨头窸窣作响。肌肉不再那么有力了，走路也不稳了，身体受个伤也很难修复了。这就是我们肉眼可见的衰老。</p>
+<p>而衰老的原因，科学家们众说纷纭。有端粒说，有自由基说，有激素说，不一而足。作为一个普通人，不知道你注意到了没有，小孩子基本都是没有口气的，随着年纪的增大，你会发现每个人都或多或少有口气。再引申开一点，小孩子生病比较少，而年纪大了，生病就会越来越多。身体的每个器官都可能发生炎症，小到咽炎、鼻炎，大到肺炎、胃炎、肝炎、脑膜炎、脊髓灰质炎。这些炎症发生的原因是什么？我们生存的这个世界，到处都是微生物：细菌、真菌、支原体、病毒。而人从出生开始，就处在不断地新陈代谢中，也就免不了跟这些微生物打交道。有些微生物对人体有益，比如大肠中大量的益生菌。但更多的则是对人体有害的，他们在不断的入侵我们人体的各个器官。他们攻破了哪个器官的防线，哪个器官就发生炎症。长期的炎症很可能引发癌变。</p>
+<p>由此及彼，其实不只是我们会衰老，宇宙万事万物都是从出生开始，就在不断衰老。我记忆最深刻的其实就是春联。每年贴春联的时候，就会发现自己去年贴的喜庆红的春联变白了，甚至楼顶上常年照射太阳的春联，用手一抹，纸都变得粉碎随风飘去。虽然不知道纸老化的根本原因，但我知道，自然界存在让纸老化的力量，可能是紫外线照射把分子键断裂，也可能是空气中的风不断摩擦造成的折旧，又或者是水蒸气和微生物的共同侵蚀作用腐化了纸张。我们使用的手机，只要开封使用，手机就会慢慢地变旧。自然界的坚硬的石头，我们的水泥马路和大理石地板，暴露在空气中，天长地久，多年以后再对比刚使用时，都发生了许许多多的变化。大到我们的地球、太阳和宇宙中的白矮星变成红矮星。无一不向我们表明，他们也在衰老。只不过，他们的寿命比我们人类长太多了。</p>
+<p>衰老意味着向死亡靠近，意味着活力和生命力的逐渐丧失。身体的衰老让我们失去活力，心理的衰老，让我们对万事万物失去兴趣，死气沉沉。当你注意到事物在衰老，特别是看到亲人在衰老中，我们就会感受到时光流逝之快。想象在不久的将来，自己也会衰老成所以，我们都喜欢新生事物，那样有活力，讨人喜欢。</p>
+
+        </div>
+
+        
+
+
+        
+
+
+        <div class="post-meta meta-tags">
+            
+            没有标签
+            
         </div>
     </article>
     
-
     
 
-
-
-
-
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "fredgan/fredgan.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
 </div>
 
                     <footer id="footer">
@@ -138,6 +253,16 @@
 </footer>
 
 
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
