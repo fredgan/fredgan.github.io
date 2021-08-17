@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title> | FredGan&#39;s Blog</title>
+    <meta property="og:title" content=" - FredGan&#39;s Blog">
+    <meta property="og:type" content="article">
+        
+        
+    <meta name="Keywords" content="c,c&#43;&#43;,go,ios,python,yang,netconf,软件架构,网络爬虫,项目管理,cleancode">
+    <meta name="description" content="">
+        
+    <meta name="author" content="FredGan">
+    <meta property="og:url" content="http://fredgan.com/post/k8s/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="http://fredgan.com">
+                        FredGan&#39;s Blog
+                    </a>
+                
+                <p class="description">随笔和技术博客：C/C&#43;&#43;/Go/Python/iOS/JavaScript、YANG/NetConf、爬虫、编译器、CleanCode</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="http://fredgan.com">首页</a>
+                    
+                    <a  href="http://fredgan.com/projects/" title="GitHub">GitHub</a>
+                    
+                    <a  href="http://fredgan.com/archives/" title="归档">归档</a>
+                    
+                    <a  href="http://fredgan.com/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-安装">1. 安装</a>
+      <ul>
+        <li><a href="#11-安装docker">1.1 安装docker</a></li>
+        <li><a href="#12-安装kubernetes">1.2 安装Kubernetes</a></li>
+        <li><a href="#13-搭建k8s集群">1.3 搭建K8s集群</a></li>
+      </ul>
+    </li>
+    <li><a href="#启动">启动</a>
+      <ul>
+        <li><a href="#安装grimoirelab">安装GrimoireLab</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title"></h1>
+        </header>
+        <date class="post-meta meta-date">
+            1年1月1日
+        </date>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <h1 id="k8s实战">K8s实战</h1>
+<h2 id="1-安装">1. 安装</h2>
+<h3 id="11-安装docker">1.1 安装docker</h3>
+<pre><code>apt install docker-engine
+</code></pre><h3 id="12-安装kubernetes">1.2 安装Kubernetes</h3>
+<pre><code># apt-key文件可以手动下载
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo &quot;deb https://mirrors.tuna.tsinghua.edu.cn/kubernetes/apt kubernetes-xenial main&quot; | sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo apt install -y kubelet kubeadm kubectl
+
+# 拉取镜像
+kube_containers=(
+  k8s.gcr.io/kube-apiserver:v1.20.2
+  k8s.gcr.io/kube-controller-manager:v1.20.2
+  k8s.gcr.io/kube-scheduler:v1.20.2
+  k8s.gcr.io/kube-proxy:v1.20.2
+  k8s.gcr.io/pause:3.2
+  k8s.gcr.io/etcd:3.4.13-0
+  k8s.gcr.io/coredns:1.7.0
+)
+
+for rec_container in ${kube_containers[*]}; do
+  echo &quot;$rec_container&quot;
+  ali_img=&quot;${rec_container//k8s.gcr.io/registry.cn-hangzhou.aliyuncs.com\/google_containers}&quot;
+  docker pull &quot;$ali_img&quot;
+  docker tag &quot;$ali_img&quot; &quot;$rec_container&quot;
+  docker rmi &quot;$ali_img&quot;
+  echo -e &quot;\033[41;37m$rec_container pull complete.\033[0m&quot;
+done
+</code></pre><p>问题1：</p>
+<pre><code>kubectl apply -f .
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+</code></pre><p>解答：没有搭建K8s集群</p>
+<h3 id="13-搭建k8s集群">1.3 搭建K8s集群</h3>
+<p>指定从阿里云镜像仓拉取镜像</p>
+<pre><code>kubeadm init --pod-network-cidr=10.244.0.0/16 --kubernetes-version=v1.21.0 --apiserver-advertise-address=192.168.0.3 --v=5 --image-repository=registry.aliyuncs.com/google_containers
+</code></pre><p>问题2：</p>
+<pre><code>[preflight] Some fatal errors occurred:
+	[ERROR IsDockerSystemdCheck]: cannot execute 'docker info -f {{.CgroupDriver}}': exit status 125
+	[ERROR SystemVerification]: failed executing &quot;docker info --format '{{json .}}'&quot;\noutput: flag provided but not defined: --format
+See 'docker info --help'.
+\nerror: exit status 125
+</code></pre><p>解答：docker版本太低，apt安装的版本是1.11，升级版本，实际最低要求是1.13。升级步骤，https://blog.csdn.net/BigData_Mining/article/details/103781306
+然后再执行上面的步骤</p>
+<p>问题3：</p>
+<pre><code>29352 checks.go:850] pulling registry.aliyuncs.com/google_containers/coredns/coredns:v1.8.0
+[preflight] Some fatal errors occurred:
+	[ERROR ImagePull]: failed to pull image registry.aliyuncs.com/google_containers/coredns/coredns:v1.8.0: output: Error response from daemon: pull access denied for registry.aliyuncs.com/google_containers/coredns/coredns, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+, error: exit status 1
+[preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`
+error execution phase preflight
+</code></pre><p>解答：
+手动拉取coredns/coredns:1.8.0镜像，然后重新打tag</p>
+<pre><code>docker tag 296a registry.aliyuncs.com/google_containers/coredns/coredns:v1.8.0
+</code></pre><h2 id="启动">启动</h2>
+<pre><code>  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+</code></pre><p>在第二胎机器上加入集群</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubeadm join 192.168.0.3:6443 --token wsh1oq.hcuy3eh1qqf8j32s --discovery-token-ca-cert-hash sha256:90881c6bc988d79c6ab854a566eaaa942e36cf29f00145a8c28f4b3a65534df3
+</code></pre></td></tr></table>
+</div>
+</div><p>问题4：
+coredns一直处于pending状态？</p>
+<p>解答：
+官方说法是</p>
+<blockquote>
+<p>coredns 停滞在 Pending 状态
+这一行为是 预期之中 的，因为系统就是这么设计的。 kubeadm 的网络供应商是中立的，因此管理员应该选择 <a href="https://kubernetes.io/zh/docs/concepts/cluster-administration/addons/">安装 pod 的网络插件</a>。 你必须完成 Pod 的网络配置，然后才能完全部署 CoreDNS。 在网络被配置好之前，DNS 组件会一直处于 Pending 状态。</p>
+</blockquote>
+<p>安装flannel插件</p>
+<pre><code>kubectl create -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+</code></pre><p>问题5：cni0网卡网段和eth0网卡网段冲突，导致机器ip不通</p>
+<p>首先到 cd /etc/cni/net.d/ 创建两个文件</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#a61717;background-color:#e3d2d2">//</span> <span style="color:#099">10</span><span style="color:#a61717;background-color:#e3d2d2">-mynet.conf</span>
+{
+	<span style="color:#000080">&#34;name&#34;</span>: <span style="color:#d14">&#34;mynet&#34;</span>,
+	<span style="color:#000080">&#34;type&#34;</span>: <span style="color:#d14">&#34;bridge&#34;</span>,
+	<span style="color:#000080">&#34;bridge&#34;</span>: <span style="color:#d14">&#34;cni0&#34;</span>,
+	<span style="color:#000080">&#34;isGateway&#34;</span>: <span style="color:#000;font-weight:bold">true</span>,
+	<span style="color:#000080">&#34;ipMasq&#34;</span>: <span style="color:#000;font-weight:bold">true</span>,
+	<span style="color:#000080">&#34;ipam&#34;</span>: {
+		<span style="color:#000080">&#34;type&#34;</span>: <span style="color:#d14">&#34;host-local&#34;</span>,
+		<span style="color:#000080">&#34;subnet&#34;</span>: <span style="color:#d14">&#34;10.22.0.0/16&#34;</span>,
+		<span style="color:#000080">&#34;routes&#34;</span>: [
+			{ <span style="color:#000080">&#34;dst&#34;</span>: <span style="color:#d14">&#34;0.0.0.0/0&#34;</span> }
+		]
+	}
+}
+
+<span style="color:#a61717;background-color:#e3d2d2">//</span> <span style="color:#099">99</span><span style="color:#a61717;background-color:#e3d2d2">-loopback.conf</span>
+{
+	<span style="color:#000080">&#34;type&#34;</span>: <span style="color:#d14">&#34;lookback&#34;</span>
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>然后删除已有的cni0</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ifconfig cni0 down
+ip link delete cni0
+</code></pre></td></tr></table>
+</div>
+</div><p>再重新启动集群</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubeadm init --pod-network-cidr<span style="color:#000;font-weight:bold">=</span>10.244.0.0/16 --kubernetes-version<span style="color:#000;font-weight:bold">=</span>v1.21.0 --apiserver-advertise-address<span style="color:#000;font-weight:bold">=</span>192.168.0.3 --v<span style="color:#000;font-weight:bold">=</span><span style="color:#099">5</span> --image-repository<span style="color:#000;font-weight:bold">=</span>registry.aliyuncs.com/google_containers
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="安装grimoirelab">安装GrimoireLab</h3>
+<p>进入 项目根目录 kubernetes后，执行命令</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl apply -f .
+</code></pre></td></tr></table>
+</div>
+</div><p>之后就启动了容器。</p>
+<p>使用端口转发开启kibiter</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl port-forward service/kibiter <span style="color:#099">5601</span> -n grimoire --address<span style="color:#000;font-weight:bold">=</span>0.0.0.0
+</code></pre></td></tr></table>
+</div>
+</div><p>问题6：
+esnode mariadb两个永久节点无法启动，describe发现warning</p>
+<pre><code>  Type     Reason            Age                 From               Message
+  ----     ------            ----                ----               -------
+  Warning  FailedScheduling  39s (x42 over 40m)  default-scheduler  0/2 nodes are available: 2 pod has unbound immediate PersistentVolumeClaims.
+</code></pre><p>解答：
+因为这两个容器比较特殊，是需要持久存储的，因此，需要分配固定的磁盘给他们。PersistantVolumns和PersistantVolumnClaims分别代表持久存储分区和持久存储分区请求。
+因此，需要创建两个PV，之后这两个pending的pod会自动启动。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#998;font-style:italic"># pv-demo.yml</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">apiVersion</span>:<span style="color:#bbb"> </span>v1<span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">kind</span>:<span style="color:#bbb"> </span>PersistentVolume<span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">metadata</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">name</span>:<span style="color:#bbb"> </span>pv-es<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">labels</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">name</span>:<span style="color:#bbb"> </span>pv001<span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">spec</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">nfs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">path</span>:<span style="color:#bbb"> </span>/data/volumes/v1<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">server</span>:<span style="color:#bbb"> </span>nfs<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">accessModes</span>:<span style="color:#bbb"> </span>[<span style="color:#d14">&#34;ReadWriteOnce&#34;</span>]<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">capacity</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">storage</span>:<span style="color:#bbb"> </span>20Gi<span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#555">---</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">apiVersion</span>:<span style="color:#bbb"> </span>v1<span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">kind</span>:<span style="color:#bbb"> </span>PersistentVolume<span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">metadata</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">name</span>:<span style="color:#bbb"> </span>pv002<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">labels</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">name</span>:<span style="color:#bbb"> </span>pv002<span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">spec</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">nfs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">path</span>:<span style="color:#bbb"> </span>/data/volumes/v2<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">server</span>:<span style="color:#bbb"> </span>nfs<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">accessModes</span>:<span style="color:#bbb"> </span>[<span style="color:#d14">&#34;ReadWriteOnce&#34;</span>]<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">capacity</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">storage</span>:<span style="color:#bbb"> </span>10Gi<span style="color:#bbb">
+</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">kubectl apply -f pv-demo.yml
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<p>进入容器：</p>
+<pre><code>kubectl -n grimoire exec -it kibiter-598f5c5bdc-nxtvn -- bash
+</code></pre>
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><strong><a href="/projects/"> Github项目列表 - 2020/08/19</a></strong></li>
+        
+        <li><strong><a href="/post/database-software/"> 数据库软件简介 - 2020/08/19</a></strong></li>
+        
+        <li><strong><a href="/about/"> 关于自己 - 2020/08/18</a></strong></li>
+        
+        <li><strong><a href="/post/english-grammar/"> 英语语法核心体系 - 2020/08/18</a></strong></li>
+        
+        <li><strong><a href="/post/gdb/"> GDB调试技巧 - 2020/07/06</a></strong></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            没有标签
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "fredgan/fredgan.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2021 <a href="http://fredgan.com">FredGan&#39;s Blog</a>
+        
+        | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">粤ICP备2021017083号</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='http://fredgan.com/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://fredgan.com">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://fredgan.com/post/aging/" title="从衰老说开去">从衰老说开去</a>
+    </li>
+    
+    <li>
+        <a href="http://fredgan.com/post/quality/" title="谈谈质量">谈谈质量</a>
+    </li>
+    
+    <li>
+        <a href="http://fredgan.com/post/my-like/" title="我的安利">我的安利</a>
+    </li>
+    
+    <li>
+        <a href="http://fredgan.com/post/database-software/" title="数据库软件简介">数据库软件简介</a>
+    </li>
+    
+    <li>
+        <a href="http://fredgan.com/post/english-grammar/" title="英语语法核心体系">英语语法核心体系</a>
+    </li>
+    
+    <li>
+        <a href="http://fredgan.com/post/thinking-to-open-source/" title="开源的感悟">开源的感悟</a>
+    </li>
+    
+    <li>
+        <a href="http://fredgan.com/post/c-traps/c-traps-chapter-two/" title="《C陷阱和缺陷》读书笔记（2）- 语法”陷阱“">《C陷阱和缺陷》读书笔记（2）- 语法”陷阱“</a>
+    </li>
+    
+    <li>
+        <a href="http://fredgan.com/post/c-traps/c-traps-chapter-one/" title="《C陷阱和缺陷》读书笔记（1）- 词法”陷阱“">《C陷阱和缺陷》读书笔记（1）- 词法”陷阱“</a>
+    </li>
+    
+    <li>
+        <a href="http://fredgan.com/post/how-to-write-a-beautiful-markdown/" title="如何写一个漂亮的Markdown">如何写一个漂亮的Markdown</a>
+    </li>
+    
+    <li>
+        <a href="http://fredgan.com/post/good_software/" title="优质软件列表">优质软件列表</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="http://fredgan.com/categories/C/">C (2)</a></li>
+    
+    <li><a href="http://fredgan.com/categories/redis/">redis (1)</a></li>
+    
+    <li><a href="http://fredgan.com/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件 (1)</a></li>
+    
+    <li><a href="http://fredgan.com/categories/%E5%B0%8F%E8%AF%B4/">小说 (1)</a></li>
+    
+    <li><a href="http://fredgan.com/categories/%E5%B7%A5%E5%85%B7/">工具 (2)</a></li>
+    
+    <li><a href="http://fredgan.com/categories/%E5%BC%80%E5%8F%91/">开发 (1)</a></li>
+    
+    <li><a href="http://fredgan.com/categories/%E5%BC%80%E6%BA%90/">开源 (1)</a></li>
+    
+    <li><a href="http://fredgan.com/categories/%E6%84%9F%E6%82%9F/">感悟 (3)</a></li>
+    
+    <li><a href="http://fredgan.com/categories/%E6%8E%A8%E8%8D%90/">推荐 (1)</a></li>
+    
+    <li><a href="http://fredgan.com/categories/%E6%95%88%E7%8E%87/">效率 (1)</a></li>
+    
+    <li><a href="http://fredgan.com/categories/%E7%94%9F%E6%B4%BB/">生活 (1)</a></li>
+    
+    <li><a href="http://fredgan.com/categories/%E7%94%B5%E5%BD%B1/">电影 (1)</a></li>
+    
+    <li><a href="http://fredgan.com/categories/%E7%94%B5%E8%A7%86%E5%89%A7/">电视剧 (1)</a></li>
+    
+    <li><a href="http://fredgan.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记 (2)</a></li>
+    
+    <li><a href="http://fredgan.com/categories/%E8%BD%AF%E4%BB%B6/">软件 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="http://fredgan.com/tags/C/">C</a>
+    
+    <a href="http://fredgan.com/tags/Markdown/">Markdown</a>
+    
+    <a href="http://fredgan.com/tags/language/">language</a>
+    
+    <a href="http://fredgan.com/tags/redis/">redis</a>
+    
+    <a href="http://fredgan.com/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件</a>
+    
+    <a href="http://fredgan.com/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="http://fredgan.com/tags/%E6%8E%A8%E8%8D%90/">推荐</a>
+    
+    <a href="http://fredgan.com/tags/%E6%95%88%E7%8E%87/">效率</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://time.geekbang.org/" title="geektime">极客时间</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://github.com/fredgan" title="github">Github</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://tools.fredgan.com" title="tools">Fred&#39;s Tools</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://fredgan.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

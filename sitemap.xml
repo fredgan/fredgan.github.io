@@ -23,12 +23,22 @@
   </url>
   
   <url>
+    <loc>http://fredgan.com/categories/%E5%BC%80%E5%8F%91/</loc>
+    <lastmod>2021-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://fredgan.com/categories/%E6%84%9F%E6%82%9F/</loc>
     <lastmod>2021-03-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://fredgan.com/categories/%E7%94%9F%E6%B4%BB/</loc>
+    <lastmod>2021-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://fredgan.com/post/quality/</loc>
     <lastmod>2021-03-02T00:00:00+00:00</lastmod>
   </url>
   
@@ -205,6 +215,30 @@
   <url>
     <loc>http://fredgan.com/tags/%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2021-02-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://fredgan.com/post/command-line-trick/</loc>
+  </url>
+  
+  <url>
+    <loc>http://fredgan.com/post/k8s/</loc>
+  </url>
+  
+  <url>
+    <loc>http://fredgan.com/post/learning/learning-2021-03/</loc>
+  </url>
+  
+  <url>
+    <loc>http://fredgan.com/post/learning/learning-2021-04/</loc>
+  </url>
+  
+  <url>
+    <loc>http://fredgan.com/post/learning/learning-2021-05/</loc>
+  </url>
+  
+  <url>
+    <loc>http://fredgan.com/post/learning/learning-2021-08/</loc>
   </url>
   
 </urlset>
