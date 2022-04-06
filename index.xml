@@ -6,11 +6,20 @@
     <description>Recent content on FredGan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 02 Mar 2021 00:21:58 +0800</lastBuildDate><atom:link href="https://fredgan.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Apr 2022 02:03:58 +0800</lastBuildDate><atom:link href="https://fredgan.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>白话GPL和SSPL</title>
+      <link>https://fredgan.github.io/post/gpl-and-sspl/</link>
+      <pubDate>Thu, 07 Apr 2022 02:03:58 +0800</pubDate>
+      
+      <guid>https://fredgan.github.io/post/gpl-and-sspl/</guid>
+      <description>白话GPL和SSPL 一、问题 说到GPL，恐怕大家都不陌生了。但你知道LGPL、GPL、AGPL的区别吗？甚至后面的众多知名软件如MongoDB、ElasticSearch等都相继修改的SSPL又是什么？ GPL是如何让企业用户为之“闻风丧胆”的呢？GPL其实是一个家族license</description>
+    </item>
+    
     <item>
       <title>从衰老说开去</title>
       <link>https://fredgan.github.io/post/aging/</link>
-      <pubDate>Tue, 02 Mar 2021 00:21:58 +0800</pubDate>
+      <pubDate>Sun, 15 Aug 2021 00:21:58 +0800</pubDate>
       
       <guid>https://fredgan.github.io/post/aging/</guid>
       <description>从衰老说开去 随着年纪慢慢的增加，会慢慢关注到越来越多的事情。有些事情会在一些很不经意的瞬间突然发现，比如照镜子的时候突然发现自己的头上冒出好多白头发；又比如好久不运动，突然心血来潮运动一下，发现自己的身体居然要长达四五天才能恢复；再比如，晚上熬夜后，第二天一整天都昏昏沉沉，胸口也</description>
@@ -23,6 +32,15 @@
       
       <guid>https://fredgan.github.io/post/quality/</guid>
       <description>谈谈质量 今天部门内部开了一个茶话会，会议的主题就是谈谈质量。 我们部门老大发表了一番自己对质量的看法，其中说到，质量是要求的满足程度，这是对质量一词的高度抽象的概括。本来是让大家都说说，我想了想，感觉没想清楚，就没发表意见了。 但是来公司之后，其实我对质量还是有比较深的感触的。我其实</description>
+    </item>
+    
+    <item>
+      <title>LLVM和LSP有感</title>
+      <link>https://fredgan.github.io/post/thinking-to-llvm-and-lsp.md/</link>
+      <pubDate>Mon, 08 Feb 2021 18:57:23 +0800</pubDate>
+      
+      <guid>https://fredgan.github.io/post/thinking-to-llvm-and-lsp.md/</guid>
+      <description>LSP和LLVM有感 试想这样一种场景：如果你是一个电话提供商。现在有一个比较贫困的地区，你去那边建立这样一个电话系统。当然，最开始会很少的人愿意安装，毕竟大家都比较穷，能装得起电话的人呢有限。比如只有3个人。这个时候，这三个人需要彼此能够联通。从我们最直观的角度想，我们会怎么去做</description>
     </item>
     
     <item>
@@ -203,6 +221,15 @@
       
       <guid>https://fredgan.github.io/post/learning/learning-2021-08/</guid>
       <description>每日习得 2021-08-03 【体验 - 首次】在路边捡了一只流浪猫，开始了铲屎官生活。 2021-08-09 【体验 - 宠物】鉴于上周晚上睡觉被猫咪吵醒了好多次，严重影响我白天上班。早上6点把它关在笼子里放卫生间并且关上了卫生间门。无奈，卫生间门突然打不开了。砸了玻璃，破坏了锁，依然没打开。猫在卫生间里面哀嚎了接近2小时。自</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://fredgan.github.io/post/post/images/black_ask.png/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fredgan.github.io/post/post/images/black_ask.png/</guid>
+      <description></description>
     </item>
     
   </channel>

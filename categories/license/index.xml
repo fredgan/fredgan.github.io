@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>license on FredGan&#39;s Blog</title>
+    <link>https://fredgan.github.io/categories/license/</link>
+    <description>Recent content in license on FredGan&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 07 Apr 2022 02:03:58 +0800</lastBuildDate><atom:link href="https://fredgan.github.io/categories/license/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>白话GPL和SSPL</title>
+      <link>https://fredgan.github.io/post/gpl-and-sspl/</link>
+      <pubDate>Thu, 07 Apr 2022 02:03:58 +0800</pubDate>
+      
+      <guid>https://fredgan.github.io/post/gpl-and-sspl/</guid>
+      <description>白话GPL和SSPL 一、问题 说到GPL，恐怕大家都不陌生了。但你知道LGPL、GPL、AGPL的区别吗？甚至后面的众多知名软件如MongoDB、ElasticSearch等都相继修改的SSPL又是什么？ GPL是如何让企业用户为之“闻风丧胆”的呢？GPL其实是一个家族license</description>
+    </item>
+    
+  </channel>
+</rss>
