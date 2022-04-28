@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>软件 on FredGan&#39;s Blog</title>
-    <link>http://fredgan.com/categories/%E8%BD%AF%E4%BB%B6/</link>
+    <link>https://fredgan.com/categories/%E8%BD%AF%E4%BB%B6/</link>
     <description>Recent content in 软件 on FredGan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 08 Jul 2020 14:21:58 +0800</lastBuildDate><atom:link href="http://fredgan.com/categories/%E8%BD%AF%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Jul 2020 14:21:58 +0800</lastBuildDate><atom:link href="https://fredgan.com/categories/%E8%BD%AF%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>优质软件列表</title>
-      <link>http://fredgan.com/post/good_software/</link>
+      <link>https://fredgan.com/post/good_software/</link>
       <pubDate>Wed, 08 Jul 2020 14:21:58 +0800</pubDate>
       
-      <guid>http://fredgan.com/post/good_software/</guid>
+      <guid>https://fredgan.com/post/good_software/</guid>
       <description>优质软件列表 经过多年实践，总结的优质软件列表。持续更新中&amp;hellip; 一、Windows 1.1 Directory Opus（收费） 功能超强的资源管理器。比Windows自带的资源管理器好用太多，多Tab，正则表达式批量重命名，FTP连接器，多窗口操作，图片文本文件预览等。 1.2 SQLyog 连接MySQL数据库的客</description>
     </item>
     

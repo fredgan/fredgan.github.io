@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>感悟 on FredGan&#39;s Blog</title>
+    <link>https://fredgan.com/tags/%E6%84%9F%E6%82%9F/</link>
+    <description>Recent content in 感悟 on FredGan&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 08 Feb 2021 18:57:23 +0800</lastBuildDate><atom:link href="https://fredgan.com/tags/%E6%84%9F%E6%82%9F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LLVM和LSP有感</title>
+      <link>https://fredgan.com/post/thinking-to-llvm-and-lsp.md/</link>
+      <pubDate>Mon, 08 Feb 2021 18:57:23 +0800</pubDate>
+      
+      <guid>https://fredgan.com/post/thinking-to-llvm-and-lsp.md/</guid>
+      <description>LSP和LLVM有感 试想这样一种场景：如果你是一个电话提供商。现在有一个比较贫困的地区，你去那边建立这样一个电话系统。当然，最开始会很少的人愿意安装，毕竟大家都比较穷，能装得起电话的人呢有限。比如只有3个人。这个时候，这三个人需要彼此能够联通。从我们最直观的角度想，我们会怎么去做</description>
+    </item>
+    
+  </channel>
+</rss>

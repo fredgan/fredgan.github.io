@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>开发 on FredGan&#39;s Blog</title>
-    <link>http://fredgan.com/categories/%E5%BC%80%E5%8F%91/</link>
+    <link>https://fredgan.com/categories/%E5%BC%80%E5%8F%91/</link>
     <description>Recent content in 开发 on FredGan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 02 Mar 2021 00:21:58 +0800</lastBuildDate><atom:link href="http://fredgan.com/categories/%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Mar 2021 00:21:58 +0800</lastBuildDate><atom:link href="https://fredgan.com/categories/%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>谈谈质量</title>
-      <link>http://fredgan.com/post/quality/</link>
+      <link>https://fredgan.com/post/quality/</link>
       <pubDate>Tue, 02 Mar 2021 00:21:58 +0800</pubDate>
       
-      <guid>http://fredgan.com/post/quality/</guid>
+      <guid>https://fredgan.com/post/quality/</guid>
       <description>谈谈质量 今天部门内部开了一个茶话会，会议的主题就是谈谈质量。 我们部门老大发表了一番自己对质量的看法，其中说到，质量是要求的满足程度，这是对质量一词的高度抽象的概括。本来是让大家都说说，我想了想，感觉没想清楚，就没发表意见了。 但是来公司之后，其实我对质量还是有比较深的感触的。我其实</description>
     </item>
     
