@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>redis on FredGan&#39;s Blog</title>
-    <link>https://fredgan.com/tags/redis/</link>
+    <link>https://fredgan.github.io/tags/redis/</link>
     <description>Recent content in redis on FredGan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 03 Jan 2019 11:33:01 +0800</lastBuildDate><atom:link href="https://fredgan.com/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Jan 2019 11:33:01 +0800</lastBuildDate><atom:link href="https://fredgan.github.io/tags/redis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Redis的使用</title>
-      <link>https://fredgan.com/post/redis/</link>
+      <link>https://fredgan.github.io/post/redis/</link>
       <pubDate>Thu, 03 Jan 2019 11:33:01 +0800</pubDate>
       
-      <guid>https://fredgan.com/post/redis/</guid>
+      <guid>https://fredgan.github.io/post/redis/</guid>
       <description>Redis的使用方法 一、 工具查看 可以直接使用 redisClients 软件界面操作查看 二、 命令行 redis-cli -h 127.0.0.1 -p 6379 2.1 基础命令 keys * // 列举所有的key expire &amp;lt;key&amp;gt; &amp;lt;seconds&amp;gt; // 设置某个key的过期时间（单位：秒） ttl &amp;lt;key&amp;gt; // 显示key的过期时间（单位：秒）【返回-1表示永久 -2表示key不存在】 persist &amp;lt;key&amp;gt; // 将key的时间设置为永久 set getset 都会将ke</description>
     </item>
     
