@@ -2,161 +2,170 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on FredGan&#39;s Blog</title>
-    <link>https://fredgan.com/post/</link>
+    <link>https://fredgan.github.io/post/</link>
     <description>Recent content in Posts on FredGan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 07 Apr 2022 02:03:58 +0800</lastBuildDate><atom:link href="https://fredgan.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Apr 2022 00:41:58 +0800</lastBuildDate><atom:link href="https://fredgan.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2021年度总结</title>
+      <link>https://fredgan.github.io/post/annual-summary-2021/</link>
+      <pubDate>Thu, 28 Apr 2022 00:41:58 +0800</pubDate>
+      
+      <guid>https://fredgan.github.io/post/annual-summary-2021/</guid>
+      <description>2021年年度总结 整理历史文档过程中，发现了一篇2019年的年度总结。一不留神，发现居然自己2020年、2021年的年度总结都没写，有点自责。看来是自己过去玩的游戏有点太多了，忘了这么重要的事情。而今，让我再回想过去的两年发生的事情，着实，有点记不太清楚了。找一些2021年的相册</description>
+    </item>
+    
     <item>
       <title>白话GPL和SSPL</title>
-      <link>https://fredgan.com/post/colloquial-gpl-and-sspl/</link>
+      <link>https://fredgan.github.io/post/colloquial-gpl-and-sspl/</link>
       <pubDate>Thu, 07 Apr 2022 02:03:58 +0800</pubDate>
       
-      <guid>https://fredgan.com/post/colloquial-gpl-and-sspl/</guid>
+      <guid>https://fredgan.github.io/post/colloquial-gpl-and-sspl/</guid>
       <description>白话GPL和SSPL 一、问题 说到GPL，恐怕大家都不陌生了。但你知道LGPL、GPL、AGPL的区别吗？甚至后面的众多知名软件如MongoDB、ElasticSearch等都相继修改的SSPL又是什么？ GPL是如何让企业用户为之“闻风丧胆”的呢？GPL其实是一个家族license</description>
     </item>
     
     <item>
       <title>从衰老说开去</title>
-      <link>https://fredgan.com/post/aging/</link>
+      <link>https://fredgan.github.io/post/aging/</link>
       <pubDate>Sun, 15 Aug 2021 00:21:58 +0800</pubDate>
       
-      <guid>https://fredgan.com/post/aging/</guid>
+      <guid>https://fredgan.github.io/post/aging/</guid>
       <description>从衰老说开去 随着年纪慢慢的增加，会慢慢关注到越来越多的事情。有些事情会在一些很不经意的瞬间突然发现，比如照镜子的时候突然发现自己的头上冒出好多白头发；又比如好久不运动，突然心血来潮运动一下，发现自己的身体居然要长达四五天才能恢复；再比如，晚上熬夜后，第二天一整天都昏昏沉沉，胸口也</description>
     </item>
     
     <item>
       <title>谈谈质量</title>
-      <link>https://fredgan.com/post/quality/</link>
+      <link>https://fredgan.github.io/post/quality/</link>
       <pubDate>Tue, 02 Mar 2021 00:21:58 +0800</pubDate>
       
-      <guid>https://fredgan.com/post/quality/</guid>
+      <guid>https://fredgan.github.io/post/quality/</guid>
       <description>谈谈质量 今天部门内部开了一个茶话会，会议的主题就是谈谈质量。 我们部门老大发表了一番自己对质量的看法，其中说到，质量是要求的满足程度，这是对质量一词的高度抽象的概括。本来是让大家都说说，我想了想，感觉没想清楚，就没发表意见了。 但是来公司之后，其实我对质量还是有比较深的感触的。我其实</description>
     </item>
     
     <item>
       <title>30 Minutes Regex</title>
-      <link>https://fredgan.com/post/30-minutes-regex/</link>
+      <link>https://fredgan.github.io/post/30-minutes-regex/</link>
       <pubDate>Mon, 08 Feb 2021 19:52:20 +0800</pubDate>
       
-      <guid>https://fredgan.com/post/30-minutes-regex/</guid>
+      <guid>https://fredgan.github.io/post/30-minutes-regex/</guid>
       <description>一 、简介 1. 正则表达式的历史 两千多年前，我国伟大的诗人、政治家 屈原 曾经说过， 帝高阳之苗裔兮，朕皇考曰伯庸。 摄提贞于孟陬兮，惟庚寅吾以降。 皇览揆余初度兮，肇锡余以嘉名。 名余曰正则兮，字余曰灵均。 屈原曰：“以我名字命名的 正则表达式，当然是我发明的了！（误）” 起源于1951年，数学家St</description>
     </item>
     
     <item>
       <title>LLVM和LSP有感</title>
-      <link>https://fredgan.com/post/thinking-to-llvm-and-lsp.md/</link>
+      <link>https://fredgan.github.io/post/thinking-to-llvm-and-lsp.md/</link>
       <pubDate>Mon, 08 Feb 2021 18:57:23 +0800</pubDate>
       
-      <guid>https://fredgan.com/post/thinking-to-llvm-and-lsp.md/</guid>
+      <guid>https://fredgan.github.io/post/thinking-to-llvm-and-lsp.md/</guid>
       <description>LSP和LLVM有感 试想这样一种场景：如果你是一个电话提供商。现在有一个比较贫困的地区，你去那边建立这样一个电话系统。当然，最开始会很少的人愿意安装，毕竟大家都比较穷，能装得起电话的人呢有限。比如只有3个人。这个时候，这三个人需要彼此能够联通。从我们最直观的角度想，我们会怎么去做</description>
     </item>
     
     <item>
       <title>我的安利</title>
-      <link>https://fredgan.com/post/my-like/</link>
+      <link>https://fredgan.github.io/post/my-like/</link>
       <pubDate>Mon, 08 Feb 2021 18:57:23 +0800</pubDate>
       
-      <guid>https://fredgan.com/post/my-like/</guid>
+      <guid>https://fredgan.github.io/post/my-like/</guid>
       <description>我的安利 电影 《功夫》：最喜欢的电影，看了不下二十遍了，里面的每句台词我都记得。 电视剧 《毛骗》：第二季&amp;amp;终结季。名字难登大雅之堂，我觉得改名叫做《侠骗》比较好。虽然设定上是有借鉴《飞天大盗》，但自第二季开始，完全就是青出于蓝而远胜于蓝了。真的是个好片。 《隐秘的角落》：开放的</description>
     </item>
     
     <item>
       <title>数据库软件简介</title>
-      <link>https://fredgan.com/post/database-software/</link>
+      <link>https://fredgan.github.io/post/database-software/</link>
       <pubDate>Wed, 19 Aug 2020 14:08:05 +0800</pubDate>
       
-      <guid>https://fredgan.com/post/database-software/</guid>
+      <guid>https://fredgan.github.io/post/database-software/</guid>
       <description>数据库软件简介 Question 科普类型：美国的数据库软件在什么地方先进，我们差距在哪？有什么卡脖子的？现在全球竞争格局是怎样的？ 1 数据类型 数据库是用来存储数据的，先简单介绍一下数据有哪些类型。 常见的数据类型有： 1.1 关系型数据 其实就类似于Excel表格通常所呈现的数据那样，每一行每一列整整齐齐，井</description>
     </item>
     
     <item>
       <title>英语语法核心体系</title>
-      <link>https://fredgan.com/post/english-grammar/</link>
+      <link>https://fredgan.github.io/post/english-grammar/</link>
       <pubDate>Tue, 18 Aug 2020 14:08:05 +0800</pubDate>
       
-      <guid>https://fredgan.com/post/english-grammar/</guid>
+      <guid>https://fredgan.github.io/post/english-grammar/</guid>
       <description>英语语法核心体系 造句 Simple Sentence 什么怎么样 substract 名词（人或者物体） 代词 predicate 可以独立完成的动作(不及物动词) 有一个动作的承受者(单及物动词+宾语) 两个动作承受者(双及物动词+ 间接宾语 + 直接宾语) 只有一个动作承受者(复杂及物动词+宾语+宾语补语) 不是个动作 (连系动词 + 主语补语(表语)) 句子成分 定语</description>
     </item>
     
     <item>
       <title>开源的感悟</title>
-      <link>https://fredgan.com/post/thinking-to-open-source/</link>
+      <link>https://fredgan.github.io/post/thinking-to-open-source/</link>
       <pubDate>Fri, 17 Jul 2020 00:21:58 +0800</pubDate>
       
-      <guid>https://fredgan.com/post/thinking-to-open-source/</guid>
+      <guid>https://fredgan.github.io/post/thinking-to-open-source/</guid>
       <description>开源的一些感悟 从事开源软件开发已经有一年多了。从原来对开源一无所知，甚至是一些错误的认知，到现在已经能够深入参与到开源社区，并成为一些软件的Committer，走过了许许多多的弯路，也对开源有了许多的新的认识。突然对开源有了一些感悟，所以紧急插入一篇感悟。 “开源” ≠ “免费” 这是几</description>
     </item>
     
     <item>
       <title>《C陷阱和缺陷》读书笔记（2）- 语法”陷阱“</title>
-      <link>https://fredgan.com/post/c-traps/c-traps-chapter-two/</link>
+      <link>https://fredgan.github.io/post/c-traps/c-traps-chapter-two/</link>
       <pubDate>Wed, 15 Jul 2020 22:21:58 +0800</pubDate>
       
-      <guid>https://fredgan.com/post/c-traps/c-traps-chapter-two/</guid>
+      <guid>https://fredgan.github.io/post/c-traps/c-traps-chapter-two/</guid>
       <description>《C陷阱和缺陷》读书笔记（2）- 语法“陷阱” 词法、语法构成语言的一个基本条件。光有一个个的单词符号是不够的，这些符号的不同组合可以表达不同的含义。 例如，声明是什么，表达式什么，语句是什么，程序是什么等等。 理解函数声明 看看下面一个语句： 1 (*(void(*)())0)(); 乍一看到这个语句，肯定当场吓尿！啥鬼玩儿意</description>
     </item>
     
     <item>
       <title>《C陷阱和缺陷》读书笔记（1）- 词法”陷阱“</title>
-      <link>https://fredgan.com/post/c-traps/c-traps-chapter-one/</link>
+      <link>https://fredgan.github.io/post/c-traps/c-traps-chapter-one/</link>
       <pubDate>Mon, 13 Jul 2020 22:21:58 +0800</pubDate>
       
-      <guid>https://fredgan.com/post/c-traps/c-traps-chapter-one/</guid>
+      <guid>https://fredgan.github.io/post/c-traps/c-traps-chapter-one/</guid>
       <description>《C陷阱和缺陷》读书笔记（1）- 词法“陷阱” 为了敦促自己读书，特地开了一个读书笔记系列。 自上大学学习了谭浩强版本的《C程序设计》以来，以及经过这么多年遭受的C/C++面试和工作的毒打，就有一个感觉，C/C++语言的设计处处充满了陷阱。编译器设计之复杂，条目细则之多，感觉远远超出了</description>
     </item>
     
     <item>
       <title>如何写一个漂亮的Markdown</title>
-      <link>https://fredgan.com/post/how-to-write-a-beautiful-markdown/</link>
+      <link>https://fredgan.github.io/post/how-to-write-a-beautiful-markdown/</link>
       <pubDate>Sun, 12 Jul 2020 22:21:58 +0800</pubDate>
       
-      <guid>https://fredgan.com/post/how-to-write-a-beautiful-markdown/</guid>
+      <guid>https://fredgan.github.io/post/how-to-write-a-beautiful-markdown/</guid>
       <description>如何写一个漂亮的Markdown 一、概述 作为一个技术人员，善于利用工具提升生产效率是一个合格的技术人员的基本修养，也是提升效率的一个重要途径。作为一个程序员，有许许多多的工具来提升生产效率，使用规范化和大统一的规则规范是与优秀程序员世界接轨、交流和孜孜不倦的追求。 这里，想写很多工</description>
     </item>
     
     <item>
       <title>优质软件列表</title>
-      <link>https://fredgan.com/post/good_software/</link>
+      <link>https://fredgan.github.io/post/good_software/</link>
       <pubDate>Wed, 08 Jul 2020 14:21:58 +0800</pubDate>
       
-      <guid>https://fredgan.com/post/good_software/</guid>
+      <guid>https://fredgan.github.io/post/good_software/</guid>
       <description>优质软件列表 经过多年实践，总结的优质软件列表。持续更新中&amp;hellip; 一、Windows 1.1 Directory Opus（收费） 功能超强的资源管理器。比Windows自带的资源管理器好用太多，多Tab，正则表达式批量重命名，FTP连接器，多窗口操作，图片文本文件预览等。 1.2 SQLyog 连接MySQL数据库的客</description>
     </item>
     
     <item>
       <title>GDB调试技巧</title>
-      <link>https://fredgan.com/post/gdb/</link>
+      <link>https://fredgan.github.io/post/gdb/</link>
       <pubDate>Mon, 06 Jul 2020 14:08:05 +0800</pubDate>
       
-      <guid>https://fredgan.com/post/gdb/</guid>
+      <guid>https://fredgan.github.io/post/gdb/</guid>
       <description>GDB 调试技巧 一、直接调试 1.1 启动与停止 run / r 启动程序 set args &amp;lt;arg1&amp;gt; &amp;lt;arg2&amp;gt; 设置程序运行参数 finish 结束当前函数的运行，函数剩余部分会执行完毕 return 立即结束当前函数执行并返回，可带参数返回 1.2 调试指令： step / next 执行下一行（进入函数）/（不进入函数） disassemble 查看汇编命令 stepi / nexti 执行下一条汇编指令 (进入函数)/（不进入函数）</description>
     </item>
     
     <item>
       <title>2019年度总结</title>
-      <link>https://fredgan.com/post/annual-summary-2019/</link>
+      <link>https://fredgan.github.io/post/annual-summary-2019/</link>
       <pubDate>Wed, 01 Jan 2020 00:41:58 +0800</pubDate>
       
-      <guid>https://fredgan.com/post/annual-summary-2019/</guid>
+      <guid>https://fredgan.github.io/post/annual-summary-2019/</guid>
       <description>2019年度总结 2019年就这样匆匆而过，还来不及回味，就已经到达最后一天了。这一年发生了太多的事情，也有太多让我没有想到的事情。本来想回顾一下这10年，但是想想10年发生的许多事情已经记不清楚了，还是回顾一年的事情吧。 今年是平凡的一年。没有太多的不同，和往年差不多。感情没有变好</description>
     </item>
     
     <item>
       <title>致震波的一封信</title>
-      <link>https://fredgan.com/post/a-letter-to-university-student/</link>
+      <link>https://fredgan.github.io/post/a-letter-to-university-student/</link>
       <pubDate>Thu, 05 Sep 2019 09:14:03 +0800</pubDate>
       
-      <guid>https://fredgan.com/post/a-letter-to-university-student/</guid>
+      <guid>https://fredgan.github.io/post/a-letter-to-university-student/</guid>
       <description>致震波的一封信 这封信是在你考上大学准备进入校园的时候写的，有点长，耐心读下去，写这封信也是自己这些年来的一些感悟和体会。 恭喜考入大学 首先，恭喜震波考入大学！从今以后，你就是一名光荣的大学生了，成为了一名独立、自主的个体，可以有自己的想法，自己的行为，并且自己为自己的所作所为负责，</description>
     </item>
     
     <item>
       <title>Redis的使用</title>
-      <link>https://fredgan.com/post/redis/</link>
+      <link>https://fredgan.github.io/post/redis/</link>
       <pubDate>Thu, 03 Jan 2019 11:33:01 +0800</pubDate>
       
-      <guid>https://fredgan.com/post/redis/</guid>
+      <guid>https://fredgan.github.io/post/redis/</guid>
       <description>Redis的使用方法 一、 工具查看 可以直接使用 redisClients 软件界面操作查看 二、 命令行 redis-cli -h 127.0.0.1 -p 6379 2.1 基础命令 keys * // 列举所有的key expire &amp;lt;key&amp;gt; &amp;lt;seconds&amp;gt; // 设置某个key的过期时间（单位：秒） ttl &amp;lt;key&amp;gt; // 显示key的过期时间（单位：秒）【返回-1表示永久 -2表示key不存在】 persist &amp;lt;key&amp;gt; // 将key的时间设置为永久 set getset 都会将ke</description>
     </item>
     
