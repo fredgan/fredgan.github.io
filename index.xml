@@ -6,16 +6,7 @@
     <description>Recent content on FredGan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 18 Apr 2022 21:03:58 +0800</lastBuildDate><atom:link href="https://fredgan.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>白话数字证书</title>
-      <link>https://fredgan.github.io/post/digit-certificate/</link>
-      <pubDate>Mon, 18 Apr 2022 21:03:58 +0800</pubDate>
-      
-      <guid>https://fredgan.github.io/post/digit-certificate/</guid>
-      <description>白话数字证书 今天想谈谈数字证书的体系。其实这个问题也是面试常考的题哦😯 请你说一下HTTPS证书是怎么工作的？ 但在具体介绍数字证书体系之前，我想先聊一下历史【又是历史！】 谈谈历史 我想请问一个问题： 计算机是怎么出现的？ 你可能这时候出现在脑海中的就是1946年的ENIAC，公认的世界第</description>
-    </item>
-    
+    <lastBuildDate>Thu, 07 Apr 2022 02:03:58 +0800</lastBuildDate><atom:link href="https://fredgan.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>白话GPL和SSPL</title>
       <link>https://fredgan.github.io/post/colloquial-gpl-and-sspl/</link>
@@ -194,69 +185,6 @@
       
       <guid>https://fredgan.github.io/post/redis/</guid>
       <description>Redis的使用方法 一、 工具查看 可以直接使用 redisClients 软件界面操作查看 二、 命令行 redis-cli -h 127.0.0.1 -p 6379 2.1 基础命令 keys * // 列举所有的key expire &amp;lt;key&amp;gt; &amp;lt;seconds&amp;gt; // 设置某个key的过期时间（单位：秒） ttl &amp;lt;key&amp;gt; // 显示key的过期时间（单位：秒）【返回-1表示永久 -2表示key不存在】 persist &amp;lt;key&amp;gt; // 将key的时间设置为永久 set getset 都会将ke</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://fredgan.github.io/post/command-line-trick/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fredgan.github.io/post/command-line-trick/</guid>
-      <description>命令行使用小技巧 Ctrl+L 清屏 Ctrl+R 搜索历史命令 sudo !! 使用sudo权限执行上一条命令 ll | sort -t &amp;quot; &amp;quot; -k 6 -h ls展示文件列表将文件大小从小到大排序</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://fredgan.github.io/post/k8s/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fredgan.github.io/post/k8s/</guid>
-      <description>K8s实战 1. 安装 1.1 安装docker apt install docker-engine 1.2 安装Kubernetes # apt-key文件可以手动下载 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - echo &amp;quot;deb https://mirrors.tuna.tsinghua.edu.cn/kubernetes/apt kubernetes-xenial main&amp;quot; | sudo tee /etc/apt/sources.list.d/kubernetes.list sudo apt install -y kubelet kubeadm kubectl # 拉取镜像 kube_containers=( k8s.gcr.io/kube-apiserver:v1.20.2 k8s.gcr.io/kube-controller-manager:v1.20.2 k8s.gcr.io/kube-scheduler:v1.20.2 k8s.gcr.io/kube-proxy:v1.20.2 k8s.gcr.io/pause:3.2 k8s.gcr.io/etcd:3.4.13-0 k8s.gcr.io/coredns:1.7.0 ) for rec_container in ${kube_containers[*]}; do echo &amp;quot;$rec_container&amp;quot; ali_img=&amp;quot;${rec_container//k8s.gcr.io/registry.cn-hangzhou.aliyuncs.com\/google_containers}&amp;quot; docker pull &amp;quot;$ali_img&amp;quot; docker tag &amp;quot;$ali_img&amp;quot; &amp;quot;$rec_container&amp;quot; docker rmi &amp;quot;$ali_img&amp;quot; echo -e &amp;quot;\033[41;37m$rec_container pull complete.\033[0m&amp;quot; done 问题1： kubectl apply -f . The connection to the server localhost:8080 was refused - did you specify the right host or port? 解答：没</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://fredgan.github.io/post/learning/learning-2021-03/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fredgan.github.io/post/learning/learning-2021-03/</guid>
-      <description>每日习得 2021-03-15 【体验 - 首次】第一次体验鼻镜，尝试取鱼刺 2021-03-16 【体验 - 场所】第一次到福田港大医院做鼻镜尝试取鱼刺 2021-03-21 【知识 - 网络】网络词语：一袋米要扛几楼，一袋米要扛二楼 【知识 - 健康】槟榔致癌：特别是口腔癌、食道癌和胃癌。 2021-03-22 【知识 - 心理】踢猫效应 【知识 - 文学】飞雪连天射白鹿，笑书神侠倚碧鸳 【</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://fredgan.github.io/post/learning/learning-2021-04/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fredgan.github.io/post/learning/learning-2021-04/</guid>
-      <description>每日习得 2021-04-01 【知识 - 技能】MySQL事务隔离的4个级别：读未提交，读已提交，可重复读，串行化。以及实现方式 2021-04-04 【体验 - 首次】珠海会同村，第一次 【体验 - 旅游】淇澳岛红树林 【体验 - 首次】首次WarmCar珠海上路82公里 2021-04-05 【知识 - 英语】英语构词法 —— 派生、合成、混合、裁剪、缩写、转移 【知</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://fredgan.github.io/post/learning/learning-2021-05/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fredgan.github.io/post/learning/learning-2021-05/</guid>
-      <description>每日习得 2021-05-03 【体验 - 首次】首次开车上高速。并在服务区停车时撞了一个石头。 2021-05-04 【体验 - 首次】连续开车4个半小时，并且中途暴雨。第一次开现代领动的车，算是第二天开了，开起来的感觉还可以，车子不大，油耗感觉是比较低的，6点几。起步的时候发动机开始传动会有一点震动，应该说是有一个明显的噪声。</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://fredgan.github.io/post/learning/learning-2021-08/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fredgan.github.io/post/learning/learning-2021-08/</guid>
-      <description>每日习得 2021-08-03 【体验 - 首次】在路边捡了一只流浪猫，开始了铲屎官生活。 2021-08-09 【体验 - 宠物】鉴于上周晚上睡觉被猫咪吵醒了好多次，严重影响我白天上班。早上6点把它关在笼子里放卫生间并且关上了卫生间门。无奈，卫生间门突然打不开了。砸了玻璃，破坏了锁，依然没打开。猫在卫生间里面哀嚎了接近2小时。自</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://fredgan.github.io/post/post/images/black_ask.png/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fredgan.github.io/post/post/images/black_ask.png/</guid>
-      <description></description>
     </item>
     
   </channel>

@@ -6,16 +6,7 @@
     <description>Recent content in 软件 on FredGan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 18 Apr 2022 21:03:58 +0800</lastBuildDate><atom:link href="https://fredgan.github.io/categories/%E8%BD%AF%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>白话数字证书</title>
-      <link>https://fredgan.github.io/post/digit-certificate/</link>
-      <pubDate>Mon, 18 Apr 2022 21:03:58 +0800</pubDate>
-      
-      <guid>https://fredgan.github.io/post/digit-certificate/</guid>
-      <description>白话数字证书 今天想谈谈数字证书的体系。其实这个问题也是面试常考的题哦😯 请你说一下HTTPS证书是怎么工作的？ 但在具体介绍数字证书体系之前，我想先聊一下历史【又是历史！】 谈谈历史 我想请问一个问题： 计算机是怎么出现的？ 你可能这时候出现在脑海中的就是1946年的ENIAC，公认的世界第</description>
-    </item>
-    
+    <lastBuildDate>Wed, 08 Jul 2020 14:21:58 +0800</lastBuildDate><atom:link href="https://fredgan.github.io/categories/%E8%BD%AF%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>优质软件列表</title>
       <link>https://fredgan.github.io/post/good_software/</link>

@@ -4,31 +4,21 @@
   
   <url>
     <loc>https://fredgan.github.io/categories/</loc>
-    <lastmod>2022-04-18T21:03:58+08:00</lastmod>
+    <lastmod>2022-04-07T02:03:58+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://fredgan.github.io/</loc>
-    <lastmod>2022-04-18T21:03:58+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://fredgan.github.io/post/</loc>
-    <lastmod>2022-04-18T21:03:58+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://fredgan.github.io/post/digit-certificate/</loc>
-    <lastmod>2022-04-18T21:03:58+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://fredgan.github.io/categories/%E8%BD%AF%E4%BB%B6/</loc>
-    <lastmod>2022-04-18T21:03:58+08:00</lastmod>
+    <lastmod>2022-04-07T02:03:58+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://fredgan.github.io/categories/license/</loc>
+    <lastmod>2022-04-07T02:03:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fredgan.github.io/post/</loc>
     <lastmod>2022-04-07T02:03:58+08:00</lastmod>
   </url>
   
@@ -218,6 +208,11 @@
   </url>
   
   <url>
+    <loc>https://fredgan.github.io/categories/%E8%BD%AF%E4%BB%B6/</loc>
+    <lastmod>2021-02-08T10:21:58+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://fredgan.github.io/post/gdb/</loc>
     <lastmod>2020-07-06T14:08:05+08:00</lastmod>
   </url>
@@ -270,34 +265,6 @@
   <url>
     <loc>https://fredgan.github.io/tags/%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2021-02-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://fredgan.github.io/post/command-line-trick/</loc>
-  </url>
-  
-  <url>
-    <loc>https://fredgan.github.io/post/k8s/</loc>
-  </url>
-  
-  <url>
-    <loc>https://fredgan.github.io/post/learning/learning-2021-03/</loc>
-  </url>
-  
-  <url>
-    <loc>https://fredgan.github.io/post/learning/learning-2021-04/</loc>
-  </url>
-  
-  <url>
-    <loc>https://fredgan.github.io/post/learning/learning-2021-05/</loc>
-  </url>
-  
-  <url>
-    <loc>https://fredgan.github.io/post/learning/learning-2021-08/</loc>
-  </url>
-  
-  <url>
-    <loc>https://fredgan.github.io/post/post/images/black_ask.png/</loc>
   </url>
   
 </urlset>
