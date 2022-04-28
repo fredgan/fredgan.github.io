@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>2019年度总结 | FredGan&#39;s Blog</title>
+    <meta property="og:title" content="2019年度总结 - FredGan&#39;s Blog">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2020-01-01T00:41:58&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2020-01-01T00:41:58&#43;08:00'>
+        
+    <meta name="Keywords" content="[总结]">
+    <meta name="description" content="2019年度总结">
+        
+    <meta name="author" content="FredGan">
+    <meta property="og:url" content="https://fredgan.github.io/post/annual-summary-2019/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://fredgan.github.io">
+                        FredGan&#39;s Blog
+                    </a>
+                
+                <p class="description">随笔和技术博客：C/C&#43;&#43;/Go/Python/iOS/JavaScript、YANG/NetConf、爬虫、编译器、CleanCode</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://fredgan.github.io">首页</a>
+                    
+                    <a  href="https://fredgan.github.io/projects/" title="GitHub">GitHub</a>
+                    
+                    <a  href="https://fredgan.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://fredgan.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents"></nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">2019年度总结</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年1月1日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93'>年度总结</a></span>
+            
+            <span class="meta-category"><a href='/categories/%E6%84%9F%E6%82%9F'>感悟</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <h1 id="2019年度总结">2019年度总结</h1>
+<p>2019年就这样匆匆而过，还来不及回味，就已经到达最后一天了。这一年发生了太多的事情，也有太多让我没有想到的事情。本来想回顾一下这10年，但是想想10年发生的许多事情已经记不清楚了，还是回顾一年的事情吧。</p>
+<p>今年是平凡的一年。没有太多的不同，和往年差不多。感情没有变好，赚钱没有变多，身体却在变差，人过30，身体会告诉你，这个30意味着什么。</p>
+<p>今年想养一只猫，结果，没有养成。因为我换了一个工作了。其实也不是因为我换工作了，更怕自己无力照顾。想猫了，就去火山上看看别人家养的猫，聊以自慰。</p>
+<p>原想着今年结婚，但是发展并不容易，没有达成。感情非常的坎坷，坎坷到我一度想放弃，理解了别人看破红尘是怎么样一种感觉。因为感情问题，我体重从59kg一度下跌到53kg。</p>
+<p>原想着今年有一个娃，然而，并没有做到。今年有太多的人生娃，秀雯、郑菲、方丹丽、黄莹根、、陈波、王海东、饶正发、黄慧瑶、徐辉。看着身边一个个的都生娃了，有太多的无奈，许多说不出的感觉涌现心头。</p>
+<p>今年想跑400公里，骑行300公里。但是我换了一个工作了，换工作的头几个月里，压力很大。几乎没有运动，估计一半都没有达成。但至少在今年2月份的时候，完成了半马的自我挑战，用时2小时9分53秒。在今天下午挑战了一下自己，勉强完成了5公里的跑步，膝盖已经有点不听使唤。单也算是有始有终吧，希望来年有个更好的成绩。</p>
+<p>今年真是不平凡的一年。我换了一个毕业以后最好的一个工作，至少是工作最舒心的一个。不用很委屈自己，学得比以前更扎实，理解更深入。不想把自己限制在写业务代码的舒适区里。</p>
+<p>今年是悲伤的一年。从金山离职，金山的经历注定会在我的人生中留下浓墨重彩的烙印，金山的好友圈也基本都四分五裂各自分飞了，所以常常感觉到世事无常。5月20日祖父过世了，异常的心痛，而这个心痛是在年初就有的一个不好的预感。而更让我悲伤的是，我却没有时间去参加祖父的葬礼。直到10月3日这种非清明节的日子才去给祖父祖母扫墓，想想自己已经7年没有给祖母过来扫墓了，眼泪当场就流下来了。而祖父晚年的那种凄凉我想到就觉得非常的难过。胃病折磨我，让我感受过以前从来没有感受过的绝望，死神仿佛一直在身边不曾远去。很怕眼睛一闭心一沉，就再也醒不过来。我想不清楚这胃病恶化的缘由，常常怀疑自己癌症晚期，直到昨天体检结果出来，下载体检表打开后并不敢直接看，我关上屏幕先去洗手间沉静一下心情，调整一下自己情绪，想着自己可能要面对的最坏的结果。好在最坏的事情并没有发生，心中一块石头落了地。这也许就是自己叨念的祖父祖母给自己的保佑。没有神明之类的话在这种时候是最无力的。2019年，我说了最难听的话，伤了母亲的心，说完之后就非常后悔。没有一个父母是不为自己的子女好的，所以在父母面前总感觉自己长不大，都三十多了，表现还像个孩子，幼稚又叛逆。</p>
+<p>今年是快乐的一年。6月1日求婚成功，她感动得一塌糊涂，虽然自己做的并不够好，那天行动计划失败导致行动仓促而又失败，而这一天本来是想在5月20日进行的，求婚戒指都已经买了十几天了，奈何与新工作入职冲突。今年买了我最心爱的 MacBook Pro，心心念念要买一个MBP多年，但是那个价格真的令人望而却步，好在拼多多的百亿补贴让我下定了决心，所以拼多多是真香。今年阅读了很多以前听说过但是从来没有买过的书，像龙叔，不，是龙书，《编程珠玑》，《C陷阱与缺陷》等经典老书，还有DK的系列书、四大名著等。把这些经典的书翻开看后，才会明白这些书为什么是经典。也只有在看了这些经典的书之后，才会明白为什么书是人类进步的阶梯，人要多读书。今年十二月跟《代码大全》作者Steve McConnell合影，这是我第一次跟老外说话，也是第一次跟老外合影，心中的激动竟然持续了两天，像极了爱情。听侯捷老师的讲座，还听了两次，不过很难将自己以前阅读的侯捷老师翻译的书的形象跟现实中的他联系起来，而那种台湾腔是我并不习惯的。听西点军校罗伯特·卡斯兰中将的演讲，我记得他说的四句话，也是西点新生回答提问的四个标准回答:Yes,sir! No, sir! No excuse, sir! I don&rsquo;t know, sir! 联想到了华为的军事化管理，华为有这种狼性的执行力也就不足为奇了。今年国庆节回家，给母亲祝寿，听取母亲的教诲，知子莫若母，母亲才是最懂最了解我的那个人。五一期间去了西北青甘大环线旅游6日游，游览了我们祖国的魅力河西走廊，看了壮阔的青海湖，天空之境茶卡盐湖，美丽的网红打卡地翡翠湖，也去了世界的敦煌莫高窟，穿着珠海的夏日装在摄氏4度的七彩丹霞冻得瑟瑟发抖。跟着老丈人一家去了世界之窗看世界，奈何缩小的世界并不好看，也去了澳门，算是不错的。</p>
+<p>技术方面，想学习Vue，没学成，想学习Java，半途而废。想学的数据挖掘，还没怎么开始。未曾想到的是从事了开源软件事业，所以也不曾想到会重新回到使用C/C++，甚至把自己熟悉的Go都快忘记怎么写了。</p>
+<p>今年除了王者荣耀，其他就玩过一两款休闲游戏，算是玩的少的了。今年玩王者荣耀应该有几百把了。但是也做到了说戒玩一个月就戒玩一个月，说卸载就卸载。说起来，玩这个游戏有太多的心得感悟。曾一度想把所有的感悟都写下来，却写了一两千字就感觉很难写得好又放弃了。这个游戏改变了我的心态。当你发现无论你怎么努力都无法挽回局势的时候，你需要做的就是安安静静的做好自己，端正自己的心态。从开局你就设置一个良好的心态，一个良好的目标，不管周遭环境怎么恶劣，怎么变化，不变的是自己的内心。</p>
+<p>还有很多第一次，第一次把四阶、五阶、六阶、七阶、三角、五角、斜转魔方拼完。第一次拆苹果手机亲自换电池。第一次跟外国人聊天。</p>
+<p>今年买了最多的书。买书的钱估计上千块了，还是挑便宜的买。虽然很多还没开始看，但是总比没买强，没买肯定是不会看的。买了至少看到了会有很多的罪恶感，规划2020年要去看了。
+今年面了最多的试，见识了最多的企业，既见识了国企，也见识了民营，既见识了国企大企业，也见识了小企业。
+今年认识了最多的新朋友，而这里面大多数都是来自华为的优秀的人才。
+今年有最多的重大几年日，除了母亲过50岁，妹妹也过30岁，不过没能回家过，独自一个人在北京过，也是不容易的。五四运动100周年，中华人民共和国成立70周年，珠海建市40周年，澳门回归20周年。都跟我有莫大的关系。</p>
+<p>2020年，重新收拾心情，重新出发。虽然日子依然过得很艰难，但是已经不再是原来的心态了。</p>
+
+        </div>
+
+        
+
+
+        
+
+
+        <div class="post-meta meta-tags">
+            
+            没有标签
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "fredgan/fredgan.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2022 <a href="https://fredgan.github.io">FredGan&#39;s Blog</a>
+        
+        | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">粤ICP备2021017083号</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://fredgan.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://fredgan.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://fredgan.github.io/post/digit-certificate/" title="白话数字证书">白话数字证书</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/colloquial-gpl-and-sspl/" title="白话GPL和SSPL">白话GPL和SSPL</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/aging/" title="从衰老说开去">从衰老说开去</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/quality/" title="谈谈质量">谈谈质量</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/30-minutes-regex/" title="30 Minutes Regex">30 Minutes Regex</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/thinking-to-llvm-and-lsp.md/" title="LLVM和LSP有感">LLVM和LSP有感</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/my-like/" title="我的安利">我的安利</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/database-software/" title="数据库软件简介">数据库软件简介</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/english-grammar/" title="英语语法核心体系">英语语法核心体系</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/thinking-to-open-source/" title="开源的感悟">开源的感悟</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://fredgan.github.io/categories/C/">C (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/license/">license (1)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/redis/">redis (1)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件 (1)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%B0%8F%E8%AF%B4/">小说 (1)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%B7%A5%E5%85%B7/">工具 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">年度总结 (1)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%BC%80%E5%8F%91/">开发 (1)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%BC%80%E6%BA%90/">开源 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%84%9F%E6%82%9F/">感悟 (5)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%8E%A8%E8%8D%90/">推荐 (1)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%95%88%E7%8E%87/">效率 (1)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式 (1)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E7%94%9F%E6%B4%BB/">生活 (1)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E7%94%B5%E5%BD%B1/">电影 (1)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E7%94%B5%E8%A7%86%E5%89%A7/">电视剧 (1)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言 (1)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E8%BD%AF%E4%BB%B6/">软件 (2)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://fredgan.github.io/tags/C/">C</a>
+    
+    <a href="https://fredgan.github.io/tags/Markdown/">Markdown</a>
+    
+    <a href="https://fredgan.github.io/tags/language/">language</a>
+    
+    <a href="https://fredgan.github.io/tags/redis/">redis</a>
+    
+    <a href="https://fredgan.github.io/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件</a>
+    
+    <a href="https://fredgan.github.io/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%84%9F%E6%82%9F/">感悟</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%8E%A8%E8%8D%90/">推荐</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%95%88%E7%8E%87/">效率</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%AD%A3%E5%88%99/">正则</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://time.geekbang.org/" title="geektime">极客时间</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://github.com/fredgan" title="github">Github</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://tools.fredgan.com" title="tools">Fred&#39;s Tools</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://fredgan.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

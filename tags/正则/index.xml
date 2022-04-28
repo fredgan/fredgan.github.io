@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>正则 on FredGan&#39;s Blog</title>
+    <link>https://fredgan.github.io/tags/%E6%AD%A3%E5%88%99/</link>
+    <description>Recent content in 正则 on FredGan&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 08 Feb 2021 19:52:20 +0800</lastBuildDate><atom:link href="https://fredgan.github.io/tags/%E6%AD%A3%E5%88%99/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>30 Minutes Regex</title>
+      <link>https://fredgan.github.io/post/30-minutes-regex/</link>
+      <pubDate>Mon, 08 Feb 2021 19:52:20 +0800</pubDate>
+      
+      <guid>https://fredgan.github.io/post/30-minutes-regex/</guid>
+      <description>一 、简介 1. 正则表达式的历史 两千多年前，我国伟大的诗人、政治家 屈原 曾经说过， 帝高阳之苗裔兮，朕皇考曰伯庸。 摄提贞于孟陬兮，惟庚寅吾以降。 皇览揆余初度兮，肇锡余以嘉名。 名余曰正则兮，字余曰灵均。 屈原曰：“以我名字命名的 正则表达式，当然是我发明的了！（误）” 起源于1951年，数学家St</description>
+    </item>
+    
+  </channel>
+</rss>
