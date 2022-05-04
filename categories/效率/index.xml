@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>效率 on FredGan&#39;s Blog</title>
-    <link>http://fredgan.com/categories/%E6%95%88%E7%8E%87/</link>
+    <link>https://fredgan.com/categories/%E6%95%88%E7%8E%87/</link>
     <description>Recent content in 效率 on FredGan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 12 Jul 2020 22:21:58 +0800</lastBuildDate><atom:link href="http://fredgan.com/categories/%E6%95%88%E7%8E%87/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Jul 2020 22:21:58 +0800</lastBuildDate><atom:link href="https://fredgan.com/categories/%E6%95%88%E7%8E%87/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如何写一个漂亮的Markdown</title>
-      <link>http://fredgan.com/post/how-to-write-a-beautiful-markdown/</link>
+      <link>https://fredgan.com/post/how-to-write-a-beautiful-markdown/</link>
       <pubDate>Sun, 12 Jul 2020 22:21:58 +0800</pubDate>
       
-      <guid>http://fredgan.com/post/how-to-write-a-beautiful-markdown/</guid>
+      <guid>https://fredgan.com/post/how-to-write-a-beautiful-markdown/</guid>
       <description>如何写一个漂亮的Markdown 一、概述 作为一个技术人员，善于利用工具提升生产效率是一个合格的技术人员的基本修养，也是提升效率的一个重要途径。作为一个程序员，有许许多多的工具来提升生产效率，使用规范化和大统一的规则规范是与优秀程序员世界接轨、交流和孜孜不倦的追求。 这里，想写很多工</description>
     </item>
     
