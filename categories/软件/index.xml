@@ -6,7 +6,16 @@
     <description>Recent content in 软件 on FredGan&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 08 Jul 2020 14:21:58 +0800</lastBuildDate><atom:link href="https://fredgan.github.io/categories/%E8%BD%AF%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Aug 2020 14:08:05 +0800</lastBuildDate><atom:link href="https://fredgan.github.io/categories/%E8%BD%AF%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数据库软件简介</title>
+      <link>https://fredgan.github.io/post/database-software/</link>
+      <pubDate>Wed, 19 Aug 2020 14:08:05 +0800</pubDate>
+      
+      <guid>https://fredgan.github.io/post/database-software/</guid>
+      <description>数据库软件简介 Question 科普类型：美国的数据库软件在什么地方先进，我们差距在哪？有什么卡脖子的？现在全球竞争格局是怎样的？ 1 数据类型 数据库是用来存储数据的，先简单介绍一下数据有哪些类型。 常见的数据类型有： 1.1 关系型数据 其实就类似于Excel表格通常所呈现的数据那样，每一行每一列整整齐齐，井</description>
+    </item>
+    
     <item>
       <title>优质软件列表</title>
       <link>https://fredgan.github.io/post/good_software/</link>
