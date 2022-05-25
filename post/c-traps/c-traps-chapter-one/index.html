@@ -237,31 +237,31 @@
 <blockquote>
 <p>我在 if 条件里面判断的时候少写了一个等号！</p>
 </blockquote>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#000;font-weight:bold">if</span> (x <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">3</span>) {
-    printf(<span style="color:#d14">&#34;x = 3&#34;</span>); <span style="color:#998;font-style:italic">// 因为if里面是个赋值语句，表达式永远为真，该语句都会被执行。
-</span><span style="color:#998;font-style:italic"></span>}
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">if</span> (x <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">3</span>) {
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#d14">&#34;x = 3&#34;</span>); <span style="color:#998;font-style:italic">// 因为if里面是个赋值语句，表达式永远为真，该语句都会被执行。
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>}
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>是的！这也是我在C/C++编程的时候常常犯的错误！而且这种错误非常致命，因为编译器不会报告任何错误，甚至都不会有警告！这种错误 <strong>$\color{red}{非常难以排查}$</strong> ！</p>
 <p>为此，许多IT公司还设计出了一个看起来不美观但是有效的办法，将操作数判断放到等号前面作为左值，这样编译器发现少了一个等号，就会报告错误！让这种错误无处遁形。</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#000;font-weight:bold">if</span> (<span style="color:#099">3</span> <span style="color:#000;font-weight:bold">=</span> x) {  <span style="color:#998;font-style:italic">// 编译器会报错，因为数字 3 不是变量，不能成为左值被赋值。
-</span><span style="color:#998;font-style:italic"></span>    printf(<span style="color:#d14">&#34;x = 3&#34;</span>); 
-}
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">if</span> (<span style="color:#099">3</span> <span style="color:#000;font-weight:bold">=</span> x) {  <span style="color:#998;font-style:italic">// 编译器会报错，因为数字 3 不是变量，不能成为左值被赋值。
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>    printf(<span style="color:#d14">&#34;x = 3&#34;</span>); 
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>而许多其他语言也积极吸取了该教训，有的将赋值操作换一个操作符，<code>=</code>只作为相等比较。有的则在if的判断表达式里面禁用等号赋值操作，只使用一个等号的直接报错！</p>
 <h3 id="12--和--不同于--和-">1.2 <code>&amp;</code> 和 <code>|</code> 不同于 <code>&amp;&amp;</code> 和 <code>||</code></h3>
@@ -273,18 +273,18 @@
 </ul>
 <h3 id="13-词法分析中的贪心算法">1.3 词法分析中的“贪心”算法</h3>
 <p>说道贪心算法，“我要，我还要！”闪过脑海，想必大家都非常了解了！ 说的简单一点就是，当从前往后识别的时候，遇到满足条件的就能够满足的就要的更多！举个栗子！</p>
-<pre><code>int *p;
+<pre tabindex="0"><code>int *p;
 int b = x/*p;
 </code></pre><p>你们认为这段表达的意思是什么呢？我省去了语法高亮。我再把语法高亮打开，看看</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#458;font-weight:bold">int</span> <span style="color:#000;font-weight:bold">*</span>p
-<span style="color:#458;font-weight:bold">int</span> b <span style="color:#000;font-weight:bold">=</span> x<span style="color:#998;font-style:italic">/*p;
-</span></code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#458;font-weight:bold">int</span> <span style="color:#000;font-weight:bold">*</span>p
+</span></span><span style="display:flex;"><span><span style="color:#458;font-weight:bold">int</span> b <span style="color:#000;font-weight:bold">=</span> x<span style="color:#998;font-style:italic">/*p;
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>贪心算法遇到 <code>/</code>的时候，如果后面遇到了 <code>*</code> 则贪心地将这两个符号组合在一起，构成多行注释的前半部分。而不是 <code>x</code> 除以 <code>*p</code>，而要表达这个意思，则需要写作 <code>int b = x / *p;</code> 或者 <code>int b = x/(*p);</code></p>
 <p>所以，一个思考题：<code>a---b</code> 表达的是 <code>a-- -b</code> 还是 <code>a- --b</code> 呢？
@@ -298,22 +298,22 @@ int b = x/*p;
 <p>在C语言中，单引号引起的字符跟这个字符代表的ASCII码数字完全等价！ 比如， <code>char a = 'a';</code> 和 <code>char a = 97;</code> 是完全一样的。 <code>'a' + 'd'</code> 就完全等于 <code>197</code> 。</p>
 <p>而 双引号引起的字符串，代表的是一个 字符数组常量的 <strong>指针</strong>。其实，也就是一个地址。</p>
 <p>而如果这两者混用，通常情况下，会报告错误，但有些情况不会报错，就可能产生难以预料的错误（通常是导致程序崩溃），例如：</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">printf(<span style="color:#d14">&#34;</span><span style="color:#d14">\n</span><span style="color:#d14">&#34;</span>);
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>printf(<span style="color:#d14">&#34;</span><span style="color:#d14">\n</span><span style="color:#d14">&#34;</span>);
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>和</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">printf(<span style="color:#d14">&#39;\n&#39;</span>);
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>printf(<span style="color:#d14">&#39;\n&#39;</span>);
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>上面这个例子我们都知道，没啥问题，打印一个换行符。而下面这个例子则就迷惑多了！ 掌握了这两个的区别，其实很简单，就是把 <code>'\n'</code>(换行符) 这个字符ASCII值（10）当做了一个字符串指针地址传给了printf函数，所以打印出来的东西可能很混乱，也可能是崩溃，属于非法访问。</p>
 <p>第一章就这样完成了！撒花✿✿ヽ(°▽°)ノ✿！</p>
@@ -348,16 +348,20 @@ int b = x/*p;
 
     
     
-    <div class="post bg-white">
-      <script src="https://utteranc.es/client.js"
-            repo= "fredgan/fredgan.github.io"
-            issue-term="pathname"
-            theme="github-light"
+    <script src="https://giscus.app/client.js"
+            data-repo="fredgan/fredgan.github.io"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkxNjQ2NDg4MTI="
+            data-category="Announcements"
+            data-category-id="DIC_kwDOCdBXbM4CPSMl"
+            data-mapping="pathname"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="light"
+            data-lang="zh-CN"
             crossorigin="anonymous"
             async>
-      </script>
-    </div>
-    
+    </script>
 </div>
 
                     <footer id="footer">
