@@ -230,13 +230,13 @@
     </p>
 <p>这个胡子拉渣的大叔，创建了自由软件基金会（FSF），一个人撑起了开源世界的一片天！理查大叔有一个伟大的梦想，他发起自由软件运动，他想把UNIX用开源一肩挑！他是想要改变世界的男人！</p>
 <p>这个梦想就是GNU计划！GNU的口号就是“GNU&rsquo;s Not Unix&quot;，</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">...[[[[GNU&#39;s Not Unix]&#39;s Not Unix]&#39;s Not Unix]&#39;s Not Unix]&#39;s Not Unix...
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>...[[[[GNU&#39;s Not Unix]&#39;s Not Unix]&#39;s Not Unix]&#39;s Not Unix]&#39;s Not Unix...
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>看吧，首递归了都！【禁止套娃啊喂，首递归会导致堆栈溢出的！】</p>
 <p>
@@ -364,13 +364,13 @@ MySQL、Redis、MongoDB、ElasticSearch&hellip;</p>
 <p>AGPL还能白嫖的原因是，它要求开源的是<strong>使用的这个软件本体</strong>。比如我使用MySQL【这里假设MySQL是AGPL的，实际上是GPL的】，我完全服务端部署，不修改，我压根都不用履行开源义务，因为MySQL本来就是开源的。</p>
 <p>我要反击！</p>
 <p>为首的就是MongoDB公司。在AGPL的基础上改进了条款。</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">只要你在服务端用了我的MongoDB，你服务端所有相关的软件（包括服务、API、账户系统、第三件等等）都要开源！
-</code></pre></td></tr></table>
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>只要你在服务端用了我的MongoDB，你服务端所有相关的软件（包括服务、API、账户系统、第三件等等）都要开源！
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>如果这样描述大家还不明白，用更白话来说，就是你要把你服务端完整的整套部署代码全部开源。这样的一个License叫做SSPL（Server Side Public License），名字也是直白的告诉你，就是针对服务化场景的。</p>
 <p>这样就基本不可能会有企业会使用SSPL的软件了，除非购买MongoDB的服务。</p>
@@ -416,16 +416,20 @@ MySQL、Redis、MongoDB、ElasticSearch&hellip;</p>
 
     
     
-    <div class="post bg-white">
-      <script src="https://utteranc.es/client.js"
-            repo= "fredgan/fredgan.github.io"
-            issue-term="pathname"
-            theme="github-light"
+    <script src="https://giscus.app/client.js"
+            data-repo="fredgan/fredgan.github.io"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkxNjQ2NDg4MTI="
+            data-category="Announcements"
+            data-category-id="DIC_kwDOCdBXbM4CPSMl"
+            data-mapping="pathname"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="light"
+            data-lang="zh-CN"
             crossorigin="anonymous"
             async>
-      </script>
-    </div>
-    
+    </script>
 </div>
 
                     <footer id="footer">
