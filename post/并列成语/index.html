@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title> | FredGan&#39;s Blog</title>
+    <meta property="og:title" content=" - FredGan&#39;s Blog">
+    <meta property="og:type" content="article">
+        
+        
+    <meta name="Keywords" content="c,c&#43;&#43;,go,ios,python,yang,netconf,软件架构,网络爬虫,压缩、项目管理,开源、cleancode">
+    <meta name="description" content="">
+        
+    <meta name="author" content="FredGan">
+    <meta property="og:url" content="https://fredgan.com/post/%E5%B9%B6%E5%88%97%E6%88%90%E8%AF%AD/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://fredgan.com">
+                        FredGan&#39;s Blog
+                    </a>
+                
+                <p class="description">开发、学习和成长: C/C&#43;&#43;/Go/Python/iOS/JavaScript、YANG/NetConf、爬虫、编译器、压缩序列化、开源、CleanCode</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://fredgan.com">首页</a>
+                    
+                    <a  href="https://fredgan.com/projects/" title="GitHub">GitHub</a>
+                    
+                    <a  href="https://fredgan.com/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://fredgan.com/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents"></nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title"></h1>
+        </header>
+        <date class="post-meta meta-date">
+            1年1月1日
+        </date>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <h1 id="并列成语">并列成语</h1>
+<ul>
+<li>
+<p>人际关系
+父母兄弟 兄弟姐妹 妃嫔媵嫱 鳏寡孤独 男女老少 君臣将相 鱼樵耕读</p>
+</li>
+<li>
+<p>身体状态
+行走坐卧 谦虚谨慎 卑鄙羞耻 高矮胖瘦 酸甜苦辣 喜怒哀乐 生死休戚 生老病死 跌打损伤 敏锐聪颖 乖戾暴躁 野蛮粗暴 妩媚婀娜 言谈举止 悲愁怨忿 挂擦磕碰</p>
+</li>
+<li>
+<p>精神状态
+屈辱荣光 胆义名节 爱恨情仇 悲欢离合</p>
+</li>
+<li>
+<p>事物状态
+汹涌澎湃 跑冒滴漏 奸杀捋掠  真假虚实 高新精尖 博大精深</p>
+</li>
+<li>
+<p>认知
+青红皂白 是非曲直 恩威赏罚</p>
+</li>
+<li>
+<p>生活用品
+锅碗瓢盆 杯碗盘碟 金银铜铁 锦罗绸缎 麻布尼绒 衣帽鞋袜 膏丸散剂 酒色财气 烟酒糖茶 猫狗鸡鸭 筋骨皮毛 金石药灸</p>
+</li>
+<li>
+<p>生活设施
+楼堂馆所 涵桥隧道 车马舟楫 亭台楼阁 衣食住行 兵马粮草 声色犬马</p>
+</li>
+<li>
+<p>饮食
+松焦酥脆 软润爽滑 油粮蛋菜 鸡鸭鱼肉 油盐酱醋 瓜果梨桃 煎炒烹炸</p>
+</li>
+<li>
+<p>器具
+琴瑟琵琶 刀枪剑戟 锛刨斧凿 水火冰炭</p>
+</li>
+<li>
+<p>文学
+经史子集 诗文词曲 诗词歌赋 抑扬顿挫 起承转合 跌宕起伏 听说读写 之乎者也 笔墨纸砚 琴棋书画 欧柳颜赵</p>
+</li>
+<li>
+<p>技能
+说学逗唱 吹拉弹唱 呕哑嘲哳 闪转腾挪 蹿蹦跳跃 漂泊流浪 望闻问切 吹捧拍溜 加减乘除
+吃喝嫖赌 坑蒙拐骗 围追堵截 摸爬滚打 吃碰杠胡 点烧闷拉 关停并转 吃拿卡要 穿凿附会 杀刮屯留 生杀予夺 分崩离析</p>
+</li>
+<li>
+<p>自然
+风花雪月 雨雪霜露 风雨雷电 江河湖海 江河泥沼 山川河岳 地水火风 梅兰竹菊 杨柳松柏 花草树木 阴阳明晦 阴晴圆缺</p>
+</li>
+<li>
+<p>动物
+花鸟鱼虫 鱼鳖虾蟹 虎狼蛇蝎 虎豹豺狼 鸟兽鱼虫</p>
+</li>
+<li>
+<p>神话
+妖魔鬼怪 魑魅魍魉 天地人神 福禄寿禧</p>
+</li>
+<li>
+<p>时间
+年月日时 子丑寅卯 春夏秋冬</p>
+</li>
+<li>
+<p>范围
+古今中外 日月星辰 东西南北 点线面体</p>
+</li>
+</ul>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><strong><a href="/projects/"> Github项目列表 - 2020/08/19</a></strong></li>
+        
+        <li><strong><a href="/about/"> 关于自己 - 2020/08/18</a></strong></li>
+        
+        <li><strong><a href="/post/a-letter-to-university-student/"> 致震波的一封信 - 2019/09/05</a></strong></li>
+        
+        <li><strong><a href="/archives/"> 归档 - 2019/01/09</a></strong></li>
+        
+        <li><strong><a href="/post/computer-words-1/">  - 0001/01/01</a></strong></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            没有标签
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <script src="https://giscus.app/client.js"
+            data-repo="fredgan/fredgan.github.io"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkxNjQ2NDg4MTI="
+            data-category="Announcements"
+            data-category-id="DIC_kwDOCdBXbM4CPSMl"
+            data-mapping="pathname"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="light"
+            data-lang="zh-CN"
+            crossorigin="anonymous"
+            async>
+    </script>
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2022 <a href="https://fredgan.com">FredGan&#39;s Blog</a>
+        
+        | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">粤ICP备2021017083号</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://fredgan.com/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://fredgan.com">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://fredgan.com/post/my-father/" title="我的父亲">我的父亲</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/thinking-to-main-of-the-world/" title="漫谈主次学习法则">漫谈主次学习法则</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/annual-summary-2021/" title="2021年度总结">2021年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/colloquial-gpl-and-sspl/" title="白话GPL和SSPL">白话GPL和SSPL</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/aging/" title="从衰老说开去">从衰老说开去</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/thinking-to-quality/" title="谈谈质量">谈谈质量</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/30-minutes-regex/" title="30分钟掌握正则表达式">30分钟掌握正则表达式</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/thinking-to-llvm-and-lsp.md/" title="LLVM和LSP有感">LLVM和LSP有感</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/my-favorite/" title="我的推荐">我的推荐</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/database-software/" title="数据库软件简介">数据库软件简介</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://fredgan.com/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件 (1)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%AD%A6%E4%B9%A0/">学习 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%B7%A5%E5%85%B7/">工具 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">年度总结 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%BC%80%E5%8F%91/">开发 (3)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%BC%80%E6%BA%90/">开源 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%84%9F%E6%82%9F/">感悟 (8)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%8E%A8%E8%8D%90/">推荐 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%95%88%E7%8E%87/">效率 (1)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式 (1)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E7%94%9F%E6%B4%BB/">生活 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言 (3)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E8%8B%B1%E8%AF%AD/">英语 (1)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E8%BD%AF%E4%BB%B6/">软件 (2)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://fredgan.com/tags/C%E8%AF%AD%E8%A8%80/">C语言</a>
+    
+    <a href="https://fredgan.com/tags/Markdown/">Markdown</a>
+    
+    <a href="https://fredgan.com/tags/redis/">redis</a>
+    
+    <a href="https://fredgan.com/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件</a>
+    
+    <a href="https://fredgan.com/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+    
+    <a href="https://fredgan.com/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://fredgan.com/tags/%E6%84%9F%E6%82%9F/">感悟</a>
+    
+    <a href="https://fredgan.com/tags/%E6%8E%A8%E8%8D%90/">推荐</a>
+    
+    <a href="https://fredgan.com/tags/%E6%95%88%E7%8E%87/">效率</a>
+    
+    <a href="https://fredgan.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://time.geekbang.org/" title="geektime">极客时间</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://github.com/fredgan" title="github">Github</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://tools.fredgan.com" title="tools">Fred&#39;s Tools</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://fredgan.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
