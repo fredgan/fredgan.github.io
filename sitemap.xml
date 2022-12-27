@@ -2,22 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://fredgan.github.io/post/annual-summary-2022/</loc>
+    <lastmod>2022-12-21T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://fredgan.github.io/categories/</loc>
-    <lastmod>2022-07-21T00:00:00+00:00</lastmod>
+    <lastmod>2022-12-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fredgan.github.io/</loc>
-    <lastmod>2022-07-21T00:00:00+00:00</lastmod>
+    <lastmod>2022-12-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fredgan.github.io/post/</loc>
-    <lastmod>2022-07-21T00:00:00+00:00</lastmod>
+    <lastmod>2022-12-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://fredgan.github.io/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2022-12-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fredgan.github.io/categories/%E6%84%9F%E6%82%9F/</loc>
-    <lastmod>2022-07-21T00:00:00+00:00</lastmod>
+    <lastmod>2022-12-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fredgan.github.io/post/my-father/</loc>
+    <loc>https://fredgan.github.io/categories/LICENSE/</loc>
     <lastmod>2022-07-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fredgan.github.io/categories/%E7%94%9F%E6%B4%BB/</loc>
+    <lastmod>2022-07-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://fredgan.github.io/post/life_license/</loc>
+    <lastmod>2022-07-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://fredgan.github.io/post/my-father/</loc>
     <lastmod>2022-07-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fredgan.github.io/tags/</loc>
@@ -36,9 +48,6 @@
     <lastmod>2022-05-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fredgan.github.io/post/annual-summary-2021/</loc>
-    <lastmod>2022-04-28T00:41:58+08:00</lastmod>
-  </url><url>
-    <loc>https://fredgan.github.io/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</loc>
     <lastmod>2022-04-28T00:41:58+08:00</lastmod>
   </url><url>
     <loc>https://fredgan.github.io/categories/%E5%BC%80%E6%BA%90/</loc>
