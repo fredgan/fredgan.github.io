@@ -9,20 +9,20 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
     
 
-    <title>GDB调试技巧 | FredGan&#39;s Blog</title>
-    <meta property="og:title" content="GDB调试技巧 - FredGan&#39;s Blog">
+    <title>电视剧《狂飙》角色寓意 | FredGan&#39;s Blog</title>
+    <meta property="og:title" content="电视剧《狂飙》角色寓意 - FredGan&#39;s Blog">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content='2020-07-06T14:08:05&#43;08:00'>
+    <meta property="article:published_time" content='2023-04-05T21:01:22&#43;08:00'>
         
         
-    <meta property="article:modified_time" content='2020-07-06T14:08:05&#43;08:00'>
+    <meta property="article:modified_time" content='2023-04-05T21:01:22&#43;08:00'>
         
-    <meta name="Keywords" content="[开发 调试]">
-    <meta name="description" content="GDB调试技巧">
+    <meta name="Keywords" content="c,c&#43;&#43;,go,ios,python,yang,netconf,软件架构,网络爬虫,压缩、项目管理,开源、cleancode">
+    <meta name="description" content="电视剧《狂飙》角色寓意">
         
     <meta name="author" content="FredGan">
-    <meta property="og:url" content="https://fredgan.github.io/post/gdb/">
+    <meta property="og:url" content="https://fredgan.github.io/post/kuangbiao-role-names-art/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
@@ -141,32 +141,7 @@
 <div class="post-toc" style="position: absolute; top: 188px;">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#一直接调试">一、直接调试</a>
-      <ul>
-        <li><a href="#11-启动与停止">1.1 启动与停止</a></li>
-        <li><a href="#12-调试指令">1.2 调试指令：</a></li>
-        <li><a href="#13-查看变量内存">1.3 查看变量内存</a></li>
-      </ul>
-    </li>
-    <li><a href="#二attach调试">二、Attach调试</a>
-      <ul>
-        <li><a href="#21-本机attach进程">2.1 本机attach进程</a></li>
-        <li><a href="#22-gdb_server远程调试">2.2 gdb_server远程调试</a></li>
-      </ul>
-    </li>
-    <li><a href="#三coredump调试">三、CoreDump调试</a>
-      <ul>
-        <li><a href="#31-程序异常终止产生了core文件">3.1 程序异常终止产生了core文件</a></li>
-        <li><a href="#32-程序异常终止不产生core文件原因">3.2 程序异常终止不产生core文件原因</a></li>
-        <li><a href="#33-调试方法">3.3 调试方法</a></li>
-      </ul>
-    </li>
-    <li><a href="#四辅助脚本">四、辅助脚本：</a></li>
-    <li><a href="#五参考资料">五、参考资料</a></li>
-  </ul>
-</nav>
+        <nav id="TableOfContents"></nav>
     </div>
 </div>
 <script type="text/javascript">
@@ -198,18 +173,11 @@
 </script>
     <article class="post">
         <header>
-            <h1 class="post-title">GDB调试技巧</h1>
+            <h1 class="post-title">电视剧《狂飙》角色寓意</h1>
         </header>
         <date class="post-meta meta-date">
-            2020年7月6日
+            2023年4月5日
         </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/%E5%BC%80%E5%8F%91'>开发</a></span>
-            
-        </div>
         
         
         <div class="post-meta">
@@ -219,108 +187,63 @@
         
         
         <div class="post-content">
-            <h1 id="gdb-调试技巧">GDB 调试技巧</h1>
-<h2 id="一直接调试">一、直接调试</h2>
-<h3 id="11-启动与停止">1.1 启动与停止</h3>
+            <h1 id="狂飙取名的艺术">《狂飙》取名的艺术</h1>
+<p>注：本文<strong>大量剧透</strong>。</p>
+<p>最近抽空把今年爆火的扫黑除恶电视剧《狂飙》看完了。整体来说，这个剧整体大约可分为三个故事</p>
 <ul>
-<li><code>run</code> / <code>r</code>  启动程序</li>
-<li><code>set args &lt;arg1&gt; &lt;arg2&gt;</code> 设置程序运行参数</li>
-<li><code>finish</code> 结束当前函数的运行，函数剩余部分会执行完毕</li>
-<li><code>return</code> 立即结束当前函数执行并返回，可带参数返回</li>
+<li>干掉徐江</li>
+<li>干掉莽村</li>
+<li>干掉高启强</li>
 </ul>
-<h3 id="12-调试指令">1.2 调试指令：</h3>
+<p>每个故事大约都在13集左右。第一个故事写的最好，基本挑不出啥毛病，基本可以封神。第二个故事也不错，但相对第一个差一点，最后这个就感觉草草收场，很多东西逻辑上解释不通，算是烂尾了吧。但也可能是因为在当前的环境氛围下创作的妥协。</p>
+<p>我这里不太想太多的讲这个电视剧剧情设计，回头想了一下整个故事，发现最出彩的地方可能在剧中取名上，真的很讲究。几个地名很经典，几乎每个人名都或多或少跟人物性格、命运息息相关，算是这个剧里面我最佩服的地方了。</p>
+<p>首先，剧名《<strong>狂飙</strong>》- 导演取的“狂飙”二字，是来自毛主席的一首诗：《蝶恋花·从汀州向长沙》中的一句“国际悲歌歌一曲,狂飙为我从天落。” 这句诗的原意是指革命力量的茁壮强大，在这部剧中代表了正义队伍的壮大，也代表了扫黑除恶的坚定决心。</p>
+<p>其次看看地名，</p>
 <ul>
-<li><code>step</code> / <code>next</code> 执行下一行（进入函数）/（不进入函数）</li>
-<li><code>disassemble</code> 查看汇编命令</li>
-<li><code>stepi</code> / <code>nexti</code> 执行下一条汇编指令 (进入函数)/（不进入函数）</li>
-<li><code>jmp</code> 跳转指令</li>
-<li><code>info r</code> 查看寄存器值。<code>info</code> 可以简写为 <code>i</code></li>
-<li><code>bt</code> 查看调用路径</li>
+<li><strong>旧厂街</strong> - 一看名字就是破破烂烂的地方。</li>
+<li><strong>莽村</strong> - 有地头蛇的村子，李有田和李宏伟就是莽村的地头蛇。</li>
 </ul>
-<blockquote>
-<p><strong>堆栈用途:</strong></p>
+<p>最后看看本文的重点：人名。</p>
+<p>先讲讲正面角色。</p>
 <ul>
-<li>rdi rsi rdx rcx r8 r9 寄存器依次存放函数前6个参数</li>
-<li>更多的参数放在栈中</li>
-<li>函数返回值保存在 rax 中</li>
+<li><strong>安欣</strong>。很明显，谐音安心。这个安心包含了很多意思，首先让观众安心。在扫黑除恶的环境中，需要一个能够坚持到最后的正面主角，如果这个角色不能让观众安心，那么扫黑除恶可能就太难实现了，为此，给安欣安排了两个局长庇护，后面督导组过来也是让安欣做副组长。有了保护，才能施展、折腾而不被除掉。其次是让同事安心，这个下面再讲。最后是让老百姓安心，京海市正因为有了这样的安警官，将来才可能生活的安心。</li>
+<li><strong>李响</strong>。也很明显，谐音理想。注意，安欣和李响在这里是互相解释的。安欣是李响的理想，他没有安欣那样的背景，但希望能做点好事，也希望能像安欣那样为理想奋斗。安欣为理想奋斗，在李响死后，安欣载着李响的理想继续奋斗，因此，李响终于安心。</li>
+<li><strong>孟钰</strong>。钰，含义是珍宝，父母视她为珍宝。安欣视她为珍宝，最后她老公杨健也视她为珍宝，她从小到大都一直生活在别人的保护之下，对世界的险恶缺乏认知。另外，孟钰也有谐音“梦遇”的意思。虽然她一直生活在蜜罐里，但是，最终的结局并不好，自己的青梅竹马在跟自己谈婚论嫁的时候把自己抛弃，母亲嫌弃父亲一辈子，家庭并不和谐。母亲高血压，最后躺医院多年。父亲坐牢，丈夫坐牢，而这一切，却又是自己的青梅竹马送进去的。梦碎的她最终她离开了她长大的京海，想象中的生活可能也只有梦中能遇到了。</li>
+<li><strong>安长林</strong>。平安长临。是的，从头到尾，好像也只有他是没有被牵涉到任何事情，直到最后也没什么事，平平安安的。</li>
+<li><strong>孟德海</strong>。曹操，字孟德。剧中也多次提到孟德。曹操是世所公认的奸雄。孟德海其实也在一定程度上算是奸雄，好坏参半。一方面支持安欣，自己不贪腐，算是正面人士。另一方面，明知女婿杨健贪腐却坐视不管，纵容犯罪，也算半个奸雄吧。</li>
+<li><strong>徐忠</strong>。督导组组长，忠于党忠于人民忠于职守的好干部。</li>
+<li><strong>纪泽</strong>。扫黑除恶，铲除保护伞，是纪委的重大责任。</li>
+<li><strong>高启兰</strong>。蕙质兰心，淡雅高洁。另外，启兰 - 企拦，在最后企图拦住他哥做坏事，但没成功。</li>
+<li><strong>谭思言</strong>。谈话思言。想要说话，发了很多举报信，都被拦下来了，想说话而不得。</li>
+<li><strong>李青</strong>。莽村被人欺负利用，虽然看上去很憨，但是很多道理却都能理得清。他父亲给他的教育，安欣给他讲的道理，他都能听得进去，都能记在心里。</li>
+<li><strong>陆寒</strong>。路寒，前进的道路异常寒冷孤独，陆寒没有安欣的身世背景，在安欣被调离岗位后，注定他将来要走的路就是孤独寒冷凄凉的。</li>
+<li><strong>程程</strong>。山一程，水一程，上刀山，下火海。在岸上替陈泰坐了三年牢，和高启强斗争失败后，被逼死在海里。</li>
+<li><strong>崔姨</strong>。就这个催字吧，一辈子都在催丈夫孟德海换个工作，催丈夫赚钱，最终也没能落得个好结果，最后幡然悔悟，痛哭流涕，后悔莫及。</li>
+<li><strong>黄瑶</strong>。瑶 - 摇。一辈子生活风雨飘摇，从小就被母亲抛弃，乡亲街坊带到五六岁，跟着自己的杀手父亲生活了几年，而后父亲死后，又跟着逼死父亲的仇人生活，力量渺小，只能忍辱负重逢场作戏认贼作父。生活飘摇，思想也飘摇。最后靠着自己的智慧终于扳倒高启强。</li>
 </ul>
-</blockquote>
-<h3 id="13-查看变量内存">1.3 查看变量内存</h3>
-<ol>
-<li><code>p &lt;var&gt;</code> 查看变量值</li>
-<li><code>p/x &lt;var&gt;</code> 查看变量二进制值值</li>
-<li><code>x/nfu &lt;addr&gt;</code> 查看内存值。<code>x</code> 是 <code>examine</code> 的缩写</li>
-</ol>
+<p>再讲讲反面角色。</p>
 <ul>
-<li>
-<p>n表示要显示的内存单元的个数</p>
-</li>
-<li>
-<p>f表示显示方式, 可取如下值：</p>
-<ul>
-<li>x 按十六进制格式显示变量。</li>
-<li>d 按十进制格式显示变量。</li>
-<li>u 按十进制格式显示无符号整型。</li>
-<li>o 按八进制格式显示变量。</li>
-<li>t 按二进制格式显示变量。</li>
-<li>a 按十六进制格式显示变量。</li>
-<li>i 指令地址格式</li>
-<li>c 按字符格式显示变量。</li>
-<li>f 按浮点数格式显示变量。</li>
+<li><strong>高启强</strong>。启强，企图变强。在卖鱼受人欺负的时候，祈求变强。在旧厂街稍微得势之后，企图变强。拜陈泰为干爹，乞讨变强。最后，开启变强之路。真的变得很强。他也是真的强，让曾经几乎所有的敌人都变成了自己人，为己所用。</li>
+<li><strong>高启盛</strong>。启盛 - 气盛。年轻气盛就是形容这个才华和智商都很在线的弟弟。如果不是气盛，他不应该是这个结果。年轻气盛，才会想靠小灵通发达。也是因为年轻气盛，别人不敢干的，他敢干。他敢顶撞高启强，他干贩毒。因为他同学几句羞辱他的话，他要在白金翰杀死他同学。因为李宏伟的一句侮辱他的话，他记在心里一辈子，得到机会，他要用冻鱼亲自锤死他。</li>
+<li><strong>陈金默</strong>。沉默是金。老默是个沉默寡言的人，对于一个白手套杀手来说，沉默就是最好的品质。</li>
+<li><strong>唐小龙、唐小虎</strong>。左青龙，右白虎，从名字上看注定就是高启强的左膀右臂。虽然名字里有龙有虎，但搭配着小字，小龙其实就是蛇，小虎就是猫，看着很唬人，其实没啥能耐。然后，再搭配着这个姓，唐，池塘，池塘里的小龙小虎能翻出多大浪出来。</li>
+<li><strong>赵立冬</strong>。首先，姓赵，赵家人【不懂的可以去搜索“你也配姓赵？”】。立冬，一个节气，进入冬天，万物枯萎冰冻。他心机深沉，令人不寒而栗。身为京海市政法委书记，只要他还在，这个地方就不可能是春天。而再赵立冬被扳倒之后，冰雪融化，一切本来该有的样子就展示在世人面前。</li>
+<li><strong>龚开疆</strong>。一旦公开，就僵了。督导组一到京海，他就死了。</li>
+<li><strong>何黎明</strong>。为何要这么快黎明。还有两年就退休了，他好恨，为啥不能等到他退休。</li>
+<li><strong>陈书婷</strong>。书代表智慧，她也喜欢看书，是个有脑子的女人，从剧里来看，这个女人也确实不简单。</li>
+<li><strong>陈泰</strong>。建工集团的掌权人，性格和说话的语气都稳如泰山。在逐渐洗白后的建工集团，他的位置也是有点稳如泰山，直到高启强的出现。</li>
+<li><strong>徐江</strong>。一个性格偏执的黑社会老大，金钱和势力都是如江水般源源不断的，但是遇到赵立冬，严冬降临，江面冰封，也就没办法再向前了。</li>
+<li><strong>白江波</strong>。陈书婷的第一任老公，白白地被徐江的波涛吞噬，算是个跑龙套的角色。</li>
+<li><strong>徐雷</strong>。徐江的儿子。单名一个雷字，预示着徐雷是整个故事埋下的一个雷，他的死让徐江和白江波闹翻，让高启强走向了不归路，成为了整个形势变化的导火索。</li>
+<li><strong>曹闯</strong>。草草地闯入不该闯入的地方，死于非命。</li>
+<li><strong>李宏伟</strong>。父亲给他起了个家族寄予厚望的名字。他“志向宏伟”，说一旦分到钱后，就不想留在莽村。最终也不过是狂妄之徒罢了。</li>
+<li><strong>张彪</strong>。经常在警局发飚跟安欣对着干。</li>
+<li><strong>高晓晨</strong>。这个不好说，说是“小陈”那就有点阴谋论的意思了。</li>
 </ul>
-</li>
-<li>
-<p>u表示一个地址单元的长度</p>
-<ul>
-<li>b表示单字节，</li>
-<li>h表示双字节，</li>
-<li>w表示四字节，</li>
-<li>g表示八字节</li>
-</ul>
-</li>
-</ul>
-<h2 id="二attach调试">二、Attach调试</h2>
-<h3 id="21-本机attach进程">2.1 本机attach进程</h3>
-<p>gdb program pid</p>
-<p>gdb program 进入gdb后attach pid</p>
-<p>如果没有权限</p>
-<ul>
-<li>如果uid相同，运行程序之后看看有没有改变uid，例如passwd程序</li>
-<li>root权限 echo 0 &gt; /proc/sys/kernel/yama/ptrace_scope</li>
-</ul>
-<h3 id="22-gdb_server远程调试">2.2 gdb_server远程调试</h3>
-<ul>
-<li>gdb_server运行在target上</li>
-<li>gdb运行在host上</li>
-<li>GDB Remote serial protocol/RSP协议</li>
-</ul>
-<h2 id="三coredump调试">三、CoreDump调试</h2>
-<h3 id="31-程序异常终止产生了core文件">3.1 程序异常终止产生了core文件</h3>
-<ul>
-<li>保存路径：保存在程序执行路径，修改 /proc/sys/kernel/core_pattern可以修改</li>
-<li>文件名： 默认core, root权限修改： <code>echo 1 &gt; /proc/sys/kernel/core_uses_pid</code> 后变为core.pid</li>
-<li>文件格式：ELF</li>
-<li>包含信息：内存状态、寄存器状态、堆栈指针、内存管理信息、函数调用堆栈信息</li>
-</ul>
-<h3 id="32-程序异常终止不产生core文件原因">3.2 程序异常终止不产生core文件原因</h3>
-<ul>
-<li>资源限制 ulimit -c unlimited修改</li>
-<li>权限问题 core文件生成目录没有写权限，要注意程序运行过程中有没有降权或者改变权限</li>
-</ul>
-<h3 id="33-调试方法">3.3 调试方法</h3>
-<ul>
-<li>gdb program &lt;core_file_name&gt;</li>
-<li>bt 查看调用栈</li>
-</ul>
-<h2 id="四辅助脚本">四、辅助脚本：</h2>
-<p>gdb init + 高级脚本提高调试效率</p>
-<ul>
-<li>peda</li>
-<li>pwndbg</li>
-<li>gef</li>
-</ul>
-<h2 id="五参考资料">五、参考资料</h2>
-<p><a href="https://lldb.llvm.org/use/map.html">GDB vs LLDB</a></p>
+<p>杨健、蒋飞、过山峰、李有田等也还没想到特别好的寓意，但从名字看都还比较符合他们的身份。可以说，导演对角色取名的能力，有点赶上金庸先生的水平了。</p>
+<p>最后就是剧集最后的温馨的镜头，小五给安欣揉肩，这个镜头确实让人回味无穷。想想也是，孟钰已经嫁人生子了，安欣跟孟钰是不可能了。而高启兰是对安欣的单相思罢了，安欣一辈子都毁在高启强上，是一辈子的死对头，他对高启兰没有任何感情。而高启兰视高启强为父亲一样，最后安欣把高启强送入监狱判处死刑，高启兰最后也不可能跟安欣在一起。</p>
+<p>只有小五，才是那个默默守候着安欣的人。安欣从刑侦调到宣传科，小五也从刑侦调到宣传科。在安欣喊话赵立冬的那个场景，他的所有队友都用异样的眼光看着安欣，只有小五的目光跟安欣一样，坚定的盯着赵立冬。在救人质的演习场景，小五被安排去给别人送药，但小五也要先帮安欣包扎好，安欣从楼顶上掉下来，小五也不管自己被“劫持”的身份，呼叫队友帮忙救安欣。在安欣急着找小五的时候，小五出现在他身后，说“在这儿呢”，真的是众里寻她千百度，蓦然回首，那人却在身后。小五为了安欣，也守候了20年，这种守护似的守候，才是最让人敬佩，让人暖心的。</p>
+<p>而至于名字，其他人基本都有名字，至少有个姓，如崔姨。而只有小五，不知道名字不知道姓。虽然最终不知道小五有没有跟安欣在一起，但是最美好的祝愿吧，毕竟“惟五得欣”。</p>
 
         </div>
 
@@ -328,6 +251,23 @@
 
 
         
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><strong><a href="/post/thinking-to-landlord-game/"> 连炸斗地主直播观感 - 2023/01/08</a></strong></li>
+        
+        <li><strong><a href="/projects/"> Github项目列表 - 2020/08/19</a></strong></li>
+        
+        <li><strong><a href="/about/"> 关于自己 - 2020/08/18</a></strong></li>
+        
+        <li><strong><a href="/post/a-letter-to-university-student/"> 致震波的一封信 - 2019/09/05</a></strong></li>
+        
+        <li><strong><a href="/archives/"> 归档 - 2019/01/09</a></strong></li>
+        
+    </ul>
+</div>
 
 
         <div class="post-meta meta-tags">
