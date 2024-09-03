@@ -16,13 +16,6 @@
       <description>&lt;p&gt;试想这样一种场景：如果你是一个电话提供商。现在有一个比较贫困的地区，你去那边建立这样一个电话系统。当然，最开始会很少的人愿意安装，毕竟大家都比较穷，能装得起电话的人呢有限。比如只有3个人。这个时候，这三个人需要彼此能够联通。从我们最直观的角度想，我们会怎么去做这个拓扑结构？因为电话原理比较简单，我们最开始会想到的方案可能就是，这三个人彼此连接一条线，3个电话，3条线，就能满足要求了。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>LSP和LLVM有感</title>
-      <link>https://fredgan.com/post/thinking-to-llvm-and-lsp.md/</link>
-      <pubDate>Mon, 08 Feb 2021 18:57:23 +0800</pubDate>
-      <guid>https://fredgan.com/post/thinking-to-llvm-and-lsp.md/</guid>
-      <description>&lt;p&gt;试想这样一种场景：如果你是一个电话提供商。现在有一个比较贫困的地区，你去那边建立这样一个电话系统。当然，最开始会很少的人愿意安装，毕竟大家都比较穷，能装得起电话的人呢有限。比如只有3个人。这个时候，这三个人需要彼此能够联通。从我们最直观的角度想，我们会怎么去做这个拓扑结构？因为电话原理比较简单，我们最开始会想到的方案可能就是，这三个人彼此连接一条线，3个电话，3条线，就能满足要求了。&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>《C陷阱和缺陷》读书笔记（2）- 语法”陷阱“</title>
       <link>https://fredgan.com/post/c-traps/20200715-c-traps-chapter-two/</link>
       <pubDate>Wed, 15 Jul 2020 22:21:58 +0800</pubDate>
