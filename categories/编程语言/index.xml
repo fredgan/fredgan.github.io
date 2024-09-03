@@ -9,25 +9,25 @@
     <lastBuildDate>Fri, 22 Oct 2021 18:57:23 +0800</lastBuildDate>
     <atom:link href="https://fredgan.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>LLVM和LSP有感</title>
+      <title>LSP和LLVM有感</title>
       <link>https://fredgan.com/post/thinking-to-llvm-and-lsp.md/</link>
       <pubDate>Mon, 08 Feb 2021 18:57:23 +0800</pubDate>
       <guid>https://fredgan.com/post/thinking-to-llvm-and-lsp.md/</guid>
-      <description>&lt;h1 id=&#34;lsp和llvm有感&#34;&gt;LSP和LLVM有感&lt;/h1&gt;&#xA;&lt;p&gt;试想这样一种场景：如果你是一个电话提供商。现在有一个比较贫困的地区，你去那边建立这样一个电话系统。当然，最开始会很少的人愿意安装，毕竟大家都比较穷，能装得起电话的人呢有限。比如只有3个人。这个时候，这三个人需要彼此能够联通。从我们最直观的角度想，我们会怎么去做这个拓扑结构？因为电话原理比较简单，我们最开始会想到的方案可能就是，这三个人彼此连接一条线，3个电话，3条线，就能满足要求了。&lt;/p&gt;</description>
+      <description>&lt;p&gt;试想这样一种场景：如果你是一个电话提供商。现在有一个比较贫困的地区，你去那边建立这样一个电话系统。当然，最开始会很少的人愿意安装，毕竟大家都比较穷，能装得起电话的人呢有限。比如只有3个人。这个时候，这三个人需要彼此能够联通。从我们最直观的角度想，我们会怎么去做这个拓扑结构？因为电话原理比较简单，我们最开始会想到的方案可能就是，这三个人彼此连接一条线，3个电话，3条线，就能满足要求了。&lt;/p&gt;</description>
     </item>
     <item>
       <title>《C陷阱和缺陷》读书笔记（2）- 语法”陷阱“</title>
       <link>https://fredgan.com/post/c-traps/c-traps-chapter-two/</link>
       <pubDate>Wed, 15 Jul 2020 22:21:58 +0800</pubDate>
       <guid>https://fredgan.com/post/c-traps/c-traps-chapter-two/</guid>
-      <description>&lt;h1 id=&#34;c陷阱和缺陷读书笔记2--语法陷阱&#34;&gt;《C陷阱和缺陷》读书笔记（2）- 语法“陷阱”&lt;/h1&gt;&#xA;&lt;p&gt;词法、语法构成语言的一个基本条件。光有一个个的单词符号是不够的，这些符号的不同组合可以表达不同的含义。&#xA;例如，声明是什么，表达式什么，语句是什么，程序是什么等等。&lt;/p&gt;&#xA;&lt;h2 id=&#34;理解函数声明&#34;&gt;理解函数声明&lt;/h2&gt;&#xA;&lt;p&gt;看看下面一个语句：&lt;/p&gt;</description>
+      <description>&lt;p&gt;词法、语法构成语言的一个基本条件。光有一个个的单词符号是不够的，这些符号的不同组合可以表达不同的含义。&#xA;例如，声明是什么，表达式什么，语句是什么，程序是什么等等。&lt;/p&gt;&#xA;&lt;h2 id=&#34;理解函数声明&#34;&gt;理解函数声明&lt;/h2&gt;&#xA;&lt;p&gt;看看下面一个语句：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;*&lt;/span&gt;(&lt;span style=&#34;color:#458;font-weight:bold&#34;&gt;void&lt;/span&gt;(&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;*&lt;/span&gt;)())&lt;span style=&#34;color:#099&#34;&gt;0&lt;/span&gt;)();&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;乍一看到这个语句，肯定当场吓尿！啥鬼玩儿意！&lt;/p&gt;</description>
     </item>
     <item>
       <title>《C陷阱和缺陷》读书笔记（1）- 词法”陷阱“</title>
       <link>https://fredgan.com/post/c-traps/c-traps-chapter-one/</link>
       <pubDate>Mon, 13 Jul 2020 22:21:58 +0800</pubDate>
       <guid>https://fredgan.com/post/c-traps/c-traps-chapter-one/</guid>
-      <description>&lt;h1 id=&#34;c陷阱和缺陷读书笔记1--词法陷阱&#34;&gt;《C陷阱和缺陷》读书笔记（1）- 词法“陷阱”&lt;/h1&gt;&#xA;&lt;p&gt;为了敦促自己读书，特地开了一个读书笔记系列。&lt;/p&gt;&#xA;&lt;p&gt;自上大学学习了谭浩强版本的《C程序设计》以来，以及经过这么多年遭受的C/C++面试和工作的毒打，就有一个感觉，C/C++语言的设计处处充满了陷阱。编译器设计之复杂，条目细则之多，感觉远远超出了其他语言。掌握了越多的这些”细则“或者”陷阱“，就离大师就更近了一步。而这些大师们，也津津乐道于讲述自己所掌握的这些”陷阱”以彰显自己大师之风范，以在面试中能够用这些“陷阱”困住面试者为骄傲！难怪人们常说，“细节决定成败”！而程序员最需要掌握的更加是一些编程语言、编译器的细节。&lt;/p&gt;</description>
+      <description>&lt;p&gt;为了敦促自己读书，特地开了一个读书笔记系列。&lt;/p&gt;&#xA;&lt;p&gt;自上大学学习了谭浩强版本的《C程序设计》以来，以及经过这么多年遭受的C/C++面试和工作的毒打，就有一个感觉，C/C++语言的设计处处充满了陷阱。编译器设计之复杂，条目细则之多，感觉远远超出了其他语言。掌握了越多的这些”细则“或者”陷阱“，就离大师就更近了一步。而这些大师们，也津津乐道于讲述自己所掌握的这些”陷阱”以彰显自己大师之风范，以在面试中能够用这些“陷阱”困住面试者为骄傲！难怪人们常说，“细节决定成败”！而程序员最需要掌握的更加是一些编程语言、编译器的细节。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
