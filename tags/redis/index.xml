@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>redis on FredGan&#39;s Blog</title>
+    <title>Redis on FredGan&#39;s Blog</title>
     <link>https://fredgan.github.io/tags/redis/</link>
-    <description>Recent content in redis on FredGan&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Redis on FredGan&#39;s Blog</description>
+    <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 03 Jan 2019 11:33:01 +0800</lastBuildDate><atom:link href="https://fredgan.github.io/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://fredgan.github.io/tags/redis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Redis的使用</title>
       <link>https://fredgan.github.io/post/redis/</link>
       <pubDate>Thu, 03 Jan 2019 11:33:01 +0800</pubDate>
-      
       <guid>https://fredgan.github.io/post/redis/</guid>
-      <description>Redis的使用方法 一、 工具查看 可以直接使用 redisClients 软件界面操作查看 二、 命令行 redis-cli -h 127.0.0.1 -p 6379 2.1 基础命令 keys * // 列举所有的key expire &amp;lt;key&amp;gt; &amp;lt;seconds&amp;gt; // 设置某个key的过期时间（单位：秒） ttl &amp;lt;key&amp;gt; // 显示key的过期时间（单位：秒）【返回-1表示永久 -2表示key不存在】 persist &amp;lt;key&amp;gt; // 将key的时间设置为永久 set getset 都会将ke</description>
+      <description>&lt;h1 id=&#34;redis的使用方法&#34;&gt;Redis的使用方法&lt;/h1&gt;&#xA;&lt;h2 id=&#34;一-工具查看&#34;&gt;一、 工具查看&lt;/h2&gt;&#xA;&lt;p&gt;可以直接使用 &lt;code&gt;redisClients&lt;/code&gt; 软件界面操作查看&lt;/p&gt;&#xA;&lt;h2 id=&#34;二-命令行&#34;&gt;二、 命令行&lt;/h2&gt;&#xA;&lt;p&gt;&lt;code&gt;redis-cli -h 127.0.0.1 -p 6379&lt;/code&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;21-基础命令&#34;&gt;2.1 基础命令&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;keys *&lt;/code&gt;      // 列举所有的key&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;expire &amp;lt;key&amp;gt; &amp;lt;seconds&amp;gt;&lt;/code&gt; // 设置某个key的过期时间（单位：秒）&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;ttl &amp;lt;key&amp;gt;&lt;/code&gt; // 显示key的过期时间（单位：秒）【返回&lt;code&gt;-1&lt;/code&gt;表示永久 &lt;code&gt;-2&lt;/code&gt;表示key不存在】&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;persist &amp;lt;key&amp;gt;&lt;/code&gt; // 将key的时间设置为永久&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;set&lt;/code&gt; &lt;code&gt;getset&lt;/code&gt; 都会将key设置为永久&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;expireat &amp;lt;key&amp;gt; &amp;lt;1540000000&amp;gt;&lt;/code&gt; // 在某个时间点过期&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;code&gt;pexpire&lt;/code&gt; &lt;code&gt;pttl&lt;/code&gt; &lt;code&gt;pexpireat&lt;/code&gt; 跟上面一样，只是单位是毫秒&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

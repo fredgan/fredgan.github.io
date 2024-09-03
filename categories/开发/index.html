@@ -45,7 +45,7 @@
         <div class="col-group">
             <div class="site-name ">
                 
-                    <a id="logo" href="https://fredgan.github.io">
+                    <a id="logo" href="https://fredgan.github.io/">
                         FredGan&#39;s Blog
                     </a>
                 
@@ -53,7 +53,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="https://fredgan.github.io">首页</a>
+                    <a class="" href="https://fredgan.github.io/">首页</a>
                     
                     <a  href="https://fredgan.github.io/projects/" title="GitHub">GitHub</a>
                     
@@ -103,7 +103,10 @@
         </div>
         
         <div class="post-content">
-            谈谈质量 今天部门内部开了一个茶话会，会议的主题就是谈谈质量。 我们部门老大发表了一番自己对质量的看法，其中说到，质量是要求的满足程度，这是对质量一词的高度抽象的概括。本来是让大家都说说，我想了想，感觉没想清楚，就没发表意见了。 但是来公司之后，其实我对质量还是有比较深的感触的。我其实……
+            <h1 id="谈谈质量">谈谈质量</h1>
+<p>今天部门内部开了一个茶话会，会议的主题就是谈谈质量。</p>
+<p>我们部门老大发表了一番自己对质量的看法，其中说到，质量是要求的满足程度，这是对质量一词的高度抽象的概括。本来是让大家都说说，我想了想，感觉没想清楚，就没发表意见了。</p>
+<p>但是来公司之后，其实我对质量还是有比较深的感触的。我其实感觉到了公司对质量要求是很严格的，而且处处都透露着对质量的追求。</p>……
             <p class="readmore"><a href="https://fredgan.github.io/post/thinking-to-quality/">阅读全文</a></p>
         </div>
     </article>
@@ -126,7 +129,26 @@
         </div>
         
         <div class="post-content">
-            GDB 调试技巧 一、直接调试 1.1 启动与停止 run / r 启动程序 set args &lt;arg1&gt; &lt;arg2&gt; 设置程序运行参数 finish 结束当前函数的运行，函数剩余部分会执行完毕 return 立即结束当前函数执行并返回，可带参数返回 1.2 调试指令： step / next 执行下一行（进入函数）/（不进入函数） disassemble 查看汇编命令 stepi / nexti 执行下一条汇编指令 (进入函数)/（不进入函数）……
+            <h1 id="gdb-调试技巧">GDB 调试技巧</h1>
+<h2 id="一直接调试">一、直接调试</h2>
+<h3 id="11-启动与停止">1.1 启动与停止</h3>
+<ul>
+<li><code>run</code> / <code>r</code>  启动程序</li>
+<li><code>set args &lt;arg1&gt; &lt;arg2&gt;</code> 设置程序运行参数</li>
+<li><code>finish</code> 结束当前函数的运行，函数剩余部分会执行完毕</li>
+<li><code>return</code> 立即结束当前函数执行并返回，可带参数返回</li>
+</ul>
+<h3 id="12-调试指令">1.2 调试指令：</h3>
+<ul>
+<li><code>step</code> / <code>next</code> 执行下一行（进入函数）/（不进入函数）</li>
+<li><code>disassemble</code> 查看汇编命令</li>
+<li><code>stepi</code> / <code>nexti</code> 执行下一条汇编指令 (进入函数)/（不进入函数）</li>
+<li><code>jmp</code> 跳转指令</li>
+<li><code>info r</code> 查看寄存器值。<code>info</code> 可以简写为 <code>i</code></li>
+<li><code>bt</code> 查看调用路径</li>
+</ul>
+<blockquote>
+<p><strong>堆栈用途:</strong></p>……
             <p class="readmore"><a href="https://fredgan.github.io/post/gdb/">阅读全文</a></p>
         </div>
     </article>
@@ -151,7 +173,24 @@
         </div>
         
         <div class="post-content">
-            Redis的使用方法 一、 工具查看 可以直接使用 redisClients 软件界面操作查看 二、 命令行 redis-cli -h 127.0.0.1 -p 6379 2.1 基础命令 keys * // 列举所有的key expire &lt;key&gt; &lt;seconds&gt; // 设置某个key的过期时间（单位：秒） ttl &lt;key&gt; // 显示key的过期时间（单位：秒）【返回-1表示永久 -2表示key不存在】 persist &lt;key&gt; // 将key的时间设置为永久 set getset 都会将ke……
+            <h1 id="redis的使用方法">Redis的使用方法</h1>
+<h2 id="一-工具查看">一、 工具查看</h2>
+<p>可以直接使用 <code>redisClients</code> 软件界面操作查看</p>
+<h2 id="二-命令行">二、 命令行</h2>
+<p><code>redis-cli -h 127.0.0.1 -p 6379</code></p>
+<h3 id="21-基础命令">2.1 基础命令</h3>
+<ul>
+<li><code>keys *</code>      // 列举所有的key</li>
+<li><code>expire &lt;key&gt; &lt;seconds&gt;</code> // 设置某个key的过期时间（单位：秒）</li>
+<li><code>ttl &lt;key&gt;</code> // 显示key的过期时间（单位：秒）【返回<code>-1</code>表示永久 <code>-2</code>表示key不存在】</li>
+<li><code>persist &lt;key&gt;</code> // 将key的时间设置为永久
+<ul>
+<li><code>set</code> <code>getset</code> 都会将key设置为永久</li>
+</ul>
+</li>
+<li><code>expireat &lt;key&gt; &lt;1540000000&gt;</code> // 在某个时间点过期</li>
+</ul>
+<p><code>pexpire</code> <code>pttl</code> <code>pexpireat</code> 跟上面一样，只是单位是毫秒</p>……
             <p class="readmore"><a href="https://fredgan.github.io/post/redis/">阅读全文</a></p>
         </div>
     </article>
@@ -167,7 +206,7 @@
 
                     <footer id="footer">
     <div>
-        &copy; 2024 <a href="https://fredgan.github.io">FredGan&#39;s Blog</a>
+        &copy; 2024 <a href="https://fredgan.github.io/">FredGan&#39;s Blog</a>
         
         | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">粤ICP备2023125130号</a>
         
@@ -188,8 +227,6 @@
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
 
-
-
     <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
 
 
@@ -205,7 +242,7 @@
         <form id="search" action='https://fredgan.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
       <input type="text" name="q" maxlength="20" placeholder="Search">
-      <input type="hidden" name="sitesearch" value="https://fredgan.github.io">
+      <input type="hidden" name="sitesearch" value="https://fredgan.github.io/">
       <button type="submit" class="submit icon-search"></button>
 </form>
     </section>
@@ -306,7 +343,7 @@
     
     <a href="https://fredgan.github.io/tags/Markdown/">Markdown</a>
     
-    <a href="https://fredgan.github.io/tags/redis/">redis</a>
+    <a href="https://fredgan.github.io/tags/redis/">Redis</a>
     
     <a href="https://fredgan.github.io/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件</a>
     
