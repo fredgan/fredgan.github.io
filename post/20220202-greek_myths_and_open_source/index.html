@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>开源与希腊罗马神话 | FredGan&#39;s Blog</title>
+    <meta property="og:title" content="开源与希腊罗马神话 - FredGan&#39;s Blog">
+    <meta property="og:type" content="article">
+        
+        
+    <meta name="Keywords" content="c,c&#43;&#43;,go,ios,python,yang,netconf,软件架构,网络爬虫,压缩、项目管理,开源、cleancode">
+    <meta name="description" content="开源与希腊罗马神话">
+        
+    <meta name="author" content="FredGan">
+    <meta property="og:url" content="https://fredgan.github.io/post/20220202-greek_myths_and_open_source/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://fredgan.github.io/">
+                        FredGan&#39;s Blog
+                    </a>
+                
+                <p class="description">技术分享与学习成长: C/C&#43;&#43;/Go/Python/iOS/JavaScript、YANG/NetConf、爬虫、编译器、压缩序列化、开源、CleanCode</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://fredgan.github.io/">首页</a>
+                    
+                    <a  href="https://fredgan.github.io/projects/" title="GitHub">GitHub</a>
+                    
+                    <a  href="https://fredgan.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://fredgan.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#oracle">Oracle</a></li>
+        <li><a href="#prometheus">Prometheus</a></li>
+        <li><a href="#delphi">Delphi</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">开源与希腊罗马神话</h1>
+        </header>
+        <date class="post-meta meta-date">
+            1年1月1日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E5%BC%80%E6%BA%90'>开源</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <p>最近阅读一些希腊罗马神话相关的资料和书籍，了解了一些西方人对世界的认识和解释。</p>
+<p>希腊神话中将当时世界上能认识到的一切都用一个神来创造指代。大地之神盖亚Gaia、太阳之神阿波罗Apollo、月亮女神、天空之神、海洋之神、时间之神、爱与美之神Eros、黑夜之神、</p>
+<p>不由得感慨，他们对世界的认识和解释相比我们中国的那些神话，相对更加系统和完整。逻辑相对更加严密，建议各位开发者可以去读一读。</p>
+<p>那跟我们开源世界有什么关系呢？其实关系很大，因为这是他们认识世界的起源，这样就不由地将神话中的人物、故事会融入到他们的生活中。我们华为其实也是一样，很多上古神兽（更多集中在《山海经》）都被咱们注册为商标、专利了。</p>
+<p>在天文上中西方表现尤其明显。例如太阳系八大行星，咱们中国可能早些年天文观测只发现了太阳、月亮以及其他5大行星，因此，用阴阳五行命名：太阳为阳，月亮为阴，其他分别为金木水火土星。</p>
+<p>那西方怎么命名的呢？</p>
+<p>太阳有太阳神Apollo
+月亮有月亮女神Artemis</p>
+<p>水星 Mercury（以墨丘利Mercury命名）
+金星 Venus（罗马神话中爱与美的女神，对应希腊神话中的是阿芙洛狄特Aphrodite）
+火星 Mars（罗马神话中战神Mars，对应希腊神话中的战神是Ares）
+木星 Jupiter（罗马神话中的万神之王，对应希腊神话中的万神之王宙斯Zeus4）木星也是太阳系中最大的行星。
+土星 Saturn （农业、丰收、财富之神Saturn）</p>
+<p>好像有点扯远了，拉回正轨，在开源世界中有哪些东西受到了西方神话的影响呢？</p>
+<p>首先是公司的命名上。</p>
+<h3 id="oracle">Oracle</h3>
+<p>Oracle公司，鼎鼎大名 (<del>臭名昭著</del>)的软件公司。</p>
+<p><code>oracle</code>真实的含义是<code>神谕，神的旨意</code>的意思，为啥会被翻译为<code>甲骨文公司</code>呢？其实很让人费解。大概也许可能是最开始的一个译者以为 <code>oracle</code> 就是 <code>oracle bone script（甲骨文）</code> 的缩写。这样理解肯定是不对的。 <code>oracle bone script</code> 在骨头上刻了神谕，这样才能和我们的甲骨文才能对上。如果你说神谕就是甲骨文，那我是不接受的。</p>
+<p>不过，将Oracle翻译为<code>甲骨文公司</code>倒也歪打正着地好，毕竟这个公司做的事情还配不上<code>神谕</code>这样一个高大上的名字，反而做的事情是让人觉得像甲骨文那样看不懂地谜。</p>
+<p>其次是在开源项目的命名上。</p>
+<h3 id="prometheus">Prometheus</h3>
+<p>最著名的要数Prometheus了。</p>
+<p>开源项目Prometheus是一个时间监控和告警的项目。为什么会用Prometheus命名呢？原来，普罗米修斯Prometheus在希腊神话中，和雅典娜共同创造了人类，在宙斯发起对人类进行惩罚后，普罗米修斯又为人类偷取火种，因而被宙斯惩罚，被绑在山崖上，每天被一只鹫鹰啄食肝脏。</p>
+<p>普罗米修斯在宙斯对人类发起大洪水消灭人类的时候，普罗米修斯提前对他的儿子丢卡利翁准备一个方舟，谨防宙斯大洪水消灭人类，保住了人类的生命的延续。和开源项目的这个告警功能是一致的。</p>
+<h3 id="delphi">Delphi</h3>
+<p>在希腊神话中，德尔福Delphi是最重要的神圣的区域，被认为是世界的中心。当人们有困惑或者困难的时候就会那边的阿波罗神殿求取神谕，指点迷津。</p>
+<p>而软件领域的Delphi是Windows平台下Object Pascal语言集成开发环境，支持应用程序快速开发。严格来说，它不是开源软件。Delphi擅长于桌面开发、CRM开发、数据库软件系统开发等等，在这几个领悟鲜有能出其右者。后来Delphi开发团队总负责人离开Borland去了微软开发.net，C#就是这样的产物，在C#上能看到很多Delphi的影子。</p>
+<blockquote>
+<p>“真正的程序员用C，聪明的程序员用Delphi”</p>
+</blockquote>
+<p>这句话就像 “<code>人生苦短，我用Python</code>” 一样。但随着其他优秀语言的兴起，Delphi逐步衰弱了。</p>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><strong><a href="/post/thinking-to-chatgpt/"> 说说ChatGPT - 2023/04/06</a></strong></li>
+        
+        <li><strong><a href="/post/20230406-thinking-to-chatgpt/"> 说说ChatGPT - 2023/04/06</a></strong></li>
+        
+        <li><strong><a href="/post/20230405-kuangbiao-role-names-art/"> 《狂飙》取名的艺术 - 2023/04/05</a></strong></li>
+        
+        <li><strong><a href="/post/kuangbiao-role-names-art/"> 《狂飙》取名的艺术 - 2023/04/05</a></strong></li>
+        
+        <li><strong><a href="/post/thinking-to-landlord-card-game/"> 连炸斗地主直播观感 - 2023/01/08</a></strong></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            没有标签
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <script src="https://giscus.app/client.js"
+            data-repo="fredgan/fredgan.github.io"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkxNjQ2NDg4MTI="
+            data-category="Announcements"
+            data-category-id="DIC_kwDOCdBXbM4CPSMl"
+            data-mapping="pathname"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="light"
+            data-lang="zh-CN"
+            crossorigin="anonymous"
+            async>
+    </script>
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2024 <a href="https://fredgan.github.io/">FredGan&#39;s Blog</a>
+        
+        | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">粤ICP备2023125130号</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://fredgan.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://fredgan.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20240218-annual-summary-2023/" title="2023年度总结">2023年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/annual-summary-2023/" title="2023年度总结">2023年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230802-analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230406-thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230405-kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230314-the-it-interpretation-of-life-philosophy/" title="人生哲理的计算机解释">人生哲理的计算机解释</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230108-thinking-to-landlord-card-game/" title="连炸斗地主直播观感">连炸斗地主直播观感</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://fredgan.github.io/categories/LICENSE/">LICENSE (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%AD%A6%E4%B9%A0/">学习 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%B7%A5%E5%85%B7/">工具 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">年度总结 (8)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%BC%80%E5%8F%91/">开发 (7)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%BC%80%E6%BA%90/">开源 (6)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%84%9F%E6%82%9F/">感悟 (25)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%8E%A8%E8%8D%90/">推荐 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%95%88%E7%8E%87/">效率 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E7%94%9F%E6%B4%BB/">生活 (6)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言 (6)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E8%8B%B1%E8%AF%AD/">英语 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E8%BD%AF%E4%BB%B6/">软件 (4)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://fredgan.github.io/tags/C%E8%AF%AD%E8%A8%80/">C语言</a>
+    
+    <a href="https://fredgan.github.io/tags/Markdown/">Markdown</a>
+    
+    <a href="https://fredgan.github.io/tags/redis/">Redis</a>
+    
+    <a href="https://fredgan.github.io/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件</a>
+    
+    <a href="https://fredgan.github.io/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+    
+    <a href="https://fredgan.github.io/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%84%9F%E6%82%9F/">感悟</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%8E%A8%E8%8D%90/">推荐</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%95%88%E7%8E%87/">效率</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://time.geekbang.org/" title="geektime">极客时间</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://github.com/fredgan" title="github">Github</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://tools.fredgan.com" title="tools">Fred&#39;s Tools</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://fredgan.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

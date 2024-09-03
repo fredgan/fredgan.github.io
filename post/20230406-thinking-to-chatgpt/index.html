@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>说说ChatGPT | FredGan&#39;s Blog</title>
+    <meta property="og:title" content="说说ChatGPT - FredGan&#39;s Blog">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2023-04-06T04:36:32&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2023-04-06T04:36:32&#43;08:00'>
+        
+    <meta name="Keywords" content="c,c&#43;&#43;,go,ios,python,yang,netconf,软件架构,网络爬虫,压缩、项目管理,开源、cleancode">
+    <meta name="description" content="说说ChatGPT">
+        
+    <meta name="author" content="FredGan">
+    <meta property="og:url" content="https://fredgan.github.io/post/20230406-thinking-to-chatgpt/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://fredgan.github.io/">
+                        FredGan&#39;s Blog
+                    </a>
+                
+                <p class="description">技术分享与学习成长: C/C&#43;&#43;/Go/Python/iOS/JavaScript、YANG/NetConf、爬虫、编译器、压缩序列化、开源、CleanCode</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://fredgan.github.io/">首页</a>
+                    
+                    <a  href="https://fredgan.github.io/projects/" title="GitHub">GitHub</a>
+                    
+                    <a  href="https://fredgan.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://fredgan.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents"></nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">说说ChatGPT</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2023年4月6日
+        </date>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <p>说说ChatGPT吧。</p>
+<p>约在去年12月初，OpenAI发布了一个聊天机器人——ChatGPT。当时在朋友圈同时看到两个校友发布相关信息，感觉很神奇，因此特别去研究了一下。而后，通过美国朋友手机号注册了一个OpenAI账号。体验了一把，真的有震惊到我。</p>
+<p>在12月到1月左右，还没有太引起公众的注意力，毕竟国内无法直接体验。直到二三月，国内才出现翻天覆地的各种报道。在3月份初的时候，我关注的所有微信公众号里面，大约有一半的推文话题都是ChatGPT。讲原理的、分享搞笑的、传播焦虑的、研究投资的、分享怎么注册的、分享怎么提问的、分享知识出错的、蹭热点的，卖课的，应有尽有。可能那时候，OpenAI赚的钱还没有国内这些抓住机会投机取巧的人赚的钱多。这里想感叹几句，说句可能会被人骂的话，国人的聪明才智都被用到歪门邪道上了，大部分国人都是鼠目寸光，只能看到短期和眼前的收益。要不然，这种突破性的创新革命怎么就没法发生在我们国家呢？</p>
+<p>想必到现在了，很多人都已经了解了ChatGPT是啥了。我这里也不想讲GPT实现原理，一方面这个确实太复杂，虽然我看了不少讲解，但我没有把握能讲清楚；另一方面，有太多人已经讲的很清楚了，不继续啰嗦了。可以参考师兄写的<a href="https://mp.weixin.qq.com/s/PHTFpyyalOALskOQc3dq_Q">《从0开始学chatGPT》</a>系列文章</p>
+<p>也可以在YouTube上看AI大神 Mu Li 的视频 <a href="https://www.youtube.com/watch?v=zfIGAwD1jOQ">ChatGPT背后的技术</a>, 或者Hung-yi Lee的<a href="https://www.youtube.com/watch?v=e0aKI2GGZNg">ChatGPT是怎么练成的</a></p>
+<p>自从2016年 AlphaGo 战胜人类顶级棋手以来，AI的发展进入了快车道。随着神经网络的种类越来越丰富，以及计算算力接近摩尔定律的级别提升，AI发展日新月异。如果说，AlphaGo还只是一个专用于下棋的机器人，除了让围棋选手跌落神坛，围棋行业发生一些变化之外，还不至于引起人类的恐慌。那么，ChatGPT的出现，必然会引发一场革命，这场革命我称之为第四次工业革命 - 人工智能革命。</p>
+<p>人类的出现有几百万年，在第一次工业革命之前，一切都发展的那么缓慢，祖祖辈辈的生活模式都一模一样，日出而作日落而息。在工业革命之后，人类的进化也进入了快车道。但如果要与AI对比，那么人类的进化速度像蜗牛。AI就像一个后起之秀，让人类先发展几百万年，然后花几十年开始起步，加速追赶，然后超过，然后远远地将人类甩在身后。让人类慢慢地永远无法望其项背。AlphaGo是这样，自从AlphaGo战胜李世石之后，没有一个人类棋手能够战胜AlphaGo，甚至评价人类棋手的水平也不再是战绩，而是某个棋局的下一手棋，人类棋手落子的位置和AI落子的位置有多相似，相似度越高，水平越高。我想，ChatGPT应该也是这样。现在是ChatGPT正在追赶人类。ChatGPT-4在许多方面已经优于人类了，人类恐怕在这些方面已经永远无法超越AI了。参考Mu Li的<a href="https://www.youtube.com/watch?v=K0SZ9mdygTw">《GPT-4详细解读》</a>。而这些进展，仅仅只过了几个月。</p>
+<p>这当然会让许多人引发担忧，担心自己被机器人代替。这种担忧不无道理，微软自己也在做这方面的研究，研究表示，至少有18%的人，50%的工作会被AI代替。我觉得这个评估还是太保守了，能被替代的我觉得远远不止这些，我认为在不久的将来，至少50%的人会被全部替代，80%的人会受到影响。人类社会会被极大的重构。第四次工业革命的影响就是这样全方位的。你可以说我对未来不是一个乐观的人，但我坚定自己的想法。</p>
+<p>我为什么会这么想？以我了解的这个世界和人类来说，人类最强的能力是什么？我觉得人类最强的能力是模仿能力，其次是理解能力，这综合构成了人类的学习能力。从对小孩的成长教育就不难得出这点，正所谓身教大于言传。有了这几个能力，人类才会不断进步。然而但从目前来看，AI的模仿能力，不论是AlphaGo还是ChatGPT，都有一流的模仿能力，不但模仿的很像，而且模仿的还很全面，丝毫不亚于人类。理解能力目前，AI还稍微弱于人类。但有朝一日AI的理解能力提升了，那么人类肯定是招架不住的，因为，机器可以没日没夜地学习，而且速度比人类快得多，将来，一个人真的只有可能在某一个很小的方面超过AI，其他方面都被碾压。</p>
+<p>除了搞研究的人之外，当前职场上大部分人的工作其实都是一些重复劳动的体力活，虽然有些活自称是脑力活，但实际上是体力活。这些工作都是AI很擅长或者说将来多模态成熟之后就会很擅长的，他们耗费的成本更低，没有情绪，没日没夜地干，当然会很容易被替代。现在就已经听说过好几个公司，已经因为引入了AI而开除掉一半的人了。一个例子是公众号矩阵运营，用AI写作，因为效率高，不再需要那么多人写，开除掉了一半的员工。另一个例子是游戏原画师，使用MidJourney后，开除掉了一半的原画师。可能这还是保守的操作。</p>
+<p>说了这么多对未来的影响，很多人的饭碗可能要丢，包括作为程序员的我。但是不是就这样束手就擒了呢？我想也未必是这样，任何一个工具的出现，或者说任何一个工业革命的出现，会有很多工作被替代，也会产生许多的工种。如果一直墨守陈规，自然会被时代无情地远远地甩在后面。世界上唯一不变的就是变化。</p>
+<p>虽然这次的革命跟之前的不太一样，因为出现了接近人类的智能。但我们人类可能依然有一些机会。知己知彼，百战不殆。我们看看，这个GPT有什么缺点。</p>
+<p>根据各路大神和我自己的理解，ChatGPT当前有如下几个缺点：</p>
+<ol>
+<li>运算成本高。因为参数大，算力消耗大，因此成本还挺高的。但这个可能会随着摩尔定律而成本逐渐降低。</li>
+<li>理解能力差。比如在数学上的表现，因为是基于模仿的，所以对数学运算结果可能并不理解。但这个可以跟人类一样，他可以学习使用工具，通过接入其他的能力来提高自己，例如接入Wolfram Alpha、MATLAB、Mathematics等专业软件提升自己的数学能力，其他领域也是一样。当前有个ChatGPT Tool Plugin，给ChatGPT使用工具的能力，让ChatGPT更像人。</li>
+<li>一本正经胡说八道。就是容易出错，这个出错可能是因为训练使用的数据集本身有错误，或者人类进行了恶意反馈导致。这个随着时间的发展，这种错误会慢慢减少。但我觉得这可能永远是一个猫抓老鼠的游戏，协同进化罢了。</li>
+<li>安全问题。人类需要遵守法律，ChatGPT当然也需要遵守法律，不该说的话不能说。而且在特定国家特定地区就要遵守当地的法律法规。这是一个值得深入研究的问题，OpenAI已经在做了，而且已经做的越来越好，但距离完美应该还有很长的路要走。</li>
+<li>未知/私密领域知识没得到训练，这方面会表现很差，或者一般的企业或者组织，永远不会使用公开AI工具训练甚至不会使用公开的AI进行提问，然而，由于AI训练成本巨大，从而可能永远都不会被训练。</li>
+<li>AI没有心机。这个不知道算是优点还是缺点。就像三体人，AI的想法一切都是透明的，因为都是神经网络参数。只是这个原理我们还没搞清楚。</li>
+<li>隐私问题。一旦某些私密信息被训练到了公开AI模型中，那么这些数据怎么清理删除是个比较严重的问题。</li>
+<li>偏见。这个跟安全也有点点相关。毕竟是输出结果，可能包含观点，但是观点是有可能存在偏见或者极端的，可能会触发相关法规或者特定人群的嫌恶。</li>
+</ol>
+<p>研究者几个重点研究方向：</p>
+<ol>
+<li>如何提问</li>
+<li>如何鉴定是AGI提供的内容</li>
+<li>如何纠错</li>
+<li>如何删除隐私内容</li>
+<li>如何防止被用于犯罪</li>
+<li>多模态</li>
+<li>怎么使用更广泛的工具</li>
+<li>为什么会出现智能【涌现怎么理解】</li>
+</ol>
+<p>普通人的方向：</p>
+<ol>
+<li>如何提问，提高自己的工作效率</li>
+<li>怎么</li>
+</ol>
+<p>微软研究显示，ChatGPT-4已经在一定程度上表现出了通用人工智能，表现出了一定的意识。我记得去年一个谷歌员工就表示，谷歌训练的一个AI表现出了意识，结果被开除了。没想到短短的一年，就已经成为很多人都不得不承认的近乎事实。</p>
+<p>系统 - 涌现，康威生命游戏。技术先行，科学落后。科学无法解释。正如意识无法解释一样，也就代表我们无法知道ChatGPT是否有自我意识。</p>
+<p>佩服这次微软。出手快狠准，大手笔投资。</p>
+<p>陨落：</p>
+<ol>
+<li>从【简单重复性工作容易被替代】到【重复性的工作最容易被替代】。</li>
+<li>打败Google的不会是其他搜索引擎，只能是其他工具，如ChatGPT。相关搜索产业链的行业，如竞价排行、SEO等都会被替代。</li>
+<li>相关搜索、提问类的应用和网站都会被ChatGPT替代，如家教、培训机构、付费咨询、在线医疗、客服等都会最大程度低被取代。</li>
+</ol>
+<p>崛起：</p>
+<ol>
+<li>国内会因为会限制言论自由以及保护相关行业等原因，前两三年会被限制进入，以观察国外的发展情况，然后再适当放开到特定行业。</li>
+<li>本土化的模型落后国外至少两年。</li>
+<li>但技术所驱，技术封锁导致日以落后，最终无法完全封锁。预计在三年后国内会有相关产业崛起。</li>
+</ol>
+<p>投资：</p>
+<ol>
+<li>陨落的夕阳产业企业：</li>
+<li>冉冉升起的朝阳产业：</li>
+</ol>
+<p>对抗：</p>
+<p>怎么对抗AI？</p>
+<ol>
+<li>减少正确的公共知识的传播</li>
+<li>传播错误的知识</li>
+<li>恶意训练</li>
+</ol>
+<p>黄大年茶思屋：https://www.chaspark.net/#/hotspots/844646198940250112</p>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><strong><a href="/post/thinking-to-chatgpt/"> 说说ChatGPT - 2023/04/06</a></strong></li>
+        
+        <li><strong><a href="/post/20230405-kuangbiao-role-names-art/"> 《狂飙》取名的艺术 - 2023/04/05</a></strong></li>
+        
+        <li><strong><a href="/post/kuangbiao-role-names-art/"> 《狂飙》取名的艺术 - 2023/04/05</a></strong></li>
+        
+        <li><strong><a href="/post/20230108-thinking-to-landlord-card-game/"> 连炸斗地主直播观感 - 2023/01/08</a></strong></li>
+        
+        <li><strong><a href="/post/thinking-to-landlord-card-game/"> 连炸斗地主直播观感 - 2023/01/08</a></strong></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            没有标签
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <script src="https://giscus.app/client.js"
+            data-repo="fredgan/fredgan.github.io"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkxNjQ2NDg4MTI="
+            data-category="Announcements"
+            data-category-id="DIC_kwDOCdBXbM4CPSMl"
+            data-mapping="pathname"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="light"
+            data-lang="zh-CN"
+            crossorigin="anonymous"
+            async>
+    </script>
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2024 <a href="https://fredgan.github.io/">FredGan&#39;s Blog</a>
+        
+        | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">粤ICP备2023125130号</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://fredgan.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://fredgan.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20240218-annual-summary-2023/" title="2023年度总结">2023年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/annual-summary-2023/" title="2023年度总结">2023年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230802-analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230406-thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230405-kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230314-the-it-interpretation-of-life-philosophy/" title="人生哲理的计算机解释">人生哲理的计算机解释</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230108-thinking-to-landlord-card-game/" title="连炸斗地主直播观感">连炸斗地主直播观感</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://fredgan.github.io/categories/LICENSE/">LICENSE (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%AD%A6%E4%B9%A0/">学习 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%B7%A5%E5%85%B7/">工具 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">年度总结 (8)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%BC%80%E5%8F%91/">开发 (7)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%BC%80%E6%BA%90/">开源 (6)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%84%9F%E6%82%9F/">感悟 (25)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%8E%A8%E8%8D%90/">推荐 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%95%88%E7%8E%87/">效率 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E7%94%9F%E6%B4%BB/">生活 (6)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言 (6)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E8%8B%B1%E8%AF%AD/">英语 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E8%BD%AF%E4%BB%B6/">软件 (4)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://fredgan.github.io/tags/C%E8%AF%AD%E8%A8%80/">C语言</a>
+    
+    <a href="https://fredgan.github.io/tags/Markdown/">Markdown</a>
+    
+    <a href="https://fredgan.github.io/tags/redis/">Redis</a>
+    
+    <a href="https://fredgan.github.io/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件</a>
+    
+    <a href="https://fredgan.github.io/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+    
+    <a href="https://fredgan.github.io/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%84%9F%E6%82%9F/">感悟</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%8E%A8%E8%8D%90/">推荐</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%95%88%E7%8E%87/">效率</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://time.geekbang.org/" title="geektime">极客时间</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://github.com/fredgan" title="github">Github</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://tools.fredgan.com" title="tools">Fred&#39;s Tools</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://fredgan.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

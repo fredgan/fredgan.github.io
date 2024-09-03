@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>《C陷阱和缺陷》读书笔记（1）- 词法”陷阱“ | FredGan&#39;s Blog</title>
+    <meta property="og:title" content="《C陷阱和缺陷》读书笔记（1）- 词法”陷阱“ - FredGan&#39;s Blog">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2020-07-13T22:21:58&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2020-07-15T00:00:00&#43;08:00'>
+        
+    <meta name="Keywords" content="[C语言]">
+    <meta name="description" content="《C陷阱和缺陷》读书笔记（1）- 词法”陷阱“">
+        
+    <meta name="author" content="FredGan">
+    <meta property="og:url" content="https://fredgan.github.io/post/c-traps/20200713-c-traps-chapter-one/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://fredgan.github.io/">
+                        FredGan&#39;s Blog
+                    </a>
+                
+                <p class="description">技术分享与学习成长: C/C&#43;&#43;/Go/Python/iOS/JavaScript、YANG/NetConf、爬虫、编译器、压缩序列化、开源、CleanCode</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://fredgan.github.io/">首页</a>
+                    
+                    <a  href="https://fredgan.github.io/projects/" title="GitHub">GitHub</a>
+                    
+                    <a  href="https://fredgan.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://fredgan.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#目录">目录</a></li>
+    <li><a href="#概述">概述</a></li>
+    <li><a href="#一词法陷阱">一、词法陷阱</a>
+      <ul>
+        <li><a href="#11--不等于">1.1  =不等于==</a></li>
+        <li><a href="#12--和--不同于--和-">1.2 <code>&amp;</code> 和 <code>|</code> 不同于 <code>&amp;&amp;</code> 和 <code>||</code></a></li>
+        <li><a href="#13-词法分析中的贪心算法">1.3 词法分析中的“贪心”算法</a></li>
+        <li><a href="#14-整型常量">1.4 整型常量</a></li>
+        <li><a href="#15-字符和字符串">1.5 字符和字符串</a></li>
+      </ul>
+    </li>
+    <li><a href="#附录">附录</a></li>
+    <li><a href="#更多">更多</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">《C陷阱和缺陷》读书笔记（1）- 词法”陷阱“</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年7月13日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80'>编程语言</a></span>
+            
+            <span class="meta-category"><a href='/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0'>读书笔记</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <p>为了敦促自己读书，特地开了一个读书笔记系列。</p>
+<p>自上大学学习了谭浩强版本的《C程序设计》以来，以及经过这么多年遭受的C/C++面试和工作的毒打，就有一个感觉，C/C++语言的设计处处充满了陷阱。编译器设计之复杂，条目细则之多，感觉远远超出了其他语言。掌握了越多的这些”细则“或者”陷阱“，就离大师就更近了一步。而这些大师们，也津津乐道于讲述自己所掌握的这些”陷阱”以彰显自己大师之风范，以在面试中能够用这些“陷阱”困住面试者为骄傲！难怪人们常说，“细节决定成败”！而程序员最需要掌握的更加是一些编程语言、编译器的细节。</p>
+<p><code>You are the master of the C language!</code> &ndash;&gt; 其实是个双关语! 哈哈 :)</p>
+<p>幸好有了 <code>Andrew Koenig</code> 的 <code>《C Traps and Pitfalls》</code>，带领我们一步步揭开 C 语言的面纱，避开一个个诡异的陷阱，走向 C 语言专家，成为 C语言大师！恨自己早些年没有读这本书！</p>
+<h2 id="目录">目录</h2>
+<ul>
+<li>词法陷阱</li>
+<li>语法陷阱</li>
+<li>语义陷阱</li>
+<li>连接</li>
+<li>库函数</li>
+<li>预处理器</li>
+<li>可移植性缺陷</li>
+</ul>
+<h2 id="概述">概述</h2>
+<p>这本书主要是按照C语言编译链接过程顺序来排版。作者是鼎鼎大名的贝尔实验室的大牛。作者和贝尔实验室同时期的大部分鼎鼎有名的人都是同事，他们也都有帮忙协助修订本书。光我熟悉的人中就有 Dennis Ritchie(C语言设计者)， Bjarne Strustrup(C++语言设计者)，Rob Pike(Go语言设计者) Steve Bellovin(《Accelerated C++》和《C++ Primer》作者)等等，还有十几个名字我还没来得及去查。真的是牛人身边都是牛人！</p>
+<p>这本书出的比较早，作者写本书的时候，ANSI C标准甚至还没有定稿，作者也是ANSI C的标准委员会成员，当然也就是制定者之一了。</p>
+<h2 id="一词法陷阱">一、词法陷阱</h2>
+<p>废话不多说，直接开始吧！</p>
+<h3 id="11--不等于">1.1  =不等于==</h3>
+<p>如果你问一个C语言新手在编程的时候最常犯的错误是什么，那么答案极有可能就是，</p>
+<blockquote>
+<p>我在 if 条件里面判断的时候少写了一个等号！</p>
+</blockquote>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">if</span> (x <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">3</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#900;font-weight:bold">printf</span>(<span style="color:#d14">&#34;x = 3&#34;</span>); <span style="color:#998;font-style:italic">// 因为if里面是个赋值语句，表达式永远为真，该语句都会被执行。
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>是的！这也是我在C/C++编程的时候常常犯的错误！而且这种错误非常致命，因为编译器不会报告任何错误，甚至都不会有警告！这种错误 <strong>$\color{red}{非常难以排查}$</strong> ！</p>
+<p>为此，许多IT公司还设计出了一个看起来不美观但是有效的办法，将操作数判断放到等号前面作为左值，这样编译器发现少了一个等号，就会报告错误！让这种错误无处遁形。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">if</span> (<span style="color:#099">3</span> <span style="color:#000;font-weight:bold">=</span> x) {  <span style="color:#998;font-style:italic">// 编译器会报错，因为数字 3 不是变量，不能成为左值被赋值。
+</span></span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"></span>    <span style="color:#900;font-weight:bold">printf</span>(<span style="color:#d14">&#34;x = 3&#34;</span>); 
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>而许多其他语言也积极吸取了该教训，有的将赋值操作换一个操作符，<code>=</code>只作为相等比较。有的则在if的判断表达式里面禁用等号赋值操作，只使用一个等号的直接报错！</p>
+<h3 id="12--和--不同于--和-">1.2 <code>&amp;</code> 和 <code>|</code> 不同于 <code>&amp;&amp;</code> 和 <code>||</code></h3>
+<p>其实是 赋值符号 和 相等 符号问题的延伸。作者认为这也是很容易犯的错误，容易漏写一个。但好像我们中国人不太容易犯这个错，至少我是很少的。</p>
+<p>不过关于 <code>&amp;&amp;</code> 和 <code>||</code> 我倒有一点想说，这两个符号都是 <strong>短路计算</strong>。 这也算是表达式副作用的体现，我觉得后面可能会有专门一章讲解表达式和函数的副作用。</p>
+<ul>
+<li><code>a &amp;&amp; b</code> ，如果 <code>a</code> 为假，则 <code>b</code> 不再进行计算（如果有函数调用，则不会进行调用）。</li>
+<li><code>a || b</code> ，如果 <code>a</code> 为真，则 <code>b</code> 不再进行计算。</li>
+</ul>
+<h3 id="13-词法分析中的贪心算法">1.3 词法分析中的“贪心”算法</h3>
+<p>说道贪心算法，“我要，我还要！”闪过脑海，想必大家都非常了解了！ 说的简单一点就是，当从前往后识别的时候，遇到满足条件的就能够满足的就要的更多！举个栗子！</p>
+<pre tabindex="0"><code>int *p;
+int b = x/*p;
+</code></pre><p>你们认为这段表达的意思是什么呢？我省去了语法高亮。我再把语法高亮打开，看看</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#458;font-weight:bold">int</span> <span style="color:#000;font-weight:bold">*</span>p
+</span></span><span style="display:flex;"><span><span style="color:#458;font-weight:bold">int</span> b <span style="color:#000;font-weight:bold">=</span> x<span style="color:#998;font-style:italic">/*p;
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>贪心算法遇到 <code>/</code>的时候，如果后面遇到了 <code>*</code> 则贪心地将这两个符号组合在一起，构成多行注释的前半部分。而不是 <code>x</code> 除以 <code>*p</code>，而要表达这个意思，则需要写作 <code>int b = x / *p;</code> 或者 <code>int b = x/(*p);</code></p>
+<p>所以，一个思考题：<code>a---b</code> 表达的是 <code>a-- -b</code> 还是 <code>a- --b</code> 呢？
+而 <code>a+++++b</code> 表示的是什么呢？</p>
+<p>（答案参见<a href="#%E9%99%84%E5%BD%95">附录</a>）</p>
+<h3 id="14-整型常量">1.4 整型常量</h3>
+<p>在 C语言程序中，整数表示有二进制、八进制、十进制和十六进制等多种表示方法。
+<code>0b01010101</code> <code>010</code> <code>1234</code> <code>0xffff</code></p>
+<p>格外需要注意 <code>010</code> 不是我们通常意义上的10，而是八进制的，表达的数字其实就是8。 我猜测，原本应该写为 <code>0o10</code>，但怎么看一个字母小写<code>o</code> 在数字钟都显得比较奇怪，因为跟 <code>0</code> 比较接近，因此直接禁掉这种写法比较干脆。 但没有了这个小欧，有些人在 <strong>代码对齐</strong> 的时候就可能忽视掉这个0开头导致数字弄错。这个需要格外注意！</p>
+<h3 id="15-字符和字符串">1.5 字符和字符串</h3>
+<p>在C语言中，单引号引起的字符跟这个字符代表的ASCII码数字完全等价！ 比如， <code>char a = 'a';</code> 和 <code>char a = 97;</code> 是完全一样的。 <code>'a' + 'd'</code> 就完全等于 <code>197</code> 。</p>
+<p>而 双引号引起的字符串，代表的是一个 字符数组常量的 <strong>指针</strong>。其实，也就是一个地址。</p>
+<p>而如果这两者混用，通常情况下，会报告错误，但有些情况不会报错，就可能产生难以预料的错误（通常是导致程序崩溃），例如：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#900;font-weight:bold">printf</span>(<span style="color:#d14">&#34;</span><span style="color:#d14">\n</span><span style="color:#d14">&#34;</span>);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>和</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#900;font-weight:bold">printf</span>(<span style="color:#d14">&#39;\n&#39;</span>);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上面这个例子我们都知道，没啥问题，打印一个换行符。而下面这个例子则就迷惑多了！ 掌握了这两个的区别，其实很简单，就是把 <code>'\n'</code>(换行符) 这个字符ASCII值（10）当做了一个字符串指针地址传给了printf函数，所以打印出来的东西可能很混乱，也可能是崩溃，属于非法访问。</p>
+<p>第一章就这样完成了！撒花✿✿ヽ(°▽°)ノ✿！</p>
+<h2 id="附录">附录</h2>
+<ul>
+<li>1 表示 <code>a-- -b</code></li>
+<li>2 表示 <code>a++ ++ +b</code>，会编译报错！</li>
+</ul>
+<h2 id="更多">更多</h2>
+<p>[[20200715-c-traps-chapter-two]]</p>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><strong><a href="/post/c-traps/c-traps-chapter-one/"> 《C陷阱和缺陷》读书笔记（1）- 词法”陷阱“ - 2020/07/13</a></strong></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/C%E8%AF%AD%E8%A8%80'>C语言</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <script src="https://giscus.app/client.js"
+            data-repo="fredgan/fredgan.github.io"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkxNjQ2NDg4MTI="
+            data-category="Announcements"
+            data-category-id="DIC_kwDOCdBXbM4CPSMl"
+            data-mapping="pathname"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="light"
+            data-lang="zh-CN"
+            crossorigin="anonymous"
+            async>
+    </script>
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2024 <a href="https://fredgan.github.io/">FredGan&#39;s Blog</a>
+        
+        | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">粤ICP备2023125130号</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://fredgan.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://fredgan.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20240218-annual-summary-2023/" title="2023年度总结">2023年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/annual-summary-2023/" title="2023年度总结">2023年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230802-analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230406-thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230405-kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230314-the-it-interpretation-of-life-philosophy/" title="人生哲理的计算机解释">人生哲理的计算机解释</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230108-thinking-to-landlord-card-game/" title="连炸斗地主直播观感">连炸斗地主直播观感</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://fredgan.github.io/categories/LICENSE/">LICENSE (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%AD%A6%E4%B9%A0/">学习 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%B7%A5%E5%85%B7/">工具 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">年度总结 (8)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%BC%80%E5%8F%91/">开发 (7)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%BC%80%E6%BA%90/">开源 (6)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%84%9F%E6%82%9F/">感悟 (25)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%8E%A8%E8%8D%90/">推荐 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%95%88%E7%8E%87/">效率 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E7%94%9F%E6%B4%BB/">生活 (6)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言 (6)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E8%8B%B1%E8%AF%AD/">英语 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E8%BD%AF%E4%BB%B6/">软件 (4)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://fredgan.github.io/tags/C%E8%AF%AD%E8%A8%80/">C语言</a>
+    
+    <a href="https://fredgan.github.io/tags/Markdown/">Markdown</a>
+    
+    <a href="https://fredgan.github.io/tags/redis/">Redis</a>
+    
+    <a href="https://fredgan.github.io/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件</a>
+    
+    <a href="https://fredgan.github.io/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+    
+    <a href="https://fredgan.github.io/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%84%9F%E6%82%9F/">感悟</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%8E%A8%E8%8D%90/">推荐</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%95%88%E7%8E%87/">效率</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://time.geekbang.org/" title="geektime">极客时间</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://github.com/fredgan" title="github">Github</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://tools.fredgan.com" title="tools">Fred&#39;s Tools</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://fredgan.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>数据库软件简介 | FredGan&#39;s Blog</title>
+    <meta property="og:title" content="数据库软件简介 - FredGan&#39;s Blog">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2020-08-19T14:08:05&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2020-08-19T14:08:05&#43;08:00'>
+        
+    <meta name="Keywords" content="[软件 数据库]">
+    <meta name="description" content="数据库软件简介">
+        
+    <meta name="author" content="FredGan">
+    <meta property="og:url" content="https://fredgan.github.io/post/20200819-database-software/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://fredgan.github.io/">
+                        FredGan&#39;s Blog
+                    </a>
+                
+                <p class="description">技术分享与学习成长: C/C&#43;&#43;/Go/Python/iOS/JavaScript、YANG/NetConf、爬虫、编译器、压缩序列化、开源、CleanCode</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://fredgan.github.io/">首页</a>
+                    
+                    <a  href="https://fredgan.github.io/projects/" title="GitHub">GitHub</a>
+                    
+                    <a  href="https://fredgan.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://fredgan.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#question">Question</a></li>
+    <li><a href="#1-数据类型">1 数据类型</a>
+      <ul>
+        <li><a href="#11-关系型数据">1.1 关系型数据</a></li>
+        <li><a href="#12-非关系型数据">1.2 非关系型数据</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-数据库">2 数据库</a>
+      <ul>
+        <li><a href="#21-关系型数据库软件">2.1 关系型数据库软件</a></li>
+        <li><a href="#22-非关系型数据库软件">2.2 非关系型数据库软件</a></li>
+        <li><a href="#23-大数据">2.3 大数据</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-总结">3 总结</a>
+      <ul>
+        <li><a href="#31-关于差距">3.1 关于差距</a></li>
+        <li><a href="#32-关于卡脖子">3.2 关于卡脖子</a></li>
+        <li><a href="#33-全球格局">3.3 全球格局</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">数据库软件简介</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年8月19日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E8%BD%AF%E4%BB%B6'>软件</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <h2 id="question">Question</h2>
+<p>科普类型：美国的数据库软件在什么地方先进，我们差距在哪？有什么卡脖子的？现在全球竞争格局是怎样的？</p>
+<h2 id="1-数据类型">1 数据类型</h2>
+<p>数据库是用来存储数据的，先简单介绍一下数据有哪些类型。</p>
+<p>常见的数据类型有：</p>
+<h3 id="11-关系型数据">1.1 关系型数据</h3>
+<p>其实就类似于Excel表格通常所呈现的数据那样，每一行每一列整整齐齐，井井有条。同一个表之间有可能有唯一性关系，不同的表之间也可能存在一些关联。</p>
+<p>例如：</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">序号</th>
+          <th style="text-align: left">姓名</th>
+          <th style="text-align: left">身高</th>
+          <th style="text-align: left">体重</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">张三</td>
+          <td style="text-align: left">160</td>
+          <td style="text-align: left">50</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">李四</td>
+          <td style="text-align: left">161</td>
+          <td style="text-align: left">60</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">3</td>
+          <td style="text-align: left">王五</td>
+          <td style="text-align: left">162</td>
+          <td style="text-align: left">70</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="12-非关系型数据">1.2 非关系型数据</h3>
+<p>其他的数据基本就归类为非关系型数据，例如图片、视频、文档 等等</p>
+<h2 id="2-数据库">2 数据库</h2>
+<p>由此，为了针对不同的数据就需要专门设计对应的数据库进行存储。</p>
+<p>数据库软件在不同的维度有不同的软件设计，按照<strong>数据类型</strong>， <strong>数据量大小</strong>，<strong>存储位置</strong> 等维度有不同的数据库软件。</p>
+<p>按照数据类可以划分为关系型数据库和非关系型数据库。</p>
+<h3 id="21-关系型数据库软件">2.1 关系型数据库软件</h3>
+<ul>
+<li>关系型数据库软件有：MySQL，Oracle，MariaDB，PostgreSQL</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">数据库软件</th>
+          <th style="text-align: left">分类</th>
+          <th style="text-align: left">简介</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>MySQL</strong></td>
+          <td style="text-align: left">开源软件</td>
+          <td style="text-align: left">关系型数据库里面业界使用最广泛的软件，在互联网公司大量使用。阿里巴巴有对其进行优化并部署在云端，出售服务给需要的公司或或者个人使用</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Oracle</strong></td>
+          <td style="text-align: left">商业收费软件</td>
+          <td style="text-align: left">关系型数据库的鼻祖和代表作，成就了甲骨文公司。相对于MySQL而言，Oracle支持的数据量更大，对数据安全要求，周边各种设施服务也更完善，部署对硬件条件要求也更高。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>MariaDB</strong></td>
+          <td style="text-align: left">开源软件</td>
+          <td style="text-align: left">由MySQL发展而来，另一个分支发展。使用广泛程度不如MySQL</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>PostgreSQL</strong></td>
+          <td style="text-align: left">开源软件</td>
+          <td style="text-align: left">美国伯克利大学开发，数据库功能完整。可能性能上较MySQL稍差，使用广泛程度不如MySQL</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>SQL Server</strong></td>
+          <td style="text-align: left">商业收费软件</td>
+          <td style="text-align: left">微软开发的关系型数据库软件，缺点是只能在Windows系统上运行。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>SQLite</strong></td>
+          <td style="text-align: left">开源软件</td>
+          <td style="text-align: left">存储功能简单，支持的数据量较小，无需部署到专门服务器上，内嵌在手机或者电脑APP，使用一个本地文件存储数据，主要用于本地存储一些简单的本地数据，例如微信的聊天记录等</td>
+      </tr>
+  </tbody>
+</table>
+<p>备注：<strong>开源软件</strong> 就是源代码开放的软件，所有人都可以看见代码，并进行自己修改和部署。代码托管在世界上最大的代码托管网站 GitHub 上面。 虽然是开源软件，但目前 <strong>GitHub</strong> 两年前被微软收购，虽然可能性较小，但未来发展还是由微软进行控盘。</p>
+<h3 id="22-非关系型数据库软件">2.2 非关系型数据库软件</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">数据库软件</th>
+          <th style="text-align: left">分类</th>
+          <th style="text-align: left">简介</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>MongoDB</strong></td>
+          <td style="text-align: left">开源软件</td>
+          <td style="text-align: left">相比较MySQL而言，其优点在于可以存储复杂的嵌套的数据，例如一篇文章（标题 作者 正文（正文里面有段落，段落里面有语句），评论等这种复杂结构信息，并支持这种数据内部信息的查询，使用非常广泛，成为非关系型数据库的事实标准</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Redis</strong></td>
+          <td style="text-align: left">开源软件</td>
+          <td style="text-align: left">严格来说，不算是数据库软件，更多地是用来作为数据缓存。数据存储在内存中。相比较MySQL，它存取数据速度快，但是不用作持久存储。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>CouchDB</strong></td>
+          <td style="text-align: left">开源软件</td>
+          <td style="text-align: left">跟MongoDB大体类似，一些细节特性上的区别</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="23-大数据">2.3 大数据</h3>
+<p>随着数据量的越来越大，越来越复杂，上面的一些软件渐渐的无法满足一些特定场景的需求，随后就发展出了分布式的大数据软件系统。这些大数据软件系统也基本都是开源软件。</p>
+<p>因为大数据的特点是，数据密度价值低，数据量超大，需要进行挖掘发现其价值。而数据来自许多不同的领域，针对不同领域的特点，一些垂直领域专用的数据库软件、数据分析软件也有其市场。</p>
+<p>随便列举一些如下：</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">数据库软件</th>
+          <th style="text-align: left">类别</th>
+          <th style="text-align: left">简介</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Cassandra</strong></td>
+          <td style="text-align: left">开源软件</td>
+          <td style="text-align: left">最开始由Facebook公司开发，后来捐赠给Apache开源社区成为开源软件。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>HBase</strong></td>
+          <td style="text-align: left">开源软件</td>
+          <td style="text-align: left">Hadoop是一个大数据库系统，由一系列存储、分析、管理等软件构成，而HBase是其数据存储软件。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Neo4j</strong></td>
+          <td style="text-align: left">开源软件</td>
+          <td style="text-align: left">Neo技术 公司开发的号称全球领先的图形数据库软件，目前开源在GitHub，但受Neo公司控盘</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Lucene</strong></td>
+          <td style="text-align: left">开源软件</td>
+          <td style="text-align: left">大数据 <strong>搜索引擎</strong>。例如百度、谷歌等搜索引擎底层就是基于Lucene进行开发的</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Wolfram Alpha</strong></td>
+          <td style="text-align: left">商业收费软件</td>
+          <td style="text-align: left">Proessaywriting 公司开发的进行数据内容<strong>关联搜索</strong>的软件</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>flockDB</strong></td>
+          <td style="text-align: left">开源软件</td>
+          <td style="text-align: left">Twitter公司为社会化网络而开发的图形数据库，虽是开源软件，但由Twitter控盘</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>GaussDB</strong></td>
+          <td style="text-align: left">开源软件</td>
+          <td style="text-align: left"><strong>华为</strong>开发的全球首款人工智能原生数据库，将人工智能能力植入到数据库内核算法中</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Teradata</strong></td>
+          <td style="text-align: left">商业收费软件</td>
+          <td style="text-align: left">来个来说不算是数据库软件，而是数据分析、数据仓库软件，由美国Teradata公司开发，并提供完整的解决方案，我国政企、大中华区已有超过十多个行业的客户，包含政府与公共服务、通信行业、银行、保险、证券、航空、地铁、交通运输、物流、快递行业、制造行业、汽车、零售、电子商务、互联网、电力能源等等。</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="3-总结">3 总结</h2>
+<h3 id="31-关于差距">3.1 关于差距</h3>
+<p>总体来说，我国和美国的差距是很大的，主要表现在数据库软件数量上。我国很少有开发一些知名数据库软件。但目前主流的数据库软件基本都是开源软件，中国大部分公司使用的也都是这种类型的软件，我国程序员也渐渐越来越多参与到开源软件的开发当中，这个差距正在慢慢缩小，至少是在数据库技术能力上的差距在慢慢缩小。</p>
+<h3 id="32-关于卡脖子">3.2 关于卡脖子</h3>
+<p>而目前开源软件的协议是开放的，所有人均可使用。受美国卡脖子的概率较小，除非开源软件协议被强行修改。(有极小概率可能，但即使发生，问题也不大，已有代码还是可以使用，只是不能进行和社区同步升级而已。)</p>
+<p>关系型数据库软件中，Oracle和SQL Server被MySQL等开源软件的可替代性很高，不用太担心这两个数据库软件的断供。</p>
+<p>一些垂直领域的商业软件，更多的掌握在美国商业公司手里，被卡脖子的概率更大一些。但是这些软件大都是收费软件，使用并不算广泛。</p>
+<h3 id="33-全球格局">3.3 全球格局</h3>
+<p>数据库软件已经比较成熟。特别是开源软件已经足够多，而要想开发一款新的能够脱颖而出的数据库软件，难度较大，成本很高，所以越来越少的公司专门投入开发新的付费数据库软件。
+更多的是采用开源社区化形式进行开发。更多的是倾向于开发垂直领域的商业数据分析软件。</p>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><strong><a href="/post/database-software/"> 数据库软件简介 - 2020/08/19</a></strong></li>
+        
+        <li><strong><a href="/post/20210218-good_software/"> 优质软件列表 - 2020/07/08</a></strong></li>
+        
+        <li><strong><a href="/post/good_software/"> 优质软件列表 - 2020/07/08</a></strong></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            没有标签
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <script src="https://giscus.app/client.js"
+            data-repo="fredgan/fredgan.github.io"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkxNjQ2NDg4MTI="
+            data-category="Announcements"
+            data-category-id="DIC_kwDOCdBXbM4CPSMl"
+            data-mapping="pathname"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="light"
+            data-lang="zh-CN"
+            crossorigin="anonymous"
+            async>
+    </script>
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2024 <a href="https://fredgan.github.io/">FredGan&#39;s Blog</a>
+        
+        | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">粤ICP备2023125130号</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://fredgan.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://fredgan.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20240218-annual-summary-2023/" title="2023年度总结">2023年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/annual-summary-2023/" title="2023年度总结">2023年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230802-analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230406-thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230405-kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230314-the-it-interpretation-of-life-philosophy/" title="人生哲理的计算机解释">人生哲理的计算机解释</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230108-thinking-to-landlord-card-game/" title="连炸斗地主直播观感">连炸斗地主直播观感</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://fredgan.github.io/categories/LICENSE/">LICENSE (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%AD%A6%E4%B9%A0/">学习 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%B7%A5%E5%85%B7/">工具 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">年度总结 (8)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%BC%80%E5%8F%91/">开发 (7)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%BC%80%E6%BA%90/">开源 (6)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%84%9F%E6%82%9F/">感悟 (25)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%8E%A8%E8%8D%90/">推荐 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%95%88%E7%8E%87/">效率 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E7%94%9F%E6%B4%BB/">生活 (6)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言 (6)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E8%8B%B1%E8%AF%AD/">英语 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E8%BD%AF%E4%BB%B6/">软件 (4)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://fredgan.github.io/tags/C%E8%AF%AD%E8%A8%80/">C语言</a>
+    
+    <a href="https://fredgan.github.io/tags/Markdown/">Markdown</a>
+    
+    <a href="https://fredgan.github.io/tags/redis/">Redis</a>
+    
+    <a href="https://fredgan.github.io/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件</a>
+    
+    <a href="https://fredgan.github.io/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+    
+    <a href="https://fredgan.github.io/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%84%9F%E6%82%9F/">感悟</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%8E%A8%E8%8D%90/">推荐</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%95%88%E7%8E%87/">效率</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://time.geekbang.org/" title="geektime">极客时间</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://github.com/fredgan" title="github">Github</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://tools.fredgan.com" title="tools">Fred&#39;s Tools</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://fredgan.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

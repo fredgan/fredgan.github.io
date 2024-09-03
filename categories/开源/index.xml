@@ -10,6 +10,13 @@
     <atom:link href="https://fredgan.github.io/categories/%E5%BC%80%E6%BA%90/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>白话GPL和SSPL</title>
+      <link>https://fredgan.github.io/post/20220407-colloquial-gpl-and-sspl/</link>
+      <pubDate>Thu, 07 Apr 2022 02:03:58 +0800</pubDate>
+      <guid>https://fredgan.github.io/post/20220407-colloquial-gpl-and-sspl/</guid>
+      <description>&lt;h2 id=&#34;一问题&#34;&gt;一、问题&lt;/h2&gt;&#xA;&lt;p&gt;说到GPL，恐怕大家都不陌生了。但你知道LGPL、GPL、AGPL的区别吗？甚至后面的众多知名软件如MongoDB、ElasticSearch等都相继修改的SSPL又是什么？&lt;/p&gt;&#xA;&lt;p&gt;GPL是如何让企业用户为之“闻风丧胆”的呢？GPL其实是一个家族license，包括LGPL/GPL/AGPL等，有不少公司都被这个license告了，支付了巨额的罚款！&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>白话GPL和SSPL</title>
       <link>https://fredgan.github.io/post/colloquial-gpl-and-sspl/</link>
       <pubDate>Thu, 07 Apr 2022 02:03:58 +0800</pubDate>
       <guid>https://fredgan.github.io/post/colloquial-gpl-and-sspl/</guid>
@@ -17,10 +24,24 @@
     </item>
     <item>
       <title>开源的一些感悟</title>
+      <link>https://fredgan.github.io/post/20200717-thinking-to-open-source/</link>
+      <pubDate>Fri, 17 Jul 2020 00:21:58 +0800</pubDate>
+      <guid>https://fredgan.github.io/post/20200717-thinking-to-open-source/</guid>
+      <description>&lt;p&gt;从事开源软件开发已经有一年多了。从原来对开源一无所知，甚至是一些错误的认知，到现在已经能够深入参与到开源社区，并成为一些软件的Committer，走过了许许多多的弯路，也对开源有了许多的新的认识。突然对开源有了一些感悟，所以紧急插入一篇感悟。&lt;/p&gt;&#xA;&lt;h2 id=&#34;开源--免费&#34;&gt;“开源” ≠ “免费”&lt;/h2&gt;&#xA;&lt;p&gt;这是几乎所有没有从事过开源软件开发工作的人的一个基本认识错误。如果你问以前的我，“你认为开源软件是什么？”，那我肯定会回答你：“就是开放源代码的免费软件！”。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>开源的一些感悟</title>
       <link>https://fredgan.github.io/post/thinking-to-open-source/</link>
       <pubDate>Fri, 17 Jul 2020 00:21:58 +0800</pubDate>
       <guid>https://fredgan.github.io/post/thinking-to-open-source/</guid>
       <description>&lt;p&gt;从事开源软件开发已经有一年多了。从原来对开源一无所知，甚至是一些错误的认知，到现在已经能够深入参与到开源社区，并成为一些软件的Committer，走过了许许多多的弯路，也对开源有了许多的新的认识。突然对开源有了一些感悟，所以紧急插入一篇感悟。&lt;/p&gt;&#xA;&lt;h2 id=&#34;开源--免费&#34;&gt;“开源” ≠ “免费”&lt;/h2&gt;&#xA;&lt;p&gt;这是几乎所有没有从事过开源软件开发工作的人的一个基本认识错误。如果你问以前的我，“你认为开源软件是什么？”，那我肯定会回答你：“就是开放源代码的免费软件！”。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>开源与希腊罗马神话</title>
+      <link>https://fredgan.github.io/post/20220202-greek_myths_and_open_source/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fredgan.github.io/post/20220202-greek_myths_and_open_source/</guid>
+      <description>&lt;p&gt;最近阅读一些希腊罗马神话相关的资料和书籍，了解了一些西方人对世界的认识和解释。&lt;/p&gt;&#xA;&lt;p&gt;希腊神话中将当时世界上能认识到的一切都用一个神来创造指代。大地之神盖亚Gaia、太阳之神阿波罗Apollo、月亮女神、天空之神、海洋之神、时间之神、爱与美之神Eros、黑夜之神、&lt;/p&gt;&#xA;&lt;p&gt;不由得感慨，他们对世界的认识和解释相比我们中国的那些神话，相对更加系统和完整。逻辑相对更加严密，建议各位开发者可以去读一读。&lt;/p&gt;</description>
     </item>
     <item>
       <title>开源与希腊罗马神话</title>

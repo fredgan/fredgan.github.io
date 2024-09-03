@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>2021年度总结 | FredGan&#39;s Blog</title>
+    <meta property="og:title" content="2021年度总结 - FredGan&#39;s Blog">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2022-04-28T00:41:58&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2022-04-28T00:41:58&#43;08:00'>
+        
+    <meta name="Keywords" content="[总结]">
+    <meta name="description" content="2021年度总结">
+        
+    <meta name="author" content="FredGan">
+    <meta property="og:url" content="https://fredgan.github.io/post/20200428-annual-summary-2021/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://fredgan.github.io/">
+                        FredGan&#39;s Blog
+                    </a>
+                
+                <p class="description">技术分享与学习成长: C/C&#43;&#43;/Go/Python/iOS/JavaScript、YANG/NetConf、爬虫、编译器、压缩序列化、开源、CleanCode</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://fredgan.github.io/">首页</a>
+                    
+                    <a  href="https://fredgan.github.io/projects/" title="GitHub">GitHub</a>
+                    
+                    <a  href="https://fredgan.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://fredgan.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#大事记之怀孕">大事记之怀孕</a></li>
+    <li><a href="#大事记之自驾">大事记之自驾</a></li>
+    <li><a href="#大事记之养猫">大事记之养猫</a></li>
+    <li><a href="#其他">其他</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">2021年度总结</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2022年4月28日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93'>年度总结</a></span>
+            
+            <span class="meta-category"><a href='/categories/%E6%84%9F%E6%82%9F'>感悟</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <p>整理历史文档过程中，发现了一篇2019年的年度总结。一不留神，发现居然自己2020年、2021年的年度总结都没写，有点自责。看来是自己过去玩的游戏有点太多了，忘了这么重要的事情。而今，让我再回想过去的两年发生的事情，着实，有点记不太清楚了。找一些2021年的相册、微博、朋友圈等，将就着补一下2021年的年度总结吧。</p>
+<h2 id="大事记之怀孕">大事记之怀孕</h2>
+<p>2021年最大的大事当属媳妇怀孕了。这件事着实很大程度改变了我的生活。媳妇是4月份怀孕的，预产期在今年的1月15日。我们为怀孕做了很多准备，甚至是为了达成这事还有很多争吵。当她测试发现怀孕后告诉我的时候，她哭了。可能是因为我给她施加了一些压力。但当我回家得知了这个消息的时候，我还是非常开心的，我兴奋地把她抱了起来。我想第一时间告诉我爸妈，但是又由于前三个月不稳定，我忍住了自己的激动的情绪。</p>
+<p>怀孕的过程异常艰辛。从怀孕第二个月起，就疯狂呕吐，吃什么吐什么。所以基本都不敢让她吃啥了，就喝几口白粥。然后她说想吃点榨菜，我就去买了一大包，大概就四五十小包。最终这个榨菜也只吃了两三包。因为肚子里没货，她实际上很饿，但是就是啥都吃不了。中间一度去社区医院陪她吊葡萄糖+氨基酸了。后来我想到了可以吃点蜂蜜水，就时常泡点蜂蜜水给她喝。这个症状直到怀孕五个月才有所缓解。后来我们怀疑是爱乐维的复合叶酸片导致的，她甚至对这个叶酸片有心理阴影了。这段时间中间的艰辛难以言说。9月份我去大平家里做客，他们儿子刚满三个月。听他媳妇诉说他们怀孕的艰难日子，说比我们更困难，还去医院住院了一个星期。不过她说，现在这个时候又觉得可以了，还想要二胎，可见，她对自己的孩子是真的爱地深沉，爱地真切。</p>
+<p>因为我在深圳上班，能陪伴媳妇的日子还是少的。在怀孕稳定下来后，就让她妈妈来陪伴她了。也多亏了丈母娘过来，让我心里不那么自责了。孕检就前期陪她去了几次，后面基本都是她自己一个人去的，好在她是个坚强的女性。在9月份的时候去把月子中心给订了，在她单位附近。最后在产前陪她去医院做了一次产前培训。</p>
+<h2 id="大事记之自驾">大事记之自驾</h2>
+<p>另一个比较大的事情可以算得上是自驾了吧。在2020年年底开始，看着自己报的驾校时间又快过期了，赶紧又逼着自己去学车。两三个月的时间，每周末基本都去驾校学车，这两三个月在家的时间那就更少了。好在功夫不负有心人，在2月7日光荣地拿到了自己10年前就该拿到的驾照。</p>
+<p>不过很可惜，驾校教的其实不是开车，更多是是应付考试。调整座位到哪个位置，对齐到哪个位置打方向盘等等。说白了，跟初高中学习一样，会考试，不会实践，其实不太敢上路。当时在珠海突然流行起了一股租车的风潮，兴起了很多的租车公司。我们看到了一个叫做WarmCar的电动租车的，媳妇说她同事经常租，让我也试试。好吧，抱着试试看的态度，我们在清明节期间，租了一个5座的WarmCar的车。战战兢兢地从停车场把车开出来，媳妇看着我开车，好像比我还激动。也许她期待坐我的副驾驶期待了好多年，终于实现了愿望。</p>
+<p>我开着WarmCar从吉大出发，沿着海边一直开到淇澳岛游玩，再去了会同古村。这次算是本年度唯一一次旅游了，珠海市内一日游！路上开的小心翼翼，如履薄冰，特别是在淇澳岛上，走到一个比较窄的路上，路上行人很多，确实很慌。不过总算是有惊无险地顺利回来了。这是第一次驾驶试水。</p>
+<p>谁能想到，我的第二次驾驶居然就是一次长途。五一期间，Email和陈雷在惠州结婚，我决定租一辆车开过去那边。把车管所寄来驾驶证上附带的“实习”往车后一贴，就正式出发了。在服务区准备休息停车的时候，我是顺着开停进停车位的。媳妇说她下去帮我看下，我说不需要。但我终究还是个新手，对车头位置把控不准。撞到了一个石墩上，车左前方轮胎上方的那个车壳掉下来一块。就这样第一次跑长途挂彩了！事后当然少不了媳妇的一顿骂。因为自信觉得不会出事，也没买1500额度的免赔保险，还车的时候赔偿了700大洋！Email也是挺心大，敢坐我车，陈雷是不敢的。</p>
+<p>不过最惊现刺激的还是在从惠州返回途中，我们本来是想路过顺德顺便在那玩一下。两点多出发，在快要出惠州的时候我看油不多了，我就去加满油。然后继续出发，谁能想到，天有不测风云，在大约3点多的时候，突然一场大暴雨倾泻而来。路上的车陆续开始双闪+鸣笛。雨越下越大，开着最快的雨刮器也看不清前方的情况。本来想着还是停在路边算了，但那个地方也没应急车道，大家基本也都没停在路边。公路上两侧的积水也很深。我开着十几的速度艰难行进。这场暴雨持续了很久，最后雨停了，但天已经黑了，我非常疲劳，看着密密麻麻的红色的车尾灯，让我更加有点恍惚。我强忍着自己的疲倦，打起12分精神，媳妇在一旁一直鼓励着我给我加油。最终在晚上7点左右，我们到达了顺德的一个饭店。这一次是连续开了4个多小时，解锁了3项成就：连续驾驶超过4小时成就，暴雨中行车成就，夜间驾驶成就。硬生生把一次性把一个新手锻炼成老司机了。当然也直接达成了3项违法驾驶：疲劳驾驶+暴雨驾驶+超过4小时连续驾驶。我心里都默默起誓，以后再也不开这种危险车了。</p>
+<h2 id="大事记之养猫">大事记之养猫</h2>
+<p>第三个我认为可以算得上是大事的事情应该是养猫了。在8月3日的一个下班晚上，路过宝岗小学门口的公交站，一直小猫站在一个围墙上，对着我疯狂乱叫。我不确定它是不是下不来朝我求救，我回想了一下上次有一只小猫在我脚下蹭了我好久，跟这只猫有点像。我就走到围墙边，伸过手掌把它取下来。它没有挣扎，但是看起来它很饿。这只猫看上去不像是野猫，应该是被遗弃的猫。我带着它去一个便利店，买了两根火腿肠给它吃。后来给她陆续买了猫砂、猫粮、猫罐头、猫窝、大笼子、猫玩具。带她驱虫、打三联疫苗和狂犬疫苗。虽然是穷养，也花了不下1000块了。</p>
+<p>养猫的这段时间，让我感受到了心里有一个牵挂。会让我想早早地下班回去陪她玩。我回家的时候，一到家门口，就能听到她在喵喵地期待我的回来。养猫有很多乐趣，家里小时候就养了很多野猫，来抓家里的老鼠。那时候不敢跟猫玩太近，因为爪子太锋利了。现在自己有一只猫了，剪掉指甲，就随便逗它了。逗猫棒、绳子都是她的最爱。小白橘全身都是白色，就尾巴和头上有一些橘色，我给她取名叫做奈雪。公司宵夜改版后，有很多大鱼大肉，我经常拿来给她吃，猪蹄、猪肘子、鸡蛋、大闸蟹都给她吃过，朋友们都说我是富贵人家。奈雪最喜欢吃的还是猫罐头，打开猫罐头，奈雪就像打了兴奋剂一样，喵喵喵来抢。奈雪很黏人，我坐在桌子前它就想来趴我腿上，经常抱着我的手睡觉。让人还是感觉挺幸福的。</p>
+<p>养猫也有烦恼。第一个烦恼就是经常半夜嚎叫，毕竟猫是夜行动物，经过好些个晚上的调教，她终于晚上在我睡觉的时候不叫了。第二个烦恼就是放假每天都是乱糟糟的，每天都要铲屎，喂猫粮，打扫卫生，也算是真真切切地感受到了铲屎官的称呼。第三个烦恼就是喜欢来床上。后来我买了个蚊帐，禁止它上床。十一期间一个长假，把它关在房间7天，自此她好像变了一个性格，对我应该有点怨恨了。我回来的时候，发现我的蚊帐被推倒了。房间里乱七八糟，猫屎也拉了很多地方。我有点愤怒，当然主要还是她推倒了我的蚊帐，在我床上呕吐。我狠狠地揍了它一顿。但事后我又很后悔，奈雪肯定不知道我为啥发怒，毕竟她只是一只猫。后面她还推倒了我的蚊帐好几次，蚊帐也挠破了，我又揍了它一顿。这次过后，我下班回家，她也不再迎接我了。见我开门都要远远地跑开，看到我并不想揍她它才悻悻地喵喵走过来。其实这也我错在先，如果我有时间可以陪她，就不用关她7天，她也就不会对我有怨恨，也就不会发生后面的这些事。</p>
+<p>后来工作渐渐地忙了，晚上很晚回家，早上大早出门，晚上又要睡觉，我发现自己没时间陪她。我觉得她在我这里很可怜，我想方设法把她送出去。终于在11月的时候，发现林超愿意要，我就送给他了，所有的东西打包一并拿去。房间瞬间空荡荡的，回到家也是安安静静的，心里有点小失落。这可能有点像是自己的孩子长大了离开了自己，虽然孩子长大离开自己是不是这种感觉，但是把猫送走后给我的感觉确实让我过了好几天才适应回来。</p>
+<h2 id="其他">其他</h2>
+<p>其他值得一写的事情不多，我就列在一起吧。</p>
+<p>2021年我们去领证了，正式持证上岗。</p>
+<p>2021年跑步量偏少，只跑了74公里，主要集中在4月份和10月份，身体素质有所下降。于是给今年定了跑300公里的目标。今年一定要达成。</p>
+<p>2021年看了把《西游记》看完了，并且看到“空心树解读西游记”，这也是我在微信公众号上唯一付费阅读的。发现原来西游记原来写得是这么好。对西游记的整个故事线有了全新的认识，并不是一个个单独的大妖怪的故事集合而已，每一个故事都是承前启后相连的存在，是在佛教和道教相争的大背景下，孙悟空的成长的故事。孙悟空的修心成长给我们人生有很大的启示作用。西游记果然不负四大名著的头衔。自此，四大名著原著我都看完了，而且一些解读分析的我都看了一些。我认为红楼梦可以排在第一，西游记可以排在第二。</p>
+<p>2021年虽然只看完了西游记一本书，但我用calibre整理了自己的电子书架，现在有了几百本电子书，我不想自己变成一个松鼠，这些电子书我会从2022年开始慢慢开始看的，至少这是一个好的开始。</p>
+<p>2021年我发现了我们公司A区的风景是真的很好，虽然在那边没有偶遇过老板，不过我经常去那里的湖边坐坐，思考人生。7月份我们搬了办公地点，距离A区更远了，去那边看风景的机会少了很多，有些许遗憾，不知道啥时候可以搬回去E/F区办公。</p>
+<p>2021年11月我买了新的iPhone 13远峰蓝手机，用了5年的iPhone 7正式宣告退休。其实手机还是很正常的，只是硬件跟不上了，被时代拍在时代的记忆力。</p>
+<p>2021年我看了几部老电视剧，《济公》《聊斋》，都是比我还老的电视剧了，感觉那里面的演员演技是真的好，而且也大都是素颜。那里面的美女是真的美女。</p>
+<p>2021年我玩了很多局王者荣耀，浪费了大把时间，我很后悔。</p>
+<p>2021年对人生又有了许多的思考，伟大的背后是苦难，苦难才是人生的汽油。应该降低自己的人生欲望，你想要的越多，心里不平衡就越大。当你得到了你想要的，它也就在慢慢地远离你而去。比如我想要玩游戏，当我真的买了游戏机，沉迷于玩游戏的时候，工作和学习就被搁置了，然后就不能进步，就赚不到钱，慢慢地也就不能再去玩游戏，有点像是一个调节回路。只能说鱼和熊掌不可兼得吧。</p>
+<p>2021年国家也发生了不少大事。第一件当然还是要说是这疫情。疫情已经彻底地改变了我们的生活。不知道这个疫情还要持续多久。已经三年没有跟家乡的亲人见面了。对于我这种跨城工作的人来说，疫情影响还是很大的，毕竟随时可能被禁足。疫情下的生活，很多人都无比地困难，希望疫情早日过去。2021年是共产党建党100周年，各地都举行了大型庆典。国家在科技方面也有一些举足轻重的进步，中国空间站正式运营；载人潜水器到达马里亚纳海沟最深处；在人工合成淀粉方面取得重大突破等等。</p>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><strong><a href="/post/annual-summary-2021/"> 2021年度总结 - 2022/04/28</a></strong></li>
+        
+        <li><strong><a href="/post/annual-summary-2019/"> 2019年度总结 - 2020/01/01</a></strong></li>
+        
+        <li><strong><a href="/post/20200101-annual-summary-2019/"> 2019年度总结 - 2020/01/01</a></strong></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            没有标签
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <script src="https://giscus.app/client.js"
+            data-repo="fredgan/fredgan.github.io"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkxNjQ2NDg4MTI="
+            data-category="Announcements"
+            data-category-id="DIC_kwDOCdBXbM4CPSMl"
+            data-mapping="pathname"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="light"
+            data-lang="zh-CN"
+            crossorigin="anonymous"
+            async>
+    </script>
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2024 <a href="https://fredgan.github.io/">FredGan&#39;s Blog</a>
+        
+        | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">粤ICP备2023125130号</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://fredgan.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://fredgan.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20240218-annual-summary-2023/" title="2023年度总结">2023年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/annual-summary-2023/" title="2023年度总结">2023年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230802-analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230406-thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230405-kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230314-the-it-interpretation-of-life-philosophy/" title="人生哲理的计算机解释">人生哲理的计算机解释</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230108-thinking-to-landlord-card-game/" title="连炸斗地主直播观感">连炸斗地主直播观感</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://fredgan.github.io/categories/LICENSE/">LICENSE (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%AD%A6%E4%B9%A0/">学习 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%B7%A5%E5%85%B7/">工具 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">年度总结 (8)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%BC%80%E5%8F%91/">开发 (7)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%BC%80%E6%BA%90/">开源 (6)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%84%9F%E6%82%9F/">感悟 (25)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%8E%A8%E8%8D%90/">推荐 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%95%88%E7%8E%87/">效率 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E7%94%9F%E6%B4%BB/">生活 (6)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言 (6)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E8%8B%B1%E8%AF%AD/">英语 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E8%BD%AF%E4%BB%B6/">软件 (4)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://fredgan.github.io/tags/C%E8%AF%AD%E8%A8%80/">C语言</a>
+    
+    <a href="https://fredgan.github.io/tags/Markdown/">Markdown</a>
+    
+    <a href="https://fredgan.github.io/tags/redis/">Redis</a>
+    
+    <a href="https://fredgan.github.io/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件</a>
+    
+    <a href="https://fredgan.github.io/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+    
+    <a href="https://fredgan.github.io/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%84%9F%E6%82%9F/">感悟</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%8E%A8%E8%8D%90/">推荐</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%95%88%E7%8E%87/">效率</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://time.geekbang.org/" title="geektime">极客时间</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://github.com/fredgan" title="github">Github</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://tools.fredgan.com" title="tools">Fred&#39;s Tools</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://fredgan.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

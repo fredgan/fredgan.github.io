@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>GDB调试技巧 | FredGan&#39;s Blog</title>
+    <meta property="og:title" content="GDB调试技巧 - FredGan&#39;s Blog">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2020-07-06T14:08:05&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2020-07-06T14:08:05&#43;08:00'>
+        
+    <meta name="Keywords" content="[开发 调试]">
+    <meta name="description" content="GDB调试技巧">
+        
+    <meta name="author" content="FredGan">
+    <meta property="og:url" content="https://fredgan.github.io/post/20200706-gdb/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://fredgan.github.io/">
+                        FredGan&#39;s Blog
+                    </a>
+                
+                <p class="description">技术分享与学习成长: C/C&#43;&#43;/Go/Python/iOS/JavaScript、YANG/NetConf、爬虫、编译器、压缩序列化、开源、CleanCode</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://fredgan.github.io/">首页</a>
+                    
+                    <a  href="https://fredgan.github.io/projects/" title="GitHub">GitHub</a>
+                    
+                    <a  href="https://fredgan.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://fredgan.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一直接调试">一、直接调试</a>
+      <ul>
+        <li><a href="#11-启动与停止">1.1 启动与停止</a></li>
+        <li><a href="#12-调试指令">1.2 调试指令：</a></li>
+        <li><a href="#13-查看变量内存">1.3 查看变量内存</a></li>
+      </ul>
+    </li>
+    <li><a href="#二attach调试">二、Attach调试</a>
+      <ul>
+        <li><a href="#21-本机attach进程">2.1 本机attach进程</a></li>
+        <li><a href="#22-gdb_server远程调试">2.2 gdb_server远程调试</a></li>
+      </ul>
+    </li>
+    <li><a href="#三coredump调试">三、CoreDump调试</a>
+      <ul>
+        <li><a href="#31-程序异常终止产生了core文件">3.1 程序异常终止产生了core文件</a></li>
+        <li><a href="#32-程序异常终止不产生core文件原因">3.2 程序异常终止不产生core文件原因</a></li>
+        <li><a href="#33-调试方法">3.3 调试方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#四辅助脚本">四、辅助脚本：</a></li>
+    <li><a href="#五参考资料">五、参考资料</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">GDB调试技巧</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年7月6日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E5%BC%80%E5%8F%91'>开发</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <h2 id="一直接调试">一、直接调试</h2>
+<h3 id="11-启动与停止">1.1 启动与停止</h3>
+<ul>
+<li><code>run</code> / <code>r</code>  启动程序</li>
+<li><code>set args &lt;arg1&gt; &lt;arg2&gt;</code> 设置程序运行参数</li>
+<li><code>finish</code> 结束当前函数的运行，函数剩余部分会执行完毕</li>
+<li><code>return</code> 立即结束当前函数执行并返回，可带参数返回</li>
+</ul>
+<h3 id="12-调试指令">1.2 调试指令：</h3>
+<ul>
+<li><code>step</code> / <code>next</code> 执行下一行（进入函数）/（不进入函数）</li>
+<li><code>disassemble</code> 查看汇编命令</li>
+<li><code>stepi</code> / <code>nexti</code> 执行下一条汇编指令 (进入函数)/（不进入函数）</li>
+<li><code>jmp</code> 跳转指令</li>
+<li><code>info r</code> 查看寄存器值。<code>info</code> 可以简写为 <code>i</code></li>
+<li><code>bt</code> 查看调用路径</li>
+</ul>
+<blockquote>
+<p><strong>堆栈用途:</strong></p>
+<ul>
+<li>rdi rsi rdx rcx r8 r9 寄存器依次存放函数前6个参数</li>
+<li>更多的参数放在栈中</li>
+<li>函数返回值保存在 rax 中</li>
+</ul>
+</blockquote>
+<h3 id="13-查看变量内存">1.3 查看变量内存</h3>
+<ol>
+<li><code>p &lt;var&gt;</code> 查看变量值</li>
+<li><code>p/x &lt;var&gt;</code> 查看变量二进制值值</li>
+<li><code>x/nfu &lt;addr&gt;</code> 查看内存值。<code>x</code> 是 <code>examine</code> 的缩写</li>
+</ol>
+<ul>
+<li>
+<p>n表示要显示的内存单元的个数</p>
+</li>
+<li>
+<p>f表示显示方式, 可取如下值：</p>
+<ul>
+<li>x 按十六进制格式显示变量。</li>
+<li>d 按十进制格式显示变量。</li>
+<li>u 按十进制格式显示无符号整型。</li>
+<li>o 按八进制格式显示变量。</li>
+<li>t 按二进制格式显示变量。</li>
+<li>a 按十六进制格式显示变量。</li>
+<li>i 指令地址格式</li>
+<li>c 按字符格式显示变量。</li>
+<li>f 按浮点数格式显示变量。</li>
+</ul>
+</li>
+<li>
+<p>u表示一个地址单元的长度</p>
+<ul>
+<li>b表示单字节，</li>
+<li>h表示双字节，</li>
+<li>w表示四字节，</li>
+<li>g表示八字节</li>
+</ul>
+</li>
+</ul>
+<h2 id="二attach调试">二、Attach调试</h2>
+<h3 id="21-本机attach进程">2.1 本机attach进程</h3>
+<p>gdb program pid</p>
+<p>gdb program 进入gdb后attach pid</p>
+<p>如果没有权限</p>
+<ul>
+<li>如果uid相同，运行程序之后看看有没有改变uid，例如passwd程序</li>
+<li>root权限 echo 0 &gt; /proc/sys/kernel/yama/ptrace_scope</li>
+</ul>
+<h3 id="22-gdb_server远程调试">2.2 gdb_server远程调试</h3>
+<ul>
+<li>gdb_server运行在target上</li>
+<li>gdb运行在host上</li>
+<li>GDB Remote serial protocol/RSP协议</li>
+</ul>
+<h2 id="三coredump调试">三、CoreDump调试</h2>
+<h3 id="31-程序异常终止产生了core文件">3.1 程序异常终止产生了core文件</h3>
+<ul>
+<li>保存路径：保存在程序执行路径，修改 /proc/sys/kernel/core_pattern可以修改</li>
+<li>文件名： 默认core, root权限修改： <code>echo 1 &gt; /proc/sys/kernel/core_uses_pid</code> 后变为core.pid</li>
+<li>文件格式：ELF</li>
+<li>包含信息：内存状态、寄存器状态、堆栈指针、内存管理信息、函数调用堆栈信息</li>
+</ul>
+<h3 id="32-程序异常终止不产生core文件原因">3.2 程序异常终止不产生core文件原因</h3>
+<ul>
+<li>资源限制 ulimit -c unlimited修改</li>
+<li>权限问题 core文件生成目录没有写权限，要注意程序运行过程中有没有降权或者改变权限</li>
+</ul>
+<h3 id="33-调试方法">3.3 调试方法</h3>
+<ul>
+<li>gdb program &lt;core_file_name&gt;</li>
+<li>bt 查看调用栈</li>
+</ul>
+<h2 id="四辅助脚本">四、辅助脚本：</h2>
+<p>gdb init + 高级脚本提高调试效率</p>
+<ul>
+<li>peda</li>
+<li>pwndbg</li>
+<li>gef</li>
+</ul>
+<h2 id="五参考资料">五、参考资料</h2>
+<p><a href="https://lldb.llvm.org/use/map.html">GDB vs LLDB</a></p>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><strong><a href="/post/gdb/"> GDB调试技巧 - 2020/07/06</a></strong></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            没有标签
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <script src="https://giscus.app/client.js"
+            data-repo="fredgan/fredgan.github.io"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkxNjQ2NDg4MTI="
+            data-category="Announcements"
+            data-category-id="DIC_kwDOCdBXbM4CPSMl"
+            data-mapping="pathname"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="light"
+            data-lang="zh-CN"
+            crossorigin="anonymous"
+            async>
+    </script>
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2024 <a href="https://fredgan.github.io/">FredGan&#39;s Blog</a>
+        
+        | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">粤ICP备2023125130号</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://fredgan.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://fredgan.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20240218-annual-summary-2023/" title="2023年度总结">2023年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/annual-summary-2023/" title="2023年度总结">2023年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230802-analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230406-thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230405-kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230314-the-it-interpretation-of-life-philosophy/" title="人生哲理的计算机解释">人生哲理的计算机解释</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230108-thinking-to-landlord-card-game/" title="连炸斗地主直播观感">连炸斗地主直播观感</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://fredgan.github.io/categories/LICENSE/">LICENSE (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%AD%A6%E4%B9%A0/">学习 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%B7%A5%E5%85%B7/">工具 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">年度总结 (8)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%BC%80%E5%8F%91/">开发 (7)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%BC%80%E6%BA%90/">开源 (6)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%84%9F%E6%82%9F/">感悟 (25)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%8E%A8%E8%8D%90/">推荐 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%95%88%E7%8E%87/">效率 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E7%94%9F%E6%B4%BB/">生活 (6)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言 (6)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E8%8B%B1%E8%AF%AD/">英语 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E8%BD%AF%E4%BB%B6/">软件 (4)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://fredgan.github.io/tags/C%E8%AF%AD%E8%A8%80/">C语言</a>
+    
+    <a href="https://fredgan.github.io/tags/Markdown/">Markdown</a>
+    
+    <a href="https://fredgan.github.io/tags/redis/">Redis</a>
+    
+    <a href="https://fredgan.github.io/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件</a>
+    
+    <a href="https://fredgan.github.io/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+    
+    <a href="https://fredgan.github.io/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%84%9F%E6%82%9F/">感悟</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%8E%A8%E8%8D%90/">推荐</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%95%88%E7%8E%87/">效率</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://time.geekbang.org/" title="geektime">极客时间</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://github.com/fredgan" title="github">Github</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://tools.fredgan.com" title="tools">Fred&#39;s Tools</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://fredgan.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

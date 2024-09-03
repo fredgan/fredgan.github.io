@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>玩解谜游戏有感 | FredGan&#39;s Blog</title>
+    <meta property="og:title" content="玩解谜游戏有感 - FredGan&#39;s Blog">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2022-12-28T00:41:58&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2022-12-28T00:41:58&#43;08:00'>
+        
+    <meta name="Keywords" content="[总结 感悟]">
+    <meta name="description" content="玩解谜游戏有感">
+        
+    <meta name="author" content="FredGan">
+    <meta property="og:url" content="https://fredgan.github.io/post/20221228-thinking-to-riddle-games/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://fredgan.github.io/">
+                        FredGan&#39;s Blog
+                    </a>
+                
+                <p class="description">技术分享与学习成长: C/C&#43;&#43;/Go/Python/iOS/JavaScript、YANG/NetConf、爬虫、编译器、压缩序列化、开源、CleanCode</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://fredgan.github.io/">首页</a>
+                    
+                    <a  href="https://fredgan.github.io/projects/" title="GitHub">GitHub</a>
+                    
+                    <a  href="https://fredgan.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://fredgan.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一怎么玩解谜游戏">一、怎么玩解谜游戏</a></li>
+    <li><a href="#二主要有哪些解谜类型">二、主要有哪些解谜类型</a></li>
+    <li><a href="#三什么是好的解谜游戏">三、什么是好的解谜游戏</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">玩解谜游戏有感</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2022年12月28日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E6%84%9F%E6%82%9F'>感悟</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <p>最近一个好友安利我一个解谜游戏，《Cube Escape：Paradox》，玩了几天，发现这个系列游戏设计的真心不错，非常感谢好友安利，这个系列是我玩过的所有游戏里面相当绝妙的了。第一遍已经把10部完成，还有一些成就待解锁，需要刷多遍。我这里也安利给没玩过的一些朋友，有点小惊悚，玩多了人都有点emo了。不过相比我之前玩过一半的国产解谜游戏《纸嫁衣》，惊悚程度还是差了很多。设计比《The Room》系列巧妙，跟《limbo》应该不相上下，只不过跟limbo不是完全同类型的游戏，而且遗憾的是limbo只有一部。</p>
+<p>玩了这么几天，突然对解谜类游戏有一些感悟，特此记下来。</p>
+<h2 id="一怎么玩解谜游戏">一、怎么玩解谜游戏</h2>
+<p>玩解谜游戏最需要的能力我觉得是2个：</p>
+<ol>
+<li>
+<p><strong>细节</strong>。感觉女生会比较擅长这个。可以说是游戏能不能过的最重要的东西了。无论是散落在各个地方的<strong>奇怪符号</strong>，还是某个地方画的很<strong>轻微的线</strong>，某些小动物奇怪的<strong>运动轨迹</strong>，又或者说是一群相同的东西中稍微有点<strong>不同的东西</strong>。很多时候，<strong>一个细节没发现，你可能就整个游戏都卡住了</strong>。然后就是拼命找细节，这里点点，那里滑滑，甚至所有的符号都归类记下来。</p>
+</li>
+<li>
+<p><strong>推理</strong>。这个男生会稍微擅长一点，但是不那么明显，解谜游戏里面一般不需要很强的推理。需要推理的东西我也大概总结了以下几类：</p>
+<ul>
+<li><strong>事物的基本功能</strong>。如：种子，通常来说是要种在某个地方，种完之后需要浇水。剪刀，用来剪纸张、绳子之类的东西。火柴：点燃燃气灶、纸张、蜡烛之类的。</li>
+<li><strong>事物的基本特性</strong>。如镜子的镜面对称形状。液体会往下流等。</li>
+<li><strong>顺序映射</strong>。这个跟细节有不小的关联。如果发现了一些细节符号，通常要留个心眼，这些符号通常都是密码或者映射关系。比如，5个符号，哪个先出现，哪个后出现。几个事物和几个符号对应。</li>
+<li><strong>因果关系</strong>。这通常是事物的逻辑发展，前因后果。比如，我要在暗处找东西，可能我需要一个照明的灯。比如有人想喝咖啡，如果没有现成的咖啡，那么大概率是需要自己制作的，那肯定需要咖啡机、咖啡豆，甚至还可能需要水、燃料之类的。</li>
+</ul>
+</li>
+</ol>
+<p>如果你的细节能力很强，并且这些常见推理都难不到你，那么你应该很适合玩解谜类游戏。</p>
+<h2 id="二主要有哪些解谜类型">二、主要有哪些解谜类型</h2>
+<p>作为玩解谜游戏，最关心的是游戏里面一般有什么谜题，我该怎么解。让我想起了公务员考试，公务员考试的试题也是五花八门。印象最深刻的题型是找规律。如果你没有做过很多这种类型的题，或者没有接受过系统的培训，估计这种题是你认为最困难的。但你看那些培训机构，凭借着海量数据和做题经验，愣是把这奇奇怪怪的找规律的题给你分析的头头是道。我们的解谜游戏跟公务员考试的这个找规律的题目很像。所以我也尝试找找解谜游戏的谜题规律。</p>
+<ol>
+<li>
+<p><strong>锁和密码分离</strong>。这个应该是解谜游戏里面最常见的类型了。这个应该很好理解，常见的类型就是钥匙锁、密码锁、电话号码、键盘打字、时钟表盘等。看到密码锁，很明显，你就知道这需要一个几位数的密码，或者几个符号的顺序组合。然后就是去寻找密码，密码可能是整体找到，那就比较幸运，谜题稍微简单；也可能是被拆分成多个符号在不同的地方，需要逐个寻找；还可能是密码是由密钥和密码本组合，需要分开寻找密钥和密码本，如一页书籍和一个打孔的蒙板。甚至还可能是拆分后的某个符号也需要解谜其他的谜题才能得到。（嗯、递归调用）</p>
+</li>
+<li>
+<p><strong>整体拆分</strong>。上面密码的部分也提到了这种。就是我把一个完整的东西拆开成多个部分，你只要找到我拆开的这几个零部件组合在一起，就能过关。这个很容易理解，不多啰嗦。</p>
+</li>
+<li>
+<p><strong>遥控</strong>。这种通常是机关类型，我的一个机关在一个场景，但是控制开关在另一个场景。控制开关也可能是其他谜题。（嗯，又是递归）在《limbo》中这种类型的解谜尤其多。</p>
+</li>
+<li>
+<p><strong>小游戏闯关</strong>。这个就五花八门了，比如迷宫、拼图、汉诺塔、俄罗斯方块、八皇后，24点、接龙、华容道、五行八卦、连连看等，非常多。国内我们玩到的小游戏基本都可以放在解谜游戏里面，算是解谜途中的茶点吧，让你在紧张刺激的解谜游戏环节中放松一下情绪。如果一个解谜关卡中不需要使用游戏中的任何其他道具，一般都可以判断为这一类了。</p>
+</li>
+</ol>
+<h2 id="三什么是好的解谜游戏">三、什么是好的解谜游戏</h2>
+<p>那什么是一款好的解谜游戏呢？估计玩过的人应该多多少少会有一些评判标准。我的判断标准大概有这么几点：</p>
+<ol>
+<li>
+<p><strong>谜题设计</strong>。作为解谜游戏，当然最重要的就是是否设计了一个很好的谜题关卡。毕竟大多数人都是本着挑战智商证明自己来的。如果是很弱智的谜题，相信大多数玩家都不太愿意玩。但关卡设计也不是说越难越好。那究竟什么是好的谜题设计呢？</p>
+<ul>
+<li><strong>简单谜题靠逻辑，困难谜题有提示</strong>。提示可以是很隐晦的细节，但不能没有。</li>
+<li><strong>道具多次使用</strong>。如果所有道具只使用一遍，那么大概率不会是一款好的游戏。</li>
+</ul>
+</li>
+<li>
+<p><strong>悬疑剧情</strong>。关卡的环环相扣，这就需要一个很好的剧情连接了。剧情前面可以让玩家看不太懂，但没关系，但如果能起到铺垫，草灰蛇线，最后让玩家恍然大悟，那就是很好的剧情。跟看连续剧一样，细节和伏笔是非常重要的。让我想起了电视剧《隐秘的角落》，如果这个电视剧能改编成一个解谜游戏，可能会是一个相当不错的游戏。另外，如果对于系列来说，通常会有一个主题。比如《Cube Escape》系列，每一部最终目标都是找方块，然后才能逃脱，跟游戏名完美对应。</p>
+</li>
+<li>
+<p><strong>支线谜题</strong>。这就是所谓的隐藏关卡，在《Cube Escape》里面通常把这种东西设计为成就，跟PlayStation里面的奖杯机制几乎一样。为什么需要成就？这个词翻译的是相当好，就是给玩家达成了会有成就感，用于玩家心理默默地自我欣赏陶醉，自己达成了就证明自己比别人厉害的东西。大部分人都会追求完美，追求比别人厉害，因此会多次玩这个游戏，尝试找到一切落下的细节。这个东西的设计真是狠狠地抓住了用户的多巴胺。</p>
+</li>
+<li>
+<p><strong>画面操作</strong>。这个不是至关重要，操作不要太困难，画面如果能唯美精致一点，那是很加分的。</p>
+</li>
+</ol>
+<p>我个人不喜欢太多的惊悚元素，频繁的扑脸杀在我这里会严重减分。不过像《纸嫁衣》这种本身定位就是惊悚恐怖游戏的，那属于游戏自身定位，这就见仁见智了。但它们在我手机里下载了至少有半年了，我都没怎么打开玩过，3部《纸嫁衣》的系列我也只玩了半部。</p>
+<p>大概就想到这些，先这样。</p>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><strong><a href="/post/thinking-to-riddle-games/"> 玩解谜游戏有感 - 2022/12/28</a></strong></li>
+        
+        <li><strong><a href="/post/annual-summary-2022/"> 2022年度总结 - 2022/12/21</a></strong></li>
+        
+        <li><strong><a href="/post/20221221-annual-summary-2022/"> 2022年度总结 - 2022/12/21</a></strong></li>
+        
+        <li><strong><a href="/post/20220520-thinking-to-main-of-the-world/"> 漫谈主次学习法则 - 2022/05/20</a></strong></li>
+        
+        <li><strong><a href="/post/thinking-to-main-of-the-world/"> 漫谈主次学习法则 - 2022/05/20</a></strong></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            没有标签
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <script src="https://giscus.app/client.js"
+            data-repo="fredgan/fredgan.github.io"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkxNjQ2NDg4MTI="
+            data-category="Announcements"
+            data-category-id="DIC_kwDOCdBXbM4CPSMl"
+            data-mapping="pathname"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="light"
+            data-lang="zh-CN"
+            crossorigin="anonymous"
+            async>
+    </script>
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2024 <a href="https://fredgan.github.io/">FredGan&#39;s Blog</a>
+        
+        | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">粤ICP备2023125130号</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://fredgan.github.io/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://fredgan.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20240218-annual-summary-2023/" title="2023年度总结">2023年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/annual-summary-2023/" title="2023年度总结">2023年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230802-analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230406-thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230405-kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230314-the-it-interpretation-of-life-philosophy/" title="人生哲理的计算机解释">人生哲理的计算机解释</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.github.io/post/20230108-thinking-to-landlord-card-game/" title="连炸斗地主直播观感">连炸斗地主直播观感</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://fredgan.github.io/categories/LICENSE/">LICENSE (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%AD%A6%E4%B9%A0/">学习 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%B7%A5%E5%85%B7/">工具 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">年度总结 (8)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%BC%80%E5%8F%91/">开发 (7)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E5%BC%80%E6%BA%90/">开源 (6)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%84%9F%E6%82%9F/">感悟 (25)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%8E%A8%E8%8D%90/">推荐 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%95%88%E7%8E%87/">效率 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E7%94%9F%E6%B4%BB/">生活 (6)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言 (6)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E8%8B%B1%E8%AF%AD/">英语 (2)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记 (4)</a></li>
+    
+    <li><a href="https://fredgan.github.io/categories/%E8%BD%AF%E4%BB%B6/">软件 (4)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://fredgan.github.io/tags/C%E8%AF%AD%E8%A8%80/">C语言</a>
+    
+    <a href="https://fredgan.github.io/tags/Markdown/">Markdown</a>
+    
+    <a href="https://fredgan.github.io/tags/redis/">Redis</a>
+    
+    <a href="https://fredgan.github.io/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件</a>
+    
+    <a href="https://fredgan.github.io/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+    
+    <a href="https://fredgan.github.io/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%84%9F%E6%82%9F/">感悟</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%8E%A8%E8%8D%90/">推荐</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%95%88%E7%8E%87/">效率</a>
+    
+    <a href="https://fredgan.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://time.geekbang.org/" title="geektime">极客时间</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://github.com/fredgan" title="github">Github</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://tools.fredgan.com" title="tools">Fred&#39;s Tools</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://fredgan.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
