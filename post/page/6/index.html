@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>Posts | FredGan&#39;s Blog</title>
+    <meta property="og:title" content="Posts - FredGan&#39;s Blog">
+    <meta property="og:type" content="article">
+        
+        
+    <meta name="Keywords" content="c,c&#43;&#43;,go,ios,python,yang,netconf,软件架构,网络爬虫,压缩、项目管理,开源、cleancode">
+    <meta name="description" content="Posts">
+        
+    <meta name="author" content="FredGan">
+    <meta property="og:url" content="https://fredgan.com/post/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <link rel="alternate" type="application/rss+xml+xml" href="https://fredgan.com/post/index.xml" title="FredGan's Blog" />
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://fredgan.com/">
+                        FredGan&#39;s Blog
+                    </a>
+                
+                <p class="description">技术分享与学习成长: C/C&#43;&#43;/Go/Python/iOS/JavaScript、YANG/NetConf、爬虫、编译器、压缩序列化、开源、CleanCode</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://fredgan.com/">首页</a>
+                    
+                    <a  href="https://fredgan.com/projects/" title="GitHub">GitHub</a>
+                    
+                    <a  href="https://fredgan.com/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://fredgan.com/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://fredgan.com/post/gdb/" title="GDB调试技巧">GDB调试技巧</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年7月6日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E5%BC%80%E5%8F%91'>开发</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            <h1 id="gdb-调试技巧">GDB 调试技巧</h1>
+<h2 id="一直接调试">一、直接调试</h2>
+<h3 id="11-启动与停止">1.1 启动与停止</h3>
+<ul>
+<li><code>run</code> / <code>r</code>  启动程序</li>
+<li><code>set args &lt;arg1&gt; &lt;arg2&gt;</code> 设置程序运行参数</li>
+<li><code>finish</code> 结束当前函数的运行，函数剩余部分会执行完毕</li>
+<li><code>return</code> 立即结束当前函数执行并返回，可带参数返回</li>
+</ul>
+<h3 id="12-调试指令">1.2 调试指令：</h3>
+<ul>
+<li><code>step</code> / <code>next</code> 执行下一行（进入函数）/（不进入函数）</li>
+<li><code>disassemble</code> 查看汇编命令</li>
+<li><code>stepi</code> / <code>nexti</code> 执行下一条汇编指令 (进入函数)/（不进入函数）</li>
+<li><code>jmp</code> 跳转指令</li>
+<li><code>info r</code> 查看寄存器值。<code>info</code> 可以简写为 <code>i</code></li>
+<li><code>bt</code> 查看调用路径</li>
+</ul>
+<blockquote>
+<p><strong>堆栈用途:</strong></p>……
+        </div>
+        <p class="readmore"><a href="https://fredgan.com/post/gdb/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://fredgan.com/post/20200706-gdb/" title="GDB调试技巧">GDB调试技巧</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年7月6日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E5%BC%80%E5%8F%91'>开发</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            <h2 id="一直接调试">一、直接调试</h2>
+<h3 id="11-启动与停止">1.1 启动与停止</h3>
+<ul>
+<li><code>run</code> / <code>r</code>  启动程序</li>
+<li><code>set args &lt;arg1&gt; &lt;arg2&gt;</code> 设置程序运行参数</li>
+<li><code>finish</code> 结束当前函数的运行，函数剩余部分会执行完毕</li>
+<li><code>return</code> 立即结束当前函数执行并返回，可带参数返回</li>
+</ul>
+<h3 id="12-调试指令">1.2 调试指令：</h3>
+<ul>
+<li><code>step</code> / <code>next</code> 执行下一行（进入函数）/（不进入函数）</li>
+<li><code>disassemble</code> 查看汇编命令</li>
+<li><code>stepi</code> / <code>nexti</code> 执行下一条汇编指令 (进入函数)/（不进入函数）</li>
+<li><code>jmp</code> 跳转指令</li>
+<li><code>info r</code> 查看寄存器值。<code>info</code> 可以简写为 <code>i</code></li>
+<li><code>bt</code> 查看调用路径</li>
+</ul>
+<blockquote>
+<p><strong>堆栈用途:</strong></p>……
+        </div>
+        <p class="readmore"><a href="https://fredgan.com/post/20200706-gdb/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://fredgan.com/post/annual-summary-2019/" title="2019年度总结">2019年度总结</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年1月1日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93'>年度总结</a></span>
+            
+            <span class="meta-category"><a href='/categories/%E6%84%9F%E6%82%9F'>感悟</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            <p>2019年就这样匆匆而过，还来不及回味，就已经到达最后一天了。这一年发生了太多的事情，也有太多让我没有想到的事情。本来想回顾一下这10年，但是想想10年发生的许多事情已经记不清楚了，还是回顾一年的事情吧。</p>
+<p>今年是平凡的一年。没有太多的不同，和往年差不多。感情没有变好，赚钱没有变多，身体却在变差，人过30，身体会告诉你，这个30意味着什么。</p>……
+        </div>
+        <p class="readmore"><a href="https://fredgan.com/post/annual-summary-2019/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://fredgan.com/post/20200101-annual-summary-2019/" title="2019年度总结">2019年度总结</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年1月1日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93'>年度总结</a></span>
+            
+            <span class="meta-category"><a href='/categories/%E6%84%9F%E6%82%9F'>感悟</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            <p>2019年就这样匆匆而过，还来不及回味，就已经到达最后一天了。这一年发生了太多的事情，也有太多让我没有想到的事情。本来想回顾一下这10年，但是想想10年发生的许多事情已经记不清楚了，还是回顾一年的事情吧。</p>
+<p>今年是平凡的一年。没有太多的不同，和往年差不多。感情没有变好，赚钱没有变多，身体却在变差，人过30，身体会告诉你，这个30意味着什么。</p>……
+        </div>
+        <p class="readmore"><a href="https://fredgan.com/post/20200101-annual-summary-2019/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://fredgan.com/post/a-letter-to-university-student/" title="致震波的一封信">致震波的一封信</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年9月5日
+        </date>
+        
+        <div class="post-content">
+            <p>这封信是在你考上大学准备进入校园的时候写的，有点长，耐心读下去，写这封信也是自己这些年来的一些感悟和体会。</p>
+<h2 id="恭喜考入大学">恭喜考入大学</h2>
+<p>首先，恭喜震波考入大学！从今以后，你就是一名光荣的大学生了，成为了一名独立、自主的个体，可以有自己的想法，自己的行为，并且自己为自己的所作所为负责，做一个挺胸抬头、不卑不亢、不骄不躁的自我。</p>……
+        </div>
+        <p class="readmore"><a href="https://fredgan.com/post/a-letter-to-university-student/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://fredgan.com/post/20190905-a-letter-to-university-student/" title="致震波的一封信">致震波的一封信</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年9月5日
+        </date>
+        
+        <div class="post-content">
+            <p>这封信是在你考上大学准备进入校园的时候写的，有点长，耐心读下去，写这封信也是自己这些年来的一些感悟和体会。</p>
+<h2 id="恭喜考入大学">恭喜考入大学</h2>
+<p>首先，恭喜震波考入大学！从今以后，你就是一名光荣的大学生了，成为了一名独立、自主的个体，可以有自己的想法，自己的行为，并且自己为自己的所作所为负责，做一个挺胸抬头、不卑不亢、不骄不躁的自我。</p>……
+        </div>
+        <p class="readmore"><a href="https://fredgan.com/post/20190905-a-letter-to-university-student/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://fredgan.com/post/redis/" title="Redis的使用方法">Redis的使用方法</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年1月3日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E5%BC%80%E5%8F%91'>开发</a></span>
+            
+            <span class="meta-category"><a href='/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6'>中间件</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            <h2 id="一-工具查看">一、 工具查看</h2>
+<p>可以直接使用 <code>redisClients</code> 软件界面操作查看</p>
+<h2 id="二-命令行">二、 命令行</h2>
+<p><code>redis-cli -h 127.0.0.1 -p 6379</code></p>
+<h3 id="21-基础命令">2.1 基础命令</h3>
+<ul>
+<li><code>keys *</code>      // 列举所有的key</li>
+<li><code>expire &lt;key&gt; &lt;seconds&gt;</code> // 设置某个key的过期时间（单位：秒）</li>
+<li><code>ttl &lt;key&gt;</code> // 显示key的过期时间（单位：秒）【返回<code>-1</code>表示永久 <code>-2</code>表示key不存在】</li>
+<li><code>persist &lt;key&gt;</code> // 将key的时间设置为永久
+<ul>
+<li><code>set</code> <code>getset</code> 都会将key设置为永久</li>
+</ul>
+</li>
+<li><code>expireat &lt;key&gt; &lt;1540000000&gt;</code> // 在某个时间点过期</li>
+</ul>
+<p><code>pexpire</code> <code>pttl</code> <code>pexpireat</code> 跟上面一样，只是单位是毫秒</p>……
+        </div>
+        <p class="readmore"><a href="https://fredgan.com/post/redis/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://fredgan.com/post/20190103-redis/" title="Redis的使用方法">Redis的使用方法</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年1月3日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E5%BC%80%E5%8F%91'>开发</a></span>
+            
+            <span class="meta-category"><a href='/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6'>中间件</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            <h2 id="一-工具查看">一、 工具查看</h2>
+<p>可以直接使用 <code>redisClients</code> 软件界面操作查看</p>
+<h2 id="二-命令行">二、 命令行</h2>
+<p><code>redis-cli -h 127.0.0.1 -p 6379</code></p>
+<h3 id="21-基础命令">2.1 基础命令</h3>
+<ul>
+<li><code>keys *</code>      // 列举所有的key</li>
+<li><code>expire &lt;key&gt; &lt;seconds&gt;</code> // 设置某个key的过期时间（单位：秒）</li>
+<li><code>ttl &lt;key&gt;</code> // 显示key的过期时间（单位：秒）【返回<code>-1</code>表示永久 <code>-2</code>表示key不存在】</li>
+<li><code>persist &lt;key&gt;</code> // 将key的时间设置为永久
+<ul>
+<li><code>set</code> <code>getset</code> 都会将key设置为永久</li>
+</ul>
+</li>
+<li><code>expireat &lt;key&gt; &lt;1540000000&gt;</code> // 在某个时间点过期</li>
+</ul>
+<p><code>pexpire</code> <code>pttl</code> <code>pexpireat</code> 跟上面一样，只是单位是毫秒</p>……
+        </div>
+        <p class="readmore"><a href="https://fredgan.com/post/20190103-redis/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://fredgan.com/post/greek_myths_and_open_source/" title="开源与希腊罗马神话">开源与希腊罗马神话</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            1年1月1日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E5%BC%80%E6%BA%90'>开源</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            <p>最近阅读一些希腊罗马神话相关的资料和书籍，了解了一些西方人对世界的认识和解释。</p>
+<p>希腊神话中将当时世界上能认识到的一切都用一个神来创造指代。大地之神盖亚Gaia、太阳之神阿波罗Apollo、月亮女神、天空之神、海洋之神、时间之神、爱与美之神Eros、黑夜之神、</p>
+<p>不由得感慨，他们对世界的认识和解释相比我们中国的那些神话，相对更加系统和完整。逻辑相对更加严密，建议各位开发者可以去读一读。</p>……
+        </div>
+        <p class="readmore"><a href="https://fredgan.com/post/greek_myths_and_open_source/">阅读全文</a></p>
+    </article>
+    
+    
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://fredgan.com/post/20220202-greek_myths_and_open_source/" title="开源与希腊罗马神话">开源与希腊罗马神话</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            1年1月1日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E5%BC%80%E6%BA%90'>开源</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            <p>最近阅读一些希腊罗马神话相关的资料和书籍，了解了一些西方人对世界的认识和解释。</p>
+<p>希腊神话中将当时世界上能认识到的一切都用一个神来创造指代。大地之神盖亚Gaia、太阳之神阿波罗Apollo、月亮女神、天空之神、海洋之神、时间之神、爱与美之神Eros、黑夜之神、</p>
+<p>不由得感慨，他们对世界的认识和解释相比我们中国的那些神话，相对更加系统和完整。逻辑相对更加严密，建议各位开发者可以去读一读。</p>……
+        </div>
+        <p class="readmore"><a href="https://fredgan.com/post/20220202-greek_myths_and_open_source/">阅读全文</a></p>
+    </article>
+    
+    
+    
+
+
+
+<ol class="page-navigator">
+    
+    <li class="prev">
+        <a href="https://fredgan.com/post/page/5/">上一页</a>
+    </li>
+    
+
+    
+    <li >
+        <a href="https://fredgan.com/post/">1</a>
+    </li>
+    
+    <li >
+        <a href="https://fredgan.com/post/page/2/">2</a>
+    </li>
+    
+    <li >
+        <a href="https://fredgan.com/post/page/3/">3</a>
+    </li>
+    
+    <li >
+        <a href="https://fredgan.com/post/page/4/">4</a>
+    </li>
+    
+    <li >
+        <a href="https://fredgan.com/post/page/5/">5</a>
+    </li>
+    
+    <li  class="current">
+        <a href="https://fredgan.com/post/page/6/">6</a>
+    </li>
+    
+    <li >
+        <a href="https://fredgan.com/post/page/7/">7</a>
+    </li>
+    
+
+    
+    <li class="next">
+        <a href="https://fredgan.com/post/page/7/">下一页</a>
+    </li>
+    
+</ol>
+
+
+
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2024 <a href="https://fredgan.com/">FredGan&#39;s Blog</a>
+        
+        | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">粤ICP备2023125130号</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://fredgan.com/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://fredgan.com/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://fredgan.com/post/20240218-annual-summary-2023/" title="2023年度总结">2023年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/annual-summary-2023/" title="2023年度总结">2023年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230802-analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230406-thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230405-kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230314-the-it-interpretation-of-life-philosophy/" title="人生哲理的计算机解释">人生哲理的计算机解释</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230108-thinking-to-landlord-card-game/" title="连炸斗地主直播观感">连炸斗地主直播观感</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://fredgan.com/categories/LICENSE/">LICENSE (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%AD%A6%E4%B9%A0/">学习 (4)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%B7%A5%E5%85%B7/">工具 (4)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">年度总结 (8)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%BC%80%E5%8F%91/">开发 (7)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%BC%80%E6%BA%90/">开源 (6)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%84%9F%E6%82%9F/">感悟 (25)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%8E%A8%E8%8D%90/">推荐 (4)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%95%88%E7%8E%87/">效率 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E7%94%9F%E6%B4%BB/">生活 (6)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言 (6)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E8%8B%B1%E8%AF%AD/">英语 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记 (4)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E8%BD%AF%E4%BB%B6/">软件 (4)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://fredgan.com/tags/C%E8%AF%AD%E8%A8%80/">C语言</a>
+    
+    <a href="https://fredgan.com/tags/Markdown/">Markdown</a>
+    
+    <a href="https://fredgan.com/tags/redis/">Redis</a>
+    
+    <a href="https://fredgan.com/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件</a>
+    
+    <a href="https://fredgan.com/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+    
+    <a href="https://fredgan.com/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://fredgan.com/tags/%E6%84%9F%E6%82%9F/">感悟</a>
+    
+    <a href="https://fredgan.com/tags/%E6%8E%A8%E8%8D%90/">推荐</a>
+    
+    <a href="https://fredgan.com/tags/%E6%95%88%E7%8E%87/">效率</a>
+    
+    <a href="https://fredgan.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://time.geekbang.org/" title="geektime">极客时间</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://github.com/fredgan" title="github">Github</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://tools.fredgan.com" title="tools">Fred&#39;s Tools</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://fredgan.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

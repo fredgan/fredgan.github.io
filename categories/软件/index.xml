@@ -10,10 +10,24 @@
     <atom:link href="https://fredgan.com/categories/%E8%BD%AF%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>数据库软件简介</title>
+      <link>https://fredgan.com/post/20200819-database-software/</link>
+      <pubDate>Wed, 19 Aug 2020 14:08:05 +0800</pubDate>
+      <guid>https://fredgan.com/post/20200819-database-software/</guid>
+      <description>&lt;h2 id=&#34;question&#34;&gt;Question&lt;/h2&gt;&#xA;&lt;p&gt;科普类型：美国的数据库软件在什么地方先进，我们差距在哪？有什么卡脖子的？现在全球竞争格局是怎样的？&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-数据类型&#34;&gt;1 数据类型&lt;/h2&gt;&#xA;&lt;p&gt;数据库是用来存储数据的，先简单介绍一下数据有哪些类型。&lt;/p&gt;&#xA;&lt;p&gt;常见的数据类型有：&lt;/p&gt;&#xA;&lt;h3 id=&#34;11-关系型数据&#34;&gt;1.1 关系型数据&lt;/h3&gt;&#xA;&lt;p&gt;其实就类似于Excel表格通常所呈现的数据那样，每一行每一列整整齐齐，井井有条。同一个表之间有可能有唯一性关系，不同的表之间也可能存在一些关联。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>数据库软件简介</title>
       <link>https://fredgan.com/post/database-software/</link>
       <pubDate>Wed, 19 Aug 2020 14:08:05 +0800</pubDate>
       <guid>https://fredgan.com/post/database-software/</guid>
       <description>&lt;h1 id=&#34;数据库软件简介&#34;&gt;数据库软件简介&lt;/h1&gt;&#xA;&lt;h2 id=&#34;question&#34;&gt;Question&lt;/h2&gt;&#xA;&lt;p&gt;科普类型：美国的数据库软件在什么地方先进，我们差距在哪？有什么卡脖子的？现在全球竞争格局是怎样的？&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-数据类型&#34;&gt;1 数据类型&lt;/h2&gt;&#xA;&lt;p&gt;数据库是用来存储数据的，先简单介绍一下数据有哪些类型。&lt;/p&gt;&#xA;&lt;p&gt;常见的数据类型有：&lt;/p&gt;&#xA;&lt;h3 id=&#34;11-关系型数据&#34;&gt;1.1 关系型数据&lt;/h3&gt;&#xA;&lt;p&gt;其实就类似于Excel表格通常所呈现的数据那样，每一行每一列整整齐齐，井井有条。同一个表之间有可能有唯一性关系，不同的表之间也可能存在一些关联。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>优质软件列表</title>
+      <link>https://fredgan.com/post/20210218-good_software/</link>
+      <pubDate>Wed, 08 Jul 2020 14:21:58 +0800</pubDate>
+      <guid>https://fredgan.com/post/20210218-good_software/</guid>
+      <description>&lt;p&gt;经过多年实践，总结的优质软件列表。持续更新中&amp;hellip;&lt;/p&gt;&#xA;&lt;h2 id=&#34;一windows&#34;&gt;一、Windows&lt;/h2&gt;&#xA;&lt;h3 id=&#34;11-directory-opus收费&#34;&gt;1.1 Directory Opus（收费）&lt;/h3&gt;&#xA;&lt;p&gt;功能超强的资源管理器。比Windows自带的资源管理器好用太多，多Tab，正则表达式批量重命名，FTP连接器，多窗口操作，图片文本文件预览等。&lt;/p&gt;</description>
     </item>
     <item>
       <title>优质软件列表</title>

@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>如何写一个漂亮的Markdown | FredGan&#39;s Blog</title>
+    <meta property="og:title" content="如何写一个漂亮的Markdown - FredGan&#39;s Blog">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2020-07-12T22:21:58&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2020-07-13T00:00:00&#43;08:00'>
+        
+    <meta name="Keywords" content="[markdown 效率 工具]">
+    <meta name="description" content="如何写一个漂亮的Markdown">
+        
+    <meta name="author" content="FredGan">
+    <meta property="og:url" content="https://fredgan.com/post/20200712-how-to-write-a-beautiful-markdown/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://fredgan.com/">
+                        FredGan&#39;s Blog
+                    </a>
+                
+                <p class="description">技术分享与学习成长: C/C&#43;&#43;/Go/Python/iOS/JavaScript、YANG/NetConf、爬虫、编译器、压缩序列化、开源、CleanCode</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://fredgan.com/">首页</a>
+                    
+                    <a  href="https://fredgan.com/projects/" title="GitHub">GitHub</a>
+                    
+                    <a  href="https://fredgan.com/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://fredgan.com/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一概述">一、概述</a></li>
+    <li><a href="#二工具">二、工具</a></li>
+    <li><a href="#三markdown的基本格式">三、Markdown的基本格式</a></li>
+    <li><a href="#四markdown心得">四、Markdown心得</a>
+      <ul>
+        <li><a href="#41-结构">4.1 结构</a></li>
+        <li><a href="#42-代码">4.2 代码</a></li>
+        <li><a href="#43-图片">4.3 图片</a></li>
+        <li><a href="#44-列表">4.4 列表</a></li>
+        <li><a href="#45-扩展">4.5 扩展</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">如何写一个漂亮的Markdown</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年7月12日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E5%B7%A5%E5%85%B7'>工具</a></span>
+            
+            <span class="meta-category"><a href='/categories/%E6%95%88%E7%8E%87'>效率</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <h2 id="一概述">一、概述</h2>
+<p>作为一个技术人员，善于利用工具提升生产效率是一个合格的技术人员的基本修养，也是提升效率的一个重要途径。作为一个程序员，有许许多多的工具来提升生产效率，使用规范化和大统一的规则规范是与优秀程序员世界接轨、交流和孜孜不倦的追求。</p>
+<p>这里，想写很多工具和方法。但是，这里想先讲讲怎么将自己的内容完美呈现出来，让更多的人能够理解自己的思想。</p>
+<p>程序员的世界里，原本表达思想的文件格式是文本格式。但是毫无格式的文本，讲真，看起来有点累。看到那个<a href="https://tools.ietf.org/html/">RFC文档</a>动则几十上百页的黑白同字号文本内容，让人看得眼花缭乱，昏昏欲睡。幸好，我们程序员自己动手丰衣足食，给自己的发明了Markdown格式的文档来自我满足。</p>
+<h2 id="二工具">二、工具</h2>
+<p>首先简单介绍几种写Markdown文件的工具：</p>
+<ul>
+<li>
+<p><strong>vscode</strong>
+万能编辑器vscode，是一个手头上最容易获取，原生支持Markdown格式。不过，原生的预览不太美观，我更喜欢安装一个 <code>Markdown Preview Enhanced</code> 的预览插件。分左右屏，左边编写内容，右边预览渲染格式。</p>
+</li>
+<li>
+<p><strong>typora</strong>
+专门为写Markdown而生的，跟上面的不一样，它是本地编写并同时进行渲染。有人喜欢，但我不太适应。</p>
+</li>
+<li>
+<p><strong>作业部落</strong>
+<a href="https://www.zybuluo.com/mdeditor">作业部落</a>是一个在线的网页编辑器，跟vscode使用体验差不多，也是分屏的。内容直接保存在云端，渲染很漂亮！</p>
+<p>对于个人来说，使用还算方便，但对于有隐私内容不便泄漏的，可能不太适合。另外，这个网站是个人搭建的，稳定性可能不算特别高，我使用期间就遇到过两次网站挂掉的情况。</p>
+</li>
+<li>
+<p><strong>其他</strong>
+其他的编辑器还有很多，如<a href="https://maxiang.io/">马克飞象</a>、<a href="https://www.yinxiang.com/">印象笔记</a>、<a href="https://github.com">GitHub</a>，以及现代的各种IDE基本上都支持Markdown的编写预览。选择一款适合自己的即可。</p>
+</li>
+</ul>
+<h2 id="三markdown的基本格式">三、Markdown的基本格式</h2>
+<blockquote>
+<p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面。    —— <a href="https://zh.wikipedia.org/wiki/Markdown">维基百科</a></p>
+</blockquote>
+<p>Markdown格式是为程序员而生，对代码、图片、超链接、列表、层级结构、表格有很好的设计。甚至还有很强的扩展能力，例如安装相应的插件后，对Latex公式、流程图、目录都可以很好的显示和表达。</p>
+<p>Markdown格式也可以很容易的转换为其他的格式，例如HTML，PDF格式等。总之，怎么夸赞都不为过。</p>
+<p>基本格式格式规范参考以下链接，我这里就不罗列一遍了。</p>
+<ul>
+<li><a href="https://www.runoob.com/markdown/md-tutorial.html">菜鸟教程</a></li>
+<li><a href="https://www.zybuluo.com/mdeditor">作业部落</a></li>
+</ul>
+<h2 id="四markdown心得">四、Markdown心得</h2>
+<h3 id="41-结构">4.1 结构</h3>
+<p>一定要层级结构清晰，逻辑清楚。这点是最重要的。使用<code>#</code> <code>##</code> 等表示标题，标题层级结构要一致、逻辑恰当。标题结构最好不要超过4级，大部分人类能理解的最多的层级结构差不多就在三四级的样子。</p>
+<h3 id="42-代码">4.2 代码</h3>
+<p>代码一定要使用重音符（键盘上数字1左边的键），并在三个重音符的后边附上代码的语言，例如<code>bash｜c｜cpp (C++)｜cs (C#)｜objectivec (Objective-C)｜swift｜java｜css｜xml (HTML, XML)｜javascript｜coffeescript｜json｜php｜perl｜python｜ruby｜sql｜mathematica｜matlab｜r｜scala｜lisp｜scheme｜markdown｜tex</code> 等等。</p>
+<p>例如：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>    ```c
+</span></span><span style="display:flex;"><span>    <span style="color:#800080">#include</span> &lt;<span style="color:#000080">stdio.h</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    # Just a hello world
+</span></span><span style="display:flex;"><span>    int main() {
+</span></span><span style="display:flex;"><span>        printf(&#34;Hello World!\n&#34;);
+</span></span><span style="display:flex;"><span>        return 0;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    ``` 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>会被渲染为：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#999;font-weight:bold;font-style:italic">#include</span> <span style="color:#999;font-weight:bold;font-style:italic">&lt;stdio.h&gt;</span><span style="color:#999;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-weight:bold;font-style:italic"># Just a hello world
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-weight:bold;font-style:italic"></span><span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#900;font-weight:bold">printf</span>(<span style="color:#d14">&#34;Hello World!</span><span style="color:#d14">\n</span><span style="color:#d14">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">return</span> <span style="color:#099">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>是不是明显漂亮多了？</p>
+<h3 id="43-图片">4.3 图片</h3>
+<p>可以适当嵌入一些图片，让文档更生动。
+对我这个懒人来说，我这点做得不够，不喜欢截图并保存。使用外部图片链接的方式不如直接保存图片到本地进行链接来的靠谱，因为很难说某一天，你的这个图片链接失效了。到时候哭都来不及。</p>
+<h3 id="44-列表">4.4 列表</h3>
+<p>分清楚有序列表和无序列表。</p>
+<h3 id="45-扩展">4.5 扩展</h3>
+<p>公式最好使用LaTeX来编辑，保存文本总是比保存图片来的稳定和可靠。流程图、甘特图等也是一样，参考<a href="https://www.runoob.com/markdown/md-advance.html">菜鸟教程</a>
+不过，这些都有一定的学习成本。但，大部分程序员其实这些用不太到，不学也关系不大。</p>
+<p>列举重要的几点如下：</p>
+<ul>
+<li>
+<p>颜色表示
+<code>$\color{red}{红色}$</code> -&gt; $\color{red}{红色}$</p>
+</li>
+<li>
+<p>待办事项</p>
+</li>
+</ul>
+<pre tabindex="0"><code>  - [ ] a
+  - [x] b
+</code></pre><p>渲染效果如下：</p>
+<blockquote>
+<ul>
+<li><input disabled="" type="checkbox"> a</li>
+<li><input checked="" disabled="" type="checkbox"> b</li>
+</ul>
+</blockquote>
+<ul>
+<li>插入目录
+这个不会所有的都支持。目前只发现 vscode和马克飞象支持。<code>[TOC]</code> 这里即会插入目录。</li>
+</ul>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><strong><a href="/post/how-to-write-a-beautiful-markdown/"> 如何写一个漂亮的Markdown - 2020/07/12</a></strong></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/Markdown'>Markdown</a></li>
+                
+                <li><a href='/tags/%E6%95%88%E7%8E%87'>效率</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <script src="https://giscus.app/client.js"
+            data-repo="fredgan/fredgan.github.io"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkxNjQ2NDg4MTI="
+            data-category="Announcements"
+            data-category-id="DIC_kwDOCdBXbM4CPSMl"
+            data-mapping="pathname"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="light"
+            data-lang="zh-CN"
+            crossorigin="anonymous"
+            async>
+    </script>
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2024 <a href="https://fredgan.com/">FredGan&#39;s Blog</a>
+        
+        | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">粤ICP备2023125130号</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://fredgan.com/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://fredgan.com/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://fredgan.com/post/20240218-annual-summary-2023/" title="2023年度总结">2023年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/annual-summary-2023/" title="2023年度总结">2023年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230802-analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230406-thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230405-kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230314-the-it-interpretation-of-life-philosophy/" title="人生哲理的计算机解释">人生哲理的计算机解释</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230108-thinking-to-landlord-card-game/" title="连炸斗地主直播观感">连炸斗地主直播观感</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://fredgan.com/categories/LICENSE/">LICENSE (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%AD%A6%E4%B9%A0/">学习 (4)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%B7%A5%E5%85%B7/">工具 (4)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">年度总结 (8)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%BC%80%E5%8F%91/">开发 (7)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%BC%80%E6%BA%90/">开源 (6)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%84%9F%E6%82%9F/">感悟 (25)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%8E%A8%E8%8D%90/">推荐 (4)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%95%88%E7%8E%87/">效率 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E7%94%9F%E6%B4%BB/">生活 (6)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言 (6)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E8%8B%B1%E8%AF%AD/">英语 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记 (4)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E8%BD%AF%E4%BB%B6/">软件 (4)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://fredgan.com/tags/C%E8%AF%AD%E8%A8%80/">C语言</a>
+    
+    <a href="https://fredgan.com/tags/Markdown/">Markdown</a>
+    
+    <a href="https://fredgan.com/tags/redis/">Redis</a>
+    
+    <a href="https://fredgan.com/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件</a>
+    
+    <a href="https://fredgan.com/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+    
+    <a href="https://fredgan.com/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://fredgan.com/tags/%E6%84%9F%E6%82%9F/">感悟</a>
+    
+    <a href="https://fredgan.com/tags/%E6%8E%A8%E8%8D%90/">推荐</a>
+    
+    <a href="https://fredgan.com/tags/%E6%95%88%E7%8E%87/">效率</a>
+    
+    <a href="https://fredgan.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://time.geekbang.org/" title="geektime">极客时间</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://github.com/fredgan" title="github">Github</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://tools.fredgan.com" title="tools">Fred&#39;s Tools</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://fredgan.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

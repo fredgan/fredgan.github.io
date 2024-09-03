@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>反义词的一点点想法 | FredGan&#39;s Blog</title>
+    <meta property="og:title" content="反义词的一点点想法 - FredGan&#39;s Blog">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2022-06-05T21:01:22&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2022-06-05T21:01:22&#43;08:00'>
+        
+    <meta name="Keywords" content="c,c&#43;&#43;,go,ios,python,yang,netconf,软件架构,网络爬虫,压缩、项目管理,开源、cleancode">
+    <meta name="description" content="反义词的一点点想法">
+        
+    <meta name="author" content="FredGan">
+    <meta property="og:url" content="https://fredgan.com/post/20220605-thinking-to-antonym/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://fredgan.com/">
+                        FredGan&#39;s Blog
+                    </a>
+                
+                <p class="description">技术分享与学习成长: C/C&#43;&#43;/Go/Python/iOS/JavaScript、YANG/NetConf、爬虫、编译器、压缩序列化、开源、CleanCode</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://fredgan.com/">首页</a>
+                    
+                    <a  href="https://fredgan.com/projects/" title="GitHub">GitHub</a>
+                    
+                    <a  href="https://fredgan.com/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://fredgan.com/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents"></nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">反义词的一点点想法</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2022年6月5日
+        </date>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <p>学语言的时候，很常用的有两个东西，“近义词”，“反义词”。</p>
+<p>“近义词”大家都很好理解，就是意思很接近的词。在英语中表达“充足”的词有：enough、sufficient、adequate等。这几个词就是近义词，甚至可以说是同义词。</p>
+<p>但“反义词”，好像却没有这么简单。只不过，我们从小学开始，就听到老师说反义词反义词的，老师们也只会说，反义词是表达意思相反的词。但真的有这么简单吗？</p>
+<p>不知道有没有注意过一个有意思的现象：老师经常会考学生，某某词的反义词是什么，如果这个学生知道这个约定俗成的反义词，则会说出来，比如高的反义词是矮，胖的反义词是瘦。但如果这个学生不知道这个词的反义词，学生往往也能回答。比如富贵的反义词，学生回答“不富贵”！</p>
+<p>这就带来了一个明显的问题，这样说那就所有的形容词都有反义词了，当然这不是问题。问题是，在一个词前面加个否定词“不”是不是等同于表达了其反义词的含义。如，高的反义词是矮，加个否定词的反义词是不高。矮和不高是表达了相同含义或者相近含义吗？看起来好像不是这么回事。</p>
+<p>这就让人很困惑了，反义词到底是啥含义呢？</p>
+<p>我又去查了一下英语中的“antonym”的说法</p>
+<ul>
+<li>描述状态的两极，如上和下，高和低，美和丑，没有明显分界线。</li>
+<li>状态两极中分割为多个状态，多个状态之间有明显分界线。红色和蓝色，星期一和星期五。</li>
+<li>描述两个动作的互逆操作。例如上升和下降，增加和减少，加速和减速。</li>
+<li>描述两个事物或者对象的相互关系。例如丈夫和妻子，父母和孩子等。</li>
+</ul>
+<p>这个可以说道说道，状态的两极，两极中间其实有很多灰度状态。对于事物美丑，假如分为0~100级别。
+你说的美可能要求是大于90，10以下是丑。
+而我说的美可能是80以上就是美，20以下就是丑。</p>
+<p>学过高中数学集合概念的可能都能画出来。</p>
+<p>所以，而对于中间的状态，比如50，可能就是用一般、不美、不丑等都可以表达。不美和丑表达的并不是相近的含义。
+也因此，就引发了第二种反义词的概念，我把中间灰度区间划分子区间。不同的子区间表达的也是反义词的概念。</p>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><strong><a href="/projects/"> Github项目列表 - 2020/08/19</a></strong></li>
+        
+        <li><strong><a href="/about/"> 关于自己 - 2020/08/18</a></strong></li>
+        
+        <li><strong><a href="/post/a-letter-to-university-student/"> 致震波的一封信 - 2019/09/05</a></strong></li>
+        
+        <li><strong><a href="/post/20190905-a-letter-to-university-student/"> 致震波的一封信 - 2019/09/05</a></strong></li>
+        
+        <li><strong><a href="/archives/"> 归档 - 2019/01/09</a></strong></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            没有标签
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <script src="https://giscus.app/client.js"
+            data-repo="fredgan/fredgan.github.io"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkxNjQ2NDg4MTI="
+            data-category="Announcements"
+            data-category-id="DIC_kwDOCdBXbM4CPSMl"
+            data-mapping="pathname"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="light"
+            data-lang="zh-CN"
+            crossorigin="anonymous"
+            async>
+    </script>
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2024 <a href="https://fredgan.com/">FredGan&#39;s Blog</a>
+        
+        | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">粤ICP备2023125130号</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://fredgan.com/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://fredgan.com/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://fredgan.com/post/20240218-annual-summary-2023/" title="2023年度总结">2023年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/annual-summary-2023/" title="2023年度总结">2023年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230802-analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230406-thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230405-kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230314-the-it-interpretation-of-life-philosophy/" title="人生哲理的计算机解释">人生哲理的计算机解释</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230108-thinking-to-landlord-card-game/" title="连炸斗地主直播观感">连炸斗地主直播观感</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://fredgan.com/categories/LICENSE/">LICENSE (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%AD%A6%E4%B9%A0/">学习 (4)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%B7%A5%E5%85%B7/">工具 (4)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">年度总结 (8)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%BC%80%E5%8F%91/">开发 (7)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%BC%80%E6%BA%90/">开源 (6)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%84%9F%E6%82%9F/">感悟 (25)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%8E%A8%E8%8D%90/">推荐 (4)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%95%88%E7%8E%87/">效率 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E7%94%9F%E6%B4%BB/">生活 (6)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言 (6)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E8%8B%B1%E8%AF%AD/">英语 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记 (4)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E8%BD%AF%E4%BB%B6/">软件 (4)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://fredgan.com/tags/C%E8%AF%AD%E8%A8%80/">C语言</a>
+    
+    <a href="https://fredgan.com/tags/Markdown/">Markdown</a>
+    
+    <a href="https://fredgan.com/tags/redis/">Redis</a>
+    
+    <a href="https://fredgan.com/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件</a>
+    
+    <a href="https://fredgan.com/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+    
+    <a href="https://fredgan.com/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://fredgan.com/tags/%E6%84%9F%E6%82%9F/">感悟</a>
+    
+    <a href="https://fredgan.com/tags/%E6%8E%A8%E8%8D%90/">推荐</a>
+    
+    <a href="https://fredgan.com/tags/%E6%95%88%E7%8E%87/">效率</a>
+    
+    <a href="https://fredgan.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://time.geekbang.org/" title="geektime">极客时间</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://github.com/fredgan" title="github">Github</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://tools.fredgan.com" title="tools">Fred&#39;s Tools</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://fredgan.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

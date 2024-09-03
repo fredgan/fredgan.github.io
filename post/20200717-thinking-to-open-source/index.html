@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>开源的一些感悟 | FredGan&#39;s Blog</title>
+    <meta property="og:title" content="开源的一些感悟 - FredGan&#39;s Blog">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2020-07-17T00:21:58&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2020-07-18T00:00:00&#43;08:00'>
+        
+    <meta name="Keywords" content="[开源]">
+    <meta name="description" content="开源的一些感悟">
+        
+    <meta name="author" content="FredGan">
+    <meta property="og:url" content="https://fredgan.com/post/20200717-thinking-to-open-source/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://fredgan.com/">
+                        FredGan&#39;s Blog
+                    </a>
+                
+                <p class="description">技术分享与学习成长: C/C&#43;&#43;/Go/Python/iOS/JavaScript、YANG/NetConf、爬虫、编译器、压缩序列化、开源、CleanCode</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://fredgan.com/">首页</a>
+                    
+                    <a  href="https://fredgan.com/projects/" title="GitHub">GitHub</a>
+                    
+                    <a  href="https://fredgan.com/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://fredgan.com/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#开源--免费">“开源” ≠ “免费”</a></li>
+    <li><a href="#开源的本质">开源的本质</a></li>
+    <li><a href="#启示">启示</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">开源的一些感悟</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年7月17日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E5%BC%80%E6%BA%90'>开源</a></span>
+            
+            <span class="meta-category"><a href='/categories/%E6%84%9F%E6%82%9F'>感悟</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <p>从事开源软件开发已经有一年多了。从原来对开源一无所知，甚至是一些错误的认知，到现在已经能够深入参与到开源社区，并成为一些软件的Committer，走过了许许多多的弯路，也对开源有了许多的新的认识。突然对开源有了一些感悟，所以紧急插入一篇感悟。</p>
+<h2 id="开源--免费">“开源” ≠ “免费”</h2>
+<p>这是几乎所有没有从事过开源软件开发工作的人的一个基本认识错误。如果你问以前的我，“你认为开源软件是什么？”，那我肯定会回答你：“就是开放源代码的免费软件！”。</p>
+<p>“开源”其实不是免费，世界上有许许多多的公司从事着开源软件的开发工作，他们也同样把开源软件拿去卖，也有人买。就比如Red Hat，SUSE等公司，他们一方面自己维护者一个开源社区（Fedora、openSUSE），另一方面也维护着自己的商业发行版。开源软件的开发需要费用，就好比Linux Foundation、Apache Foundation等这些大型开源软件基金会都有许多商业公司交年费和会员费赞助才得以存续。而开源软件发行后，公司使用也可能遇到问题，可能需要进行商业咨询，一些开源软件公司就收咨询维护费营生，这都是很自然的。 开源软件可以免费使用，但不代表你可以完全为此不用付出任何费用。</p>
+<h2 id="开源的本质">开源的本质</h2>
+<p>为什么开源可行？为什么开源能够流行？为什么开源能够诞生诸如Linux如此伟大的项目？建议看一下讲述开源文化的书《大教堂与集市》。
+互联网公司开发软件就好比是大教堂模式，而开源形式则是菜市场模式。大教堂模式封闭而严谨，集市模式则松散而又有序。</p>
+<p>美国有许许多多热心于推动开源发展的一些极客黑客，包括GNU计划的发起者Richard Stallman, Linux的核心灵魂人物Linus Torvalds, 本书的作者Eric Raymand等。</p>
+<p>他们还制定了一些看似简单的平平无奇的文本License来约束开源软件的发展。发展至今，这些License虽然不是法律条款，但却有许多公司为付出了昂贵的代价。合法合规，是所有行业能够持续健康发展的底线规则！我们国家在这方面还是有点太薄弱了。</p>
+<h2 id="启示">启示</h2>
+<p>因为《大教堂与集市》已经将黑客们的历史和开源已经讲得很清楚了，我这里就讲讲开源给我的启示。</p>
+<p>这本书中最重要的一句话：</p>
+<blockquote>
+<p>李纳斯法则(Linus&rsquo;s Law)：只要眼睛足够多，bug就无处可藏！</p>
+</blockquote>
+<p>是的，将一切大白于公众眼前，问题就很难以藏起来。这不只是软件开发的重要法则，更是我们社会的重要法则。</p>
+<p>“群众的眼睛是雪亮的！” 和 李纳斯法则 有异曲同工之妙！</p>
+<p>就像如今闹得沸沸扬扬的学术造假，居然从小学生就开始了！一个小学生居然就能搞定癌症的研究，这个造假已经是瞒天过海了。学术研究的这些数据如果都暴露在群众的眼睛视线下，定然不会导致这些事情的发生。可是这些评奖规则都不是公开透明的，就像开发软件一样，闭门开发，其可信任程度可想而知。</p>
+<ul>
+<li>如果能将公司规章制度摆在所有员工面前，并奖励提意见或者修订它的人，自然会有员工发现规章制度的漏洞，从而公司可以有效修订它！</li>
+<li>如果能开放国家法律的修订社区，每隔一年或者几年发一个版本，法律也能很快完善！</li>
+<li>如果能开放行政官员等的财务数据，则腐败问题无处可藏！</li>
+<li>如果能将国家的一些行业数据形成一个社区公开出来，则各个行业就都能健康竞争，行业也能健康发展。</li>
+</ul>
+<p>开源其实就是无所保留，开源其实就是建立信任！这才是开源能够得以长存的根本原因。</p>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><strong><a href="/post/thinking-to-open-source/"> 开源的一些感悟 - 2020/07/17</a></strong></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            没有标签
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <script src="https://giscus.app/client.js"
+            data-repo="fredgan/fredgan.github.io"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkxNjQ2NDg4MTI="
+            data-category="Announcements"
+            data-category-id="DIC_kwDOCdBXbM4CPSMl"
+            data-mapping="pathname"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="light"
+            data-lang="zh-CN"
+            crossorigin="anonymous"
+            async>
+    </script>
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2024 <a href="https://fredgan.com/">FredGan&#39;s Blog</a>
+        
+        | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">粤ICP备2023125130号</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://fredgan.com/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://fredgan.com/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://fredgan.com/post/20240218-annual-summary-2023/" title="2023年度总结">2023年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/annual-summary-2023/" title="2023年度总结">2023年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230802-analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230406-thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230405-kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230314-the-it-interpretation-of-life-philosophy/" title="人生哲理的计算机解释">人生哲理的计算机解释</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230108-thinking-to-landlord-card-game/" title="连炸斗地主直播观感">连炸斗地主直播观感</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://fredgan.com/categories/LICENSE/">LICENSE (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%AD%A6%E4%B9%A0/">学习 (4)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%B7%A5%E5%85%B7/">工具 (4)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">年度总结 (8)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%BC%80%E5%8F%91/">开发 (7)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%BC%80%E6%BA%90/">开源 (6)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%84%9F%E6%82%9F/">感悟 (25)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%8E%A8%E8%8D%90/">推荐 (4)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%95%88%E7%8E%87/">效率 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E7%94%9F%E6%B4%BB/">生活 (6)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言 (6)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E8%8B%B1%E8%AF%AD/">英语 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记 (4)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E8%BD%AF%E4%BB%B6/">软件 (4)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://fredgan.com/tags/C%E8%AF%AD%E8%A8%80/">C语言</a>
+    
+    <a href="https://fredgan.com/tags/Markdown/">Markdown</a>
+    
+    <a href="https://fredgan.com/tags/redis/">Redis</a>
+    
+    <a href="https://fredgan.com/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件</a>
+    
+    <a href="https://fredgan.com/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+    
+    <a href="https://fredgan.com/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://fredgan.com/tags/%E6%84%9F%E6%82%9F/">感悟</a>
+    
+    <a href="https://fredgan.com/tags/%E6%8E%A8%E8%8D%90/">推荐</a>
+    
+    <a href="https://fredgan.com/tags/%E6%95%88%E7%8E%87/">效率</a>
+    
+    <a href="https://fredgan.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://time.geekbang.org/" title="geektime">极客时间</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://github.com/fredgan" title="github">Github</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://tools.fredgan.com" title="tools">Fred&#39;s Tools</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://fredgan.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

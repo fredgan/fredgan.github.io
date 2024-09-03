@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>从衰老说开去 | FredGan&#39;s Blog</title>
+    <meta property="og:title" content="从衰老说开去 - FredGan&#39;s Blog">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2021-08-15T00:00:00&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2021-08-15T00:00:00&#43;08:00'>
+        
+    <meta name="Keywords" content="[衰老]">
+    <meta name="description" content="从衰老说开去">
+        
+    <meta name="author" content="FredGan">
+    <meta property="og:url" content="https://fredgan.com/post/20210815-aging/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://fredgan.com/">
+                        FredGan&#39;s Blog
+                    </a>
+                
+                <p class="description">技术分享与学习成长: C/C&#43;&#43;/Go/Python/iOS/JavaScript、YANG/NetConf、爬虫、编译器、压缩序列化、开源、CleanCode</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://fredgan.com/">首页</a>
+                    
+                    <a  href="https://fredgan.com/projects/" title="GitHub">GitHub</a>
+                    
+                    <a  href="https://fredgan.com/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://fredgan.com/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#衰老的瞬间">衰老的瞬间</a></li>
+    <li><a href="#衰老的变化">衰老的变化</a></li>
+    <li><a href="#衰老的原因">衰老的原因</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">从衰老说开去</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2021年8月15日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E7%94%9F%E6%B4%BB'>生活</a></span>
+            
+            <span class="meta-category"><a href='/categories/%E6%84%9F%E6%82%9F'>感悟</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <h2 id="衰老的瞬间">衰老的瞬间</h2>
+<p>随着年纪慢慢的增加，会慢慢关注到越来越多的事情。有些事情会在一些很不经意的瞬间出现，比如</p>
+<ul>
+<li>照镜子的时候突然发现头上冒出好多白头发</li>
+<li>许久不运动，心血来潮运动一次后，居然要疼上四五天</li>
+<li>熬夜后，第二天整天都昏昏沉沉，且胸口隐隐疼痛</li>
+</ul>
+<p>而就在这些瞬间，我们发现，自己已经不再年轻。这样的瞬间感受的次数多了，就慢慢见怪不怪了，接受了这一切。人生也就逐渐看淡了许多事情。大概这就是身体的衰老，带来了我们心理的衰老。</p>
+<h2 id="衰老的变化">衰老的变化</h2>
+<p>上面说了，衰老大部分缘由身体的衰老，慢慢引起心理的衰老。</p>
+<p>我们身体衰老的过程，很表面上看，刚出生的宝宝，细皮嫩肉，仿佛有一点点外力就可能受伤。成长为少年，皮肤慢慢变得结实，已经能承受一些风吹雨打了。再过些年头，经过岁月的洗礼，我们慢慢地变得皮糙肉厚，各种器官都在老化蜕变。皮肤慢慢的变得褶皱，头发发白，牙齿掉落，骨头窸窣作响。肌肉不再那么有力了，走路也不稳了，身体受个伤也很难修复了。这就是我们肉眼可见的身体衰老。</p>
+<p>而心理衰老呢？
+刚出生不就的宝宝，对什么都感到好奇，对什么都觉得新鲜。慢慢地，到了青年，会追求身体的刺激，体验的刺激，感官的刺激。再然后，到了中年，感受了人生百态，对万事万物已经没有很大的热情去一探究竟。</p>
+<h2 id="衰老的原因">衰老的原因</h2>
+<p>而衰老的原因，科学家们众说纷纭。有端粒说，有自由基说，有激素说，不一而足。作为一个普通人，不知道你注意到了没有，小孩子基本都是没有口气的，随着年纪的增大，你会发现每个人都或多或少有口气。再引申开一点，小孩子生病比较少，而年纪大了，生病就会越来越多。身体的每个器官都可能发生炎症，小到咽炎、鼻炎，大到肺炎、胃炎、肝炎、脑膜炎、脊髓灰质炎。这些炎症发生的原因是什么？我们生存的这个世界，到处都是微生物：细菌、真菌、支原体、病毒。而人从出生开始，就处在不断地新陈代谢中，也就免不了跟这些微生物打交道。有些微生物对人体有益，比如大肠中大量的益生菌。但更多的则是对人体有害的，他们在不断的入侵我们人体的各个器官。他们攻破了哪个器官的防线，哪个器官就发生炎症。长期的炎症很可能引发癌变，很经典的例子就是，宫颈癌是由人类乳头冠状病毒引起的，这个被研究清楚了之后，研发了HPV疫苗，用来预防宫颈癌。</p>
+<p>// TODO:</p>
+<ul>
+<li>氧化</li>
+<li>蒸发</li>
+<li>紫外线老化</li>
+<li>细菌腐蚀</li>
+<li>灰尘沉降</li>
+</ul>
+<p>人体细胞的分裂次数有次数限制</p>
+<p>无心法师</p>
+<p>由此及彼，其实不只是我们会衰老，宇宙万事万物都是从出生开始，就在不断衰老。我记忆最深刻的其实就是春联。每年贴春联的时候，就会发现自己去年贴的喜庆红的春联变白了，甚至楼顶上常年照射太阳的春联，用手一抹，纸都变得粉碎，随风飘去。虽然我不知道纸老化的根本原因，但我知道，自然界存在让纸老化的力量，可能是太阳光中的紫外线，紫外线能量很高，长期照射把分子键断裂，也可能是空气中的风不断摩擦造成的折旧，又或者是水蒸气和微生物的共同侵蚀作用腐化了纸张。我们使用的手机，只要开封使用，手机就会慢慢地变旧。甚至我们看到的自然界的坚硬的石头，我们的水泥马路和大理石地板，暴露在空气中，天长地久，多年以后再对比刚启用时的状态，都发生了许许多多的变化，不然河水中的鹅卵石为什么会变成鹅卵石呢？再向太空中延伸，我们的地球也是会衰老的、太阳现在正处于中年，再过几十亿年可能燃料烧尽，到时将从黄矮星变成红巨星。甚至是宇宙中的黑洞，会蒸发，依然会衰老，宇宙终将不再熵增，一片死寂。无一不向我们表明，万事万物都在衰老。只不过，他们的寿命比我们人类长太多了。</p>
+<p>衰老意味着向死亡靠近，意味着活力和生命力的逐渐丧失。身体的衰老让我们失去活力，心理的衰老，让我们对万事万物失去兴趣，死气沉沉。当你注意到事物在衰老，特别是看到亲人在衰老中，我们就会感受到时光流逝之快。我是由我的祖母带大的，长大后，就是一年才去看望她一次，每去一次，都能看到那边的环境发生大变样，她又老了，周围环境又发生了较多变化。最终，她逃不过岁月的衰老，离我而去。现在也是很久回老家一趟，回去一次就发现大伯、老爸、三叔耳鬓都越添白发了。而我也由曾经的少年，成长为一个中年。而我也一样在长大，在衰老。我对很多曾经喜欢的东西已经不再感兴趣，而且越来越少的东西能让我提起兴趣，失去活力。所以，人越长大，越会想要孩子，因为年少的孩子有活力，那就是朝气，是衰老的自己不具有的东西。</p>
+<p>所以，生命的意义究竟是什么？这是个伴随着一个人从开始思考生命的意义开始，就一直伴随着人的一生的问题。围绕着这个终极问题，衍生出了许多学说，甚至可以说是唯心学说。比如，佛教和道教，就分别从不同的角度回答了这个问题。佛教认为，生命是没有意义的，因为一切都将归于空。正所谓，空即是色，色即是空。你认为的一些重要的事情，在更长的时间跨度来看，就会发现是没有意义的。也因此，佛教喜欢讲一些大的时间跨度的概念，例如：轮回，劫。道教则相反，道教认为生命是有意义的，但也仅此而已，道教不知道生命的意义是什么，但是他们就认为生命是有意义的。道教认为时间万物都有道。道可道，非常道。道教认为生命的繁衍就是意义，许多很难理解的行为其实都是为了生命的繁衍服务的，有点进化论的味道。</p>
+<p>我也常常思考这个问题。在十几岁的时候，其实那时候是想不明白的，但有一次看到了一个故事，就是一个残疾人，在和命运抗争，最终活成一个为他人做贡献的人，得到了许多的赞许。也因此得出的结论是，生命的意义就是为世界做贡献，得到别人的认可。后来我又有一些不同的想法，大概在二十多岁，看了一个电影，叫做《无问西东》，其中有个故事挺触动我的，故事里王力宏去参军，但王力宏的母亲不希望他去参军。她认为，人的一生很短，世界很精彩，她希望自己的儿子能去体验所有人生该体验的：上学念书、恋爱、养育孩子、游玩世界，而不是年纪轻轻就牺牲。我那时候深表认同，生命的意义就是体验这个世界。又过了几年，对生命的意义理解产生了一点点偏移，金庸逝世那年，感觉生命都是短暂的，到底有什么东西能够长久留下来呢？可能就只有传世作品。作品永存于人世间，能让人记住你曾经来过这个世界，给这个世界留下了一点东西。现在三十多岁，对生命的意义又有了不同的理解，我的孩子即将出生，我渴望自己孩子的出生。我要付出自己的所有，养育他成长，仿佛它将是我的延续，虽然我知道，它并不是，它就是它，但人很难抗拒这样去想，养育它成长就是我在这个世界的意义，有压力，有责任，有义务。可能再过些年，我的想法又会有改变。这就像读一本书，不同的时候读的感受完全不同。小时候看《西游记》，认为这是一个打怪闯关的故事；长大后看，这是一个团队合作的故事；现在看，它是一个佛道相争大背景下，一个人修心成长过程的故事。</p>
+<p>生命的意义我说不清道不明。但回首看看自己的这几个生命意义的理解，发现他们并不矛盾，甚至可以进行抽象。比如给社会作贡献，社会会记住你；比如留下传世作品，阅读使用者会记住你；留下子孙后代，希望子孙后代会记住你。也因此，可以从这个理解上分析，孰轻孰重。只有留下传世作品，才能人生命永恒。比如，牛顿力学、爱因斯坦相对论、四大名著、金庸、后世永远都会记得他们。往小了说，生命意义就是在这个世界上留下自己的足迹以证明自己曾经来过，往大了说，生命的意义是留下了岁月的文明。刘慈欣说过，给岁月以文明，而不是给文明以岁月。或许在这个世界上，每个人活着的意义都不相同，但找到它的意义非常重要，这让你对生命有理解，有目标。</p>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><strong><a href="/post/aging/"> 从衰老说开去 - 2021/08/15</a></strong></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            没有标签
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <script src="https://giscus.app/client.js"
+            data-repo="fredgan/fredgan.github.io"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkxNjQ2NDg4MTI="
+            data-category="Announcements"
+            data-category-id="DIC_kwDOCdBXbM4CPSMl"
+            data-mapping="pathname"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="light"
+            data-lang="zh-CN"
+            crossorigin="anonymous"
+            async>
+    </script>
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2024 <a href="https://fredgan.com/">FredGan&#39;s Blog</a>
+        
+        | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">粤ICP备2023125130号</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://fredgan.com/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://fredgan.com/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://fredgan.com/post/20240218-annual-summary-2023/" title="2023年度总结">2023年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/annual-summary-2023/" title="2023年度总结">2023年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230802-analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230406-thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230405-kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230314-the-it-interpretation-of-life-philosophy/" title="人生哲理的计算机解释">人生哲理的计算机解释</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230108-thinking-to-landlord-card-game/" title="连炸斗地主直播观感">连炸斗地主直播观感</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://fredgan.com/categories/LICENSE/">LICENSE (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%AD%A6%E4%B9%A0/">学习 (4)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%B7%A5%E5%85%B7/">工具 (4)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">年度总结 (8)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%BC%80%E5%8F%91/">开发 (7)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%BC%80%E6%BA%90/">开源 (6)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%84%9F%E6%82%9F/">感悟 (25)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%8E%A8%E8%8D%90/">推荐 (4)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%95%88%E7%8E%87/">效率 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E7%94%9F%E6%B4%BB/">生活 (6)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言 (6)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E8%8B%B1%E8%AF%AD/">英语 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记 (4)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E8%BD%AF%E4%BB%B6/">软件 (4)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://fredgan.com/tags/C%E8%AF%AD%E8%A8%80/">C语言</a>
+    
+    <a href="https://fredgan.com/tags/Markdown/">Markdown</a>
+    
+    <a href="https://fredgan.com/tags/redis/">Redis</a>
+    
+    <a href="https://fredgan.com/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件</a>
+    
+    <a href="https://fredgan.com/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+    
+    <a href="https://fredgan.com/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://fredgan.com/tags/%E6%84%9F%E6%82%9F/">感悟</a>
+    
+    <a href="https://fredgan.com/tags/%E6%8E%A8%E8%8D%90/">推荐</a>
+    
+    <a href="https://fredgan.com/tags/%E6%95%88%E7%8E%87/">效率</a>
+    
+    <a href="https://fredgan.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://time.geekbang.org/" title="geektime">极客时间</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://github.com/fredgan" title="github">Github</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://tools.fredgan.com" title="tools">Fred&#39;s Tools</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://fredgan.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

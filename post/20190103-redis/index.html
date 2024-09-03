@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>Redis的使用方法 | FredGan&#39;s Blog</title>
+    <meta property="og:title" content="Redis的使用方法 - FredGan&#39;s Blog">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2019-01-03T11:33:01&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2021-02-08T00:00:00&#43;08:00'>
+        
+    <meta name="Keywords" content="[redis 中间件]">
+    <meta name="description" content="Redis的使用方法">
+        
+    <meta name="author" content="FredGan">
+    <meta property="og:url" content="https://fredgan.com/post/20190103-redis/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://fredgan.com/">
+                        FredGan&#39;s Blog
+                    </a>
+                
+                <p class="description">技术分享与学习成长: C/C&#43;&#43;/Go/Python/iOS/JavaScript、YANG/NetConf、爬虫、编译器、压缩序列化、开源、CleanCode</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://fredgan.com/">首页</a>
+                    
+                    <a  href="https://fredgan.com/projects/" title="GitHub">GitHub</a>
+                    
+                    <a  href="https://fredgan.com/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://fredgan.com/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一-工具查看">一、 工具查看</a></li>
+    <li><a href="#二-命令行">二、 命令行</a>
+      <ul>
+        <li><a href="#21-基础命令">2.1 基础命令</a></li>
+        <li><a href="#22-五种数据类型操作命令">2.2 五种数据类型操作命令：</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">Redis的使用方法</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年1月3日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E5%BC%80%E5%8F%91'>开发</a></span>
+            
+            <span class="meta-category"><a href='/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6'>中间件</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <h2 id="一-工具查看">一、 工具查看</h2>
+<p>可以直接使用 <code>redisClients</code> 软件界面操作查看</p>
+<h2 id="二-命令行">二、 命令行</h2>
+<p><code>redis-cli -h 127.0.0.1 -p 6379</code></p>
+<h3 id="21-基础命令">2.1 基础命令</h3>
+<ul>
+<li><code>keys *</code>      // 列举所有的key</li>
+<li><code>expire &lt;key&gt; &lt;seconds&gt;</code> // 设置某个key的过期时间（单位：秒）</li>
+<li><code>ttl &lt;key&gt;</code> // 显示key的过期时间（单位：秒）【返回<code>-1</code>表示永久 <code>-2</code>表示key不存在】</li>
+<li><code>persist &lt;key&gt;</code> // 将key的时间设置为永久
+<ul>
+<li><code>set</code> <code>getset</code> 都会将key设置为永久</li>
+</ul>
+</li>
+<li><code>expireat &lt;key&gt; &lt;1540000000&gt;</code> // 在某个时间点过期</li>
+</ul>
+<p><code>pexpire</code> <code>pttl</code> <code>pexpireat</code> 跟上面一样，只是单位是毫秒</p>
+<h3 id="22-五种数据类型操作命令">2.2 五种数据类型操作命令：</h3>
+<h4 id="1-string">1 string</h4>
+<p>用法：</p>
+<ul>
+<li><code>set a 100</code>  // 设置a的值</li>
+<li><code>get a</code>      // 获取a的值，不存在则返回nil</li>
+<li><code>del a</code>      // 删除a</li>
+<li><code>getset a</code>   // 设置并且获取之前的a值</li>
+<li><code>incr a</code>     // a增加1</li>
+<li><code>incrby a 2</code> // a增加2</li>
+<li><code>exists a</code>   // a是否存在，1为存在，0为不存在</li>
+<li><code>decr a</code>     // a减1</li>
+<li><code>decrby a 2</code> // a减少2</li>
+<li><code>append a &quot;bbb&quot;</code> // 在a后面拼接字符串，a变成了100bbb</li>
+<li><code>strlen a</code>   // 获取a的长度</li>
+<li><code>mget a b...</code> // 同时获取多个值</li>
+<li><code>mset a 100 b 200</code> // 同时设置多个值</li>
+<li><code>setnx a</code>    // 如果a不存在则设置，存在则失败，返回值1成功，返回0则失败</li>
+</ul>
+<h4 id="2-hash">2 hash</h4>
+<ul>
+<li><code>hset key field value</code> // 设置key的某field为某个value</li>
+<li><code>hget key field</code> // 获取key的某个field的值</li>
+<li><code>hmset key field value [ field value ...... ]</code> // 同时设置多个</li>
+<li><code>hmget key field [ field ...... ]</code> // 同时获取多个</li>
+<li><code>hgetall key</code> // 获取所有字段和值</li>
+<li><code>hexists key field</code> // 判断某个key的某field是否存在</li>
+<li><code>hdel key field [ field .....]</code> // 删除key的某些field</li>
+<li><code>hkeys key</code> // 获取所有字段的名字</li>
+<li><code>hvals key</code> // 获得键中所有字段的值</li>
+<li><code>hlen key</code> // 获得字段数量</li>
+</ul>
+<h4 id="3-list">3 list</h4>
+<ul>
+<li><code>lpush key value [ value ....... ]</code>
+<ul>
+<li>1 向列表左边增加元素</li>
+<li>2 返回表示增加元素后列表的长度</li>
+</ul>
+</li>
+<li><code>rpush key value [ value ....... ]</code>
+<ul>
+<li>1 向列表右边增加元素</li>
+<li>2 返回表示增加元素后列表的长度</li>
+</ul>
+</li>
+<li><code>lpop key</code>
+<ul>
+<li>1 将列表左边的元素从列表中移除</li>
+<li>2 返回被移除元素值</li>
+</ul>
+</li>
+<li><code>rpop key</code>
+<ul>
+<li>1 将列表右边的元素从列表中移除</li>
+<li>2 返回被移除元素值</li>
+</ul>
+</li>
+<li><code>llen key</code> // 获取列表中元素个数</li>
+<li><code>lrange key start stop</code> // 获得列表片段 <code>lrange</code> 与很多语言中用来截取数组片段的方法有一点区别是 <code>lrange</code> 返回的值包含最右边的元素  <code>lrange</code> 命令也支持负索引，表是从右边开始计算序数，如 <code>-1</code> 表示最右边第一个元素， <code>-2</code> 表示最右边第二个元素，以此类推</li>
+<li><code>lrem key count value</code>
+<ul>
+<li>1 删除列表中指定的值 lrem 命令会删除列表中前 count 个值为 value 的元素</li>
+<li>2 返回值是实际删除的元素个数。</li>
+</ul>
+</li>
+<li><code>lindex key index</code> // 获得 或 设置 指定索引的元素值</li>
+<li><code>lset key index value</code> // 是通过索引操作列表的命令，它会将索引为 <code>index</code> 的元素赋值为 <code>value</code></li>
+<li><code>ltrim key start end</code> // 只保留列表指定片段</li>
+<li><code>linsert key before | after pivot value</code>
+<ul>
+<li>1 <code>linsert</code> 命令首先会在列表中从左到右查找值为 <code>pivot</code> 的元素，然后根据第二个参数是 <code>before</code> 还是 <code>after</code> 来决定将 <code>value</code> 插入到该元素的前面还是后面,如果命令执行成功</li>
+<li>2 返回插入操作完成之后列表的长度。如果没有找到 <code>pivot</code> 返回 <code>-1</code> 如果key 不存在或为空，返回 <code>0</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="4-set">4 set</h4>
+<ul>
+<li><code>sadd key member [ member .... ]</code> // 增加删除命令</li>
+<li><code>srem key member [ member .... ]</code> // 命令用来从集合中删除一个或多个元素，并返回删除成功的个数</li>
+<li><code>smembers key</code> // 获得集合中的所有元素</li>
+<li><code>sismember key member</code> // 判断一个元素是否在集合中是一个时间复杂度为 0(1) 的操作，无论集合中有多少个元素， sismember 命令始终可以极快的返回结果。当值存在时 sismember 命令返回 1 ，当值不存在或者键不存在时返回 0</li>
+<li><code>sdiff key [ key ...... ]</code> // 命令用来对多个集合执行差集运算</li>
+<li><code>sinter key [ key ..... ]</code> // 该命令用来对多个集合执行交集运算。集合 A 与集合 B 的交集表示为 A∩B</li>
+<li><code>sunion key [ key ...... ]</code> // 该命令用来对多个集合执行并集运算</li>
+<li>`scard key // 获得集合中元素的个数</li>
+<li><code>sdiffstore destination key</code> [ key &hellip;&hellip; ] // 进行集合运算并将结果存储</li>
+<li><code>sinterstore destination key</code> [ key &hellip;&hellip; ]</li>
+<li><code>sunionstore destination key</code> [ key &hellip;&hellip; ]</li>
+<li><code>srandmember key [ count ]</code> // 随机获得集合中的元素</li>
+<li><code>spop key</code> // 从集合中弹出一个元素</li>
+</ul>
+<h4 id="5-zset有序集合">5 zset有序集合</h4>
+<ul>
+<li><code>zadd key score member [ score member ...... ]</code> // 向有序集合中加入一个元素和该元素的分数，如果该元素已经存在，则会用新的分数替换原有的分数</li>
+<li><code>zscore key member</code> // 获得元素的分数</li>
+<li><code>zrange key start stop [ withscores ]</code> // 获得排名在某个范围的元素列表</li>
+<li><code>zrevrange key start stop [ withscores ]</code></li>
+<li><code>zcard key</code> // 获得集合中元素的数量</li>
+<li><code>zcount key min max</code> //  获得指定分数范围内的元素个数</li>
+<li><code>zrem key member [ member .... ]</code> // 删除一个或多个元素</li>
+</ul>
+
+        </div>
+
+        
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><strong><a href="/post/redis/"> Redis的使用方法 - 2019/01/03</a></strong></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/%E5%B7%A5%E5%85%B7'>工具</a></li>
+                
+                <li><a href='/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6'>中间件</a></li>
+                
+                <li><a href='/tags/redis'>redis</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <script src="https://giscus.app/client.js"
+            data-repo="fredgan/fredgan.github.io"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkxNjQ2NDg4MTI="
+            data-category="Announcements"
+            data-category-id="DIC_kwDOCdBXbM4CPSMl"
+            data-mapping="pathname"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="light"
+            data-lang="zh-CN"
+            crossorigin="anonymous"
+            async>
+    </script>
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2024 <a href="https://fredgan.com/">FredGan&#39;s Blog</a>
+        
+        | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">粤ICP备2023125130号</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://fredgan.com/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://fredgan.com/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://fredgan.com/post/20240218-annual-summary-2023/" title="2023年度总结">2023年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/annual-summary-2023/" title="2023年度总结">2023年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230802-analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230406-thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230405-kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230314-the-it-interpretation-of-life-philosophy/" title="人生哲理的计算机解释">人生哲理的计算机解释</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20230108-thinking-to-landlord-card-game/" title="连炸斗地主直播观感">连炸斗地主直播观感</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://fredgan.com/categories/LICENSE/">LICENSE (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%AD%A6%E4%B9%A0/">学习 (4)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%B7%A5%E5%85%B7/">工具 (4)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">年度总结 (8)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%BC%80%E5%8F%91/">开发 (7)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E5%BC%80%E6%BA%90/">开源 (6)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%84%9F%E6%82%9F/">感悟 (25)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%8E%A8%E8%8D%90/">推荐 (4)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%95%88%E7%8E%87/">效率 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E7%94%9F%E6%B4%BB/">生活 (6)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言 (6)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E8%8B%B1%E8%AF%AD/">英语 (2)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记 (4)</a></li>
+    
+    <li><a href="https://fredgan.com/categories/%E8%BD%AF%E4%BB%B6/">软件 (4)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://fredgan.com/tags/C%E8%AF%AD%E8%A8%80/">C语言</a>
+    
+    <a href="https://fredgan.com/tags/Markdown/">Markdown</a>
+    
+    <a href="https://fredgan.com/tags/redis/">Redis</a>
+    
+    <a href="https://fredgan.com/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件</a>
+    
+    <a href="https://fredgan.com/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+    
+    <a href="https://fredgan.com/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://fredgan.com/tags/%E6%84%9F%E6%82%9F/">感悟</a>
+    
+    <a href="https://fredgan.com/tags/%E6%8E%A8%E8%8D%90/">推荐</a>
+    
+    <a href="https://fredgan.com/tags/%E6%95%88%E7%8E%87/">效率</a>
+    
+    <a href="https://fredgan.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://time.geekbang.org/" title="geektime">极客时间</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://github.com/fredgan" title="github">Github</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://tools.fredgan.com" title="tools">Fred&#39;s Tools</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://fredgan.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
