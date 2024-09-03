@@ -2,28 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>工具 on FredGan&#39;s Blog</title>
-    <link>https://fredgan.com/categories/%E5%B7%A5%E5%85%B7/</link>
+    <link>https://fredgan.github.io/categories/%E5%B7%A5%E5%85%B7/</link>
     <description>Recent content in 工具 on FredGan&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 08 Feb 2021 19:52:20 +0800</lastBuildDate><atom:link href="https://fredgan.com/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Feb 2021 18:57:23 +0800</lastBuildDate>
+    <atom:link href="https://fredgan.github.io/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>30分钟掌握正则表达式</title>
-      <link>https://fredgan.com/post/30-minutes-regex/</link>
+      <link>https://fredgan.github.io/post/30-minutes-regex/</link>
       <pubDate>Mon, 08 Feb 2021 19:52:20 +0800</pubDate>
-      
-      <guid>https://fredgan.com/post/30-minutes-regex/</guid>
-      <description>30分钟掌握正则表达式 一 、简介 1. 正则表达式的历史 两千多年前，我国伟大的诗人、政治家 屈原 曾经说过， 帝高阳之苗裔兮，朕皇考曰伯庸。 摄提贞于孟陬兮，惟庚寅吾以降。 皇览揆余初度兮，肇锡余以嘉名。 名余曰正则兮，字余曰灵均。 屈原曰：“以我名字命名的 正则表达式，当然是我发明的了！（误）” 起源于</description>
+      <guid>https://fredgan.github.io/post/30-minutes-regex/</guid>
+      <description>&lt;h1 id=&#34;30分钟掌握正则表达式&#34;&gt;30分钟掌握正则表达式&lt;/h1&gt;&#xA;&lt;h2 id=&#34;一-简介&#34;&gt;一 、简介&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-正则表达式的历史&#34;&gt;1. 正则表达式的历史&lt;/h3&gt;&#xA;&lt;p&gt;两千多年前，我国伟大的诗人、政治家 &lt;strong&gt;屈原&lt;/strong&gt; 曾经说过，&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;帝高阳之苗裔兮，朕皇考曰伯庸。&#xA;&#xA;摄提贞于孟陬兮，惟庚寅吾以降。&#xA;&#xA;皇览揆余初度兮，肇锡余以嘉名。&#xA;&#xA;名余曰正则兮，字余曰灵均。&#xA;&lt;/code&gt;&lt;/pr</description>
     </item>
-    
     <item>
       <title>如何写一个漂亮的Markdown</title>
-      <link>https://fredgan.com/post/how-to-write-a-beautiful-markdown/</link>
+      <link>https://fredgan.github.io/post/how-to-write-a-beautiful-markdown/</link>
       <pubDate>Sun, 12 Jul 2020 22:21:58 +0800</pubDate>
-      
-      <guid>https://fredgan.com/post/how-to-write-a-beautiful-markdown/</guid>
-      <description>如何写一个漂亮的Markdown 一、概述 作为一个技术人员，善于利用工具提升生产效率是一个合格的技术人员的基本修养，也是提升效率的一个重要途径。作为一个程序员，有许许多多的工具来提升生产效率，使用规范化和大统一的规则规范是与优秀程序员世界接轨、交流和孜孜不倦的追求。 这里，想写很多工</description>
+      <guid>https://fredgan.github.io/post/how-to-write-a-beautiful-markdown/</guid>
+      <description>&lt;h1 id=&#34;如何写一个漂亮的markdown&#34;&gt;如何写一个漂亮的Markdown&lt;/h1&gt;&#xA;&lt;h2 id=&#34;一概述&#34;&gt;一、概述&lt;/h2&gt;&#xA;&lt;p&gt;作为一个技术人员，善于利用工具提升生产效率是一个合格的技术人员的基本修养，也是提升效率的一个重要途径。作为一个程序员，有许许多多的工具来提升生产效率，使用规范化和大统一的规则规范是与优秀程序员世界接轨、交流和孜孜不倦的追求。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
