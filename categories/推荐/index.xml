@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>推荐 on FredGan&#39;s Blog</title>
-    <link>https://fredgan.github.io/categories/%E6%8E%A8%E8%8D%90/</link>
+    <link>https://fredgan.com/categories/%E6%8E%A8%E8%8D%90/</link>
     <description>Recent content in 推荐 on FredGan&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 08 Feb 2021 18:57:23 +0800</lastBuildDate>
-    <atom:link href="https://fredgan.github.io/categories/%E6%8E%A8%E8%8D%90/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://fredgan.com/categories/%E6%8E%A8%E8%8D%90/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>我的推荐</title>
-      <link>https://fredgan.github.io/post/my-favorite/</link>
+      <link>https://fredgan.com/post/my-favorite/</link>
       <pubDate>Mon, 08 Feb 2021 18:57:23 +0800</pubDate>
-      <guid>https://fredgan.github.io/post/my-favorite/</guid>
+      <guid>https://fredgan.com/post/my-favorite/</guid>
       <description>&lt;h1 id=&#34;我的推荐&#34;&gt;我的推荐&lt;/h1&gt;&#xA;&lt;h2 id=&#34;电影&#34;&gt;电影&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;《功夫》&lt;/strong&gt;：最喜欢的电影，看了不下二十遍了，里面的每句台词我都记得，无论看多少遍，都没有找到一处觉得尴尬的剧情。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;电视剧&#34;&gt;电视剧&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;《毛骗》&lt;/strong&gt;：第二季&amp;amp;终结季。是个网剧，名字难登大雅之堂，我觉得改名叫做《侠骗》比较好。虽然设定上是有借鉴《飞天大盗》，但自第二季开始，完全就是青出于蓝而远胜于蓝了。真的是个好网剧。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;《隐秘的角落》&lt;/strong&gt;：开放的结局，两条主线。许多细节铺垫丝丝入扣。现在听到小白船、去爬山吗等字眼都让我瘆得慌。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;纪录片&#34;&gt;纪录片&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;《地球脉动》&lt;/strong&gt;：豆瓣评分9.9的超高分纪录片，高清画质，记录真实的自然，地球环境，动物等，看了之后让人震撼。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;《河西走廊》&lt;/strong&gt;：记录河西走廊历史的一个国产纪录片。制作精良，当时看了个开头，然后我真的去了甘青大环线旅游，深刻地感受了我国大西北的这个河西走廊的原貌，再回来看这个纪录片，感触良多。再看看敦煌和莫高窟的修建，不去敦煌，就很难理解敦煌文化，“中国的甘肃，世界的敦煌！”&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;小说&#34;&gt;小说&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;《红楼梦》&lt;/strong&gt;：&#xA;这个确实是我们中华最伟大的小说。凡是否定这个说法的基本都是没有看过小说的人吧。&lt;/p&gt;</description>
     </item>
     <item>
       <title>优质软件列表</title>
-      <link>https://fredgan.github.io/post/good_software/</link>
+      <link>https://fredgan.com/post/good_software/</link>
       <pubDate>Wed, 08 Jul 2020 14:21:58 +0800</pubDate>
-      <guid>https://fredgan.github.io/post/good_software/</guid>
+      <guid>https://fredgan.com/post/good_software/</guid>
       <description>&lt;h1 id=&#34;优质软件列表&#34;&gt;优质软件列表&lt;/h1&gt;&#xA;&lt;p&gt;经过多年实践，总结的优质软件列表。持续更新中&amp;hellip;&lt;/p&gt;&#xA;&lt;h2 id=&#34;一windows&#34;&gt;一、Windows&lt;/h2&gt;&#xA;&lt;h3 id=&#34;11-directory-opus收费&#34;&gt;1.1 Directory Opus（收费）&lt;/h3&gt;&#xA;&lt;p&gt;功能超强的资源管理器。比Windows自带的资源管理器好用太多，多Tab，正则表达式批量重命名，FTP连接器，多窗口操作，图片文本文件预览等。&lt;/p&gt;</description>
     </item>
   </channel>
