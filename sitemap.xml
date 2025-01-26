@@ -2,22 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://fredgan.github.io/post/20240218-annual-summary-2023/</loc>
-    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://fredgan.github.io/categories/</loc>
-    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fredgan.github.io/</loc>
-    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fredgan.github.io/post/</loc>
-    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://fredgan.github.io/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2024-02-18T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fredgan.github.io/categories/%E6%84%9F%E6%82%9F/</loc>
+    <lastmod>2025-01-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://fredgan.github.io/post/20250125-one-day-visiting-hongkong/</loc>
+    <lastmod>2025-01-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://fredgan.github.io/post/20250113-thinking-to-bacon/</loc>
+    <lastmod>2025-01-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://fredgan.github.io/post/20241231-annual-summary-2024/</loc>
+    <lastmod>2024-12-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://fredgan.github.io/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2024-12-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://fredgan.github.io/post/20240218-annual-summary-2023/</loc>
     <lastmod>2024-02-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fredgan.github.io/post/20230802-analysis-of-luochahaishi/</loc>
