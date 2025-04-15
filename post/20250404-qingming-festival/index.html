@@ -9,21 +9,24 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
     
 
-    <title>学习 | FredGan&#39;s Blog</title>
-    <meta property="og:title" content="学习 - FredGan&#39;s Blog">
+    <title>又一年清明节 | FredGan&#39;s Blog</title>
+    <meta property="og:title" content="又一年清明节 - FredGan&#39;s Blog">
     <meta property="og:type" content="article">
         
+    <meta property="article:published_time" content='2025-04-04T00:00:00&#43;08:00'>
         
-    <meta name="Keywords" content="c,c&#43;&#43;,go,ios,python,yang,netconf,软件架构,网络爬虫,压缩、项目管理,开源、cleancode">
-    <meta name="description" content="学习">
+        
+    <meta property="article:modified_time" content='2025-04-04T00:00:00&#43;08:00'>
+        
+    <meta name="Keywords" content="[清明]">
+    <meta name="description" content="又一年清明节">
         
     <meta name="author" content="FredGan">
-    <meta property="og:url" content="https://fredgan.github.io/categories/%E5%AD%A6%E4%B9%A0/">
+    <meta property="og:url" content="https://fredgan.github.io/post/20250404-qingming-festival/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
-    <link rel="alternate" type="application/rss+xml+xml" href="https://fredgan.github.io/categories/%E5%AD%A6%E4%B9%A0/index.xml" title="FredGan's Blog" />
     <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -53,7 +56,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="" href="https://fredgan.github.io/">首页</a>
+                    <a class="current" href="https://fredgan.github.io/">首页</a>
                     
                     <a  href="https://fredgan.github.io/projects/" title="GitHub">GitHub</a>
                     
@@ -74,103 +77,174 @@
                 <div class="col-8" id="main">
                     
 <div class="res-cons">
-    
-    <h3 class="archive-title">
-        分类
-        <span class="keyword">学习</span>
-        中的文章
-    </h3>
-    
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
 
-    
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents"></nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
     <article class="post">
         <header>
-            <h1 class="post-title">
-                <a href="https://fredgan.github.io/post/20220520-thinking-to-main-of-the-world/">漫谈主次学习法则</a>
-            </h1>
+            <h1 class="post-title">又一年清明节</h1>
         </header>
         <date class="post-meta meta-date">
-            2022年5月20日
+            2025年4月4日
         </date>
         
-        <div class="post-meta meta-category">
-            |
+        <div class="post-meta">
+            <span>|</span>
             
-            <a href='/categories/%E6%84%9F%E6%82%9F'>感悟</a>
-            
-            <a href='/categories/%E5%AD%A6%E4%B9%A0'>学习</a>
+            <span class="meta-category"><a href='/categories/%E6%84%9F%E6%82%9F'>感悟</a></span>
             
         </div>
         
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
         <div class="post-content">
-            <h2 id="同等事物">同等事物</h2>
-<p>在这个世界上，几乎所有的东西，都有主次，也就是主要的和次要的。可以说了解他并灵活运用他是掌握这个世界的一个法则。人越成长，越需要掌握这个法则。</p>
-<p>在太阳系里面，有8大行星，那我们可能不知道是哪八大行星，但我们一定知道最重要的是哪颗：地球。因为它是我们居住的行星。</p>……
-            <p class="readmore"><a href="https://fredgan.github.io/post/20220520-thinking-to-main-of-the-world/">阅读全文</a></p>
+            <p>清明时节雨纷纷，路上行人欲断魂。这是一直以来清明节留给我的印象。</p>
+<p>记忆中的清明节扫墓，还是在我比较小的时候，在我还没开始上学的那两年，到在奶奶那上学之后的那段时间。几乎每个清明节都要赶到祖坟山上给亲爷爷扫墓，虽然这个亲爷爷我从来也没见过。</p>
+<p>那张我坐在摩托车上的照片，应该就是清明回家时候拍的。后来，在奶奶那，每年清明节，大早上出发，行程大约要小两小时，都要穿过数个村庄和好几里的农田，踏着泥泞的小路，天多数时候都是下雨，甚至有时候水很大，中途在官陂有条很小的河还会拦着我过去的路，需要到上下游到处寻找小木桥或者窄到可以跳过去的地方。</p>
+<p>扫墓的记忆倒不太深刻，只记得爷爷的墓小小的，在旁边。中间是曾祖和高祖的墓。后来爷爷的墓重修了一次。</p>
+<p>时至今日，我可能已经有十多年没有回家扫墓了。很可能是自大学之后，就再也没来过了。这次真的机会难得，一方面是公司下午开大会，没我啥事，我就请假了，另一方面去年也观察了一下，回家的路上车并不太多。事实也正是如此，我中午出发，下午7点就到了家里。小舅说太忙，没空回来。</p>
+<p>今天去扫墓，山上整体没有太大变化，就是多了一些新墓。大爷爷，燕辉爸，燕辉奶奶，少汉叔等，爷爷墓右边又多了好几个新墓。航桥爷爷奶奶的墓上次过年期间还是十一期间去过一次，清明节却一次没有去过。这次特地多观察了多个墓碑上的文字，有一些收获。</p>
+<ul>
+<li>亲爷爷在1974年正月初六过世的，才42岁。原来都已经过去51年了！那时候我爸也才8岁。大伯、爸和叔的身世真够悲惨的。我真的不知道我爸几个兄弟中哪个跟爷爷最像。但要真说其他的，燕辉的爸爸的命跟亲爷爷倒有几分像，他才活了38岁。</li>
+<li>整个山上，还有一个最古老的不知道几辈前的墓，被村里称为祖先墓，说是从丰城那边的祖籍，然后直接在这边设了一个祖先墓。墓碑上记载的是公元1346年出生，在明洪武朱元璋时期去世，名叫玉璨。子孙众多不可考。大伯说丰城那边的祖先还有个公元1100多年的，不过我并没去过那边。</li>
+<li>奶奶墓碑上的名字最多，子嗣众多。上面有1个名字，成文，在她死的时候，成英刚出生没多久，她希望小叔能生个儿子，就取名叫做成文。可惜现在第三个出生的也是女儿，时过15年，这个愿望也没能实现，有些许遗憾。</li>
+<li>爷爷墓碑上名字较少，才四个子孙名。真要论遗憾，他才是真的有更多的遗憾。辛苦了一辈子，没享受过什么好日子，甚至临终的时候都没看到子孙未来有多好的期盼。好在成英现在看还算优秀，在我看来是拯救小叔他们一家的唯一期望。</li>
+<li>爷爷奶奶当前这块墓地，说是奶奶自己在生前就选好了，她对我大伯我爸他们说，就选这个地儿，将来你们会愿意来给我扫墓。她怕太深山了我们子孙后代不去给她扫墓了。</li>
+<li>墓碑上其实都只有四部分内容，1是自己是男是女，姓甚名谁 2 出生时间和死亡时间  3 自己的对象是谁 4. 自己的子孙是哪些人。 另外非要算一个信息，应该可以算是地府户籍吧，亲爷爷这边写的是丹阳佳城，航桥那边写的是太原佳城。让我有点感触，普通人一辈子，能留下的就只是墓碑上的几十个字，而且就这么点信息。这可能就是几千年来祖先们告诉我们的生命的意义：传承。 </li>
+</ul>
+<p>后来，我妈又给我发消息说，她梦见我奶奶说她很渴，又没裤子穿。叫我爸买了衣服烧过去。我后来又带了几瓶水放在她墓边。</p>
+<p>中午是老爸做饭，吃饭的时候聊到了姑姑为啥喊奶奶叫做“搭仔”，其实我小时候也有这个疑惑。姑姑解释了原因，说是算命先生说姑姑跟奶奶的命相冲，不能叫妈妈。后来，小叔跟姑姑一起这样喊。</p>
+<p>中午开始下了几个小雨，到了晚上又开始慢慢下大了，果然，即使前些天天气再好，到了清明就会下雨。还是古人总结的好，清明时节雨纷纷，路上行人欲断魂。</p>
+
+        </div>
+
+        
+
+
+        
+
+
+        <div class="post-meta meta-tags">
+            
+            没有标签
+            
         </div>
     </article>
     
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://fredgan.github.io/post/20200818-english-grammar/">英语语法核心体系</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2020年8月18日
-        </date>
-        
-        <div class="post-meta meta-category">
-            |
-            
-            <a href='/categories/%E8%8B%B1%E8%AF%AD'>英语</a>
-            
-            <a href='/categories/%E5%AD%A6%E4%B9%A0'>学习</a>
-            
-        </div>
-        
-        <div class="post-content">
-            <h2 id="造句">造句</h2>
-<ul>
-<li>Simple Sentence 什么怎么样
-<ul>
-<li>substract
-<ul>
-<li>名词（人或者物体）</li>
-<li>代词</li>
-</ul>
-</li>
-<li>predicate
-<ul>
-<li>可以独立完成的动作(不及物动词)</li>
-<li>有一个动作的承受者(单及物动词+宾语)</li>
-<li>两个动作承受者(双及物动词+ 间接宾语 + 直接宾语)</li>
-<li>只有一个动作承受者(复杂及物动词+宾语+宾语补语)</li>
-<li>不是个动作 (连系动词 + 主语补语(表语))</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="句子成分">句子成分</h2>
-<ul>
-<li>定语 Attributive 修饰主语或者宾语</li>
-<li>状语 Adverbial 修饰动作</li>
-<li>同位语 Appositive 将主语、宾语再说一遍</li>
-</ul>
-<h2 id="复合句">复合句</h2>
-<p>Compound Sentence，表并列连接</p>……
-            <p class="readmore"><a href="https://fredgan.github.io/post/20200818-english-grammar/">阅读全文</a></p>
-        </div>
-    </article>
     
 
     
-
-
-
-
-
+    
+    <script src="https://giscus.app/client.js"
+            data-repo="fredgan/fredgan.github.io"
+            data-repo-id="MDEwOlJlcG9zaXRvcnkxNjQ2NDg4MTI="
+            data-category="Announcements"
+            data-category-id="DIC_kwDOCdBXbM4CPSMl"
+            data-mapping="pathname"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="light"
+            data-lang="zh-CN"
+            crossorigin="anonymous"
+            async>
+    </script>
 </div>
 
                     <footer id="footer">
@@ -192,6 +266,16 @@
 </footer>
 
 
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
