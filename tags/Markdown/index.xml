@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Markdown on FredGan&#39;s Blog</title>
+    <title>Markdown on FredGan的技术与人生</title>
     <link>https://fredgan.com/tags/Markdown/</link>
-    <description>Recent content in Markdown on FredGan&#39;s Blog</description>
+    <description>Recent content in Markdown on FredGan的技术与人生</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 13 Jul 2020 00:00:00 +0000</lastBuildDate>
@@ -13,7 +13,7 @@
       <link>https://fredgan.com/post/20200712-how-to-write-a-beautiful-markdown/</link>
       <pubDate>Sun, 12 Jul 2020 22:21:58 +0800</pubDate>
       <guid>https://fredgan.com/post/20200712-how-to-write-a-beautiful-markdown/</guid>
-      <description>&lt;h2 id=&#34;一概述&#34;&gt;一、概述&lt;/h2&gt;&#xA;&lt;p&gt;作为一个技术人员，善于利用工具提升生产效率是一个合格的技术人员的基本修养，也是提升效率的一个重要途径。作为一个程序员，有许许多多的工具来提升生产效率，使用规范化和大统一的规则规范是与优秀程序员世界接轨、交流和孜孜不倦的追求。&lt;/p&gt;&#xA;&lt;p&gt;这里，想写很多工具和方法。但是，这里想先讲讲怎么将自己的内容完美呈现出来，让更多的人能够理解自己的思想。&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;一概述&#34;&gt;一、概述&lt;/h2&gt;&#xA;&lt;p&gt;作为一个技术人员，善于利用工具提升生产效率是一个合格的技术人员的基本修养，也是提升效率的一个重要途径。作为一个程序员，有许许多多的工具来提升生产效率，使用规范化和大统一的规则规范是与优秀程序员世界接轨、交流和孜孜不倦的追求。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -9,12 +9,12 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
     
 
-    <title>Posts | FredGan&#39;s Blog</title>
-    <meta property="og:title" content="Posts - FredGan&#39;s Blog">
+    <title>Posts | FredGan的技术与人生</title>
+    <meta property="og:title" content="Posts - FredGan的技术与人生">
     <meta property="og:type" content="article">
         
         
-    <meta name="Keywords" content="c,c&#43;&#43;,go,ios,python,yang,netconf,软件架构,网络爬虫,压缩、项目管理,开源、cleancode">
+    <meta name="Keywords" content="c,c&#43;&#43;,go,ios,python,软件架构,网络爬虫,压缩和序列化,项目管理,开源,cleancode">
     <meta name="description" content="Posts">
         
     <meta name="author" content="FredGan">
@@ -23,7 +23,7 @@
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
-    <link rel="alternate" type="application/rss+xml+xml" href="https://fredgan.com/post/index.xml" title="FredGan's Blog" />
+    <link rel="alternate" type="application/rss+xml+xml" href="https://fredgan.com/post/index.xml" title="FredGan的技术与人生" />
     <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -46,10 +46,10 @@
             <div class="site-name ">
                 
                     <a id="logo" href="https://fredgan.com/">
-                        FredGan&#39;s Blog
+                        FredGan的技术与人生
                     </a>
                 
-                <p class="description">技术分享与学习成长: C/C&#43;&#43;/Go/Python/iOS/JavaScript、YANG/NetConf、爬虫、编译器、压缩序列化、开源、CleanCode</p>
+                <p class="description">技术成长与人生感悟: C/C&#43;&#43;/Go/Python/iOS、爬虫、压缩和序列化、开源软件、漏洞与安全CleanCode</p>
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
@@ -79,310 +79,42 @@
     <article class="post">
         <header>
             <h1 class="post-title">
-                <a href="https://fredgan.com/post/thinking-to-open-source/" title="开源的一些感悟">开源的一些感悟</a>
+                <a href="https://fredgan.com/post/20190103-redis/" title="Redis的使用方法">Redis的使用方法</a>
             </h1>
         </header>
         <date class="post-meta meta-date">
-            2020年7月17日
+            2019年1月3日
         </date>
         
         <div class="post-meta">
             <span>|</span>
             
-            <span class="meta-category"><a href='/categories/%E5%BC%80%E6%BA%90'>开源</a></span>
+            <span class="meta-category"><a href='/categories/%E5%BC%80%E5%8F%91'>开发</a></span>
             
-            <span class="meta-category"><a href='/categories/%E6%84%9F%E6%82%9F'>感悟</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            <p>从事开源软件开发已经有一年多了。从原来对开源一无所知，甚至是一些错误的认知，到现在已经能够深入参与到开源社区，并成为一些软件的Committer，走过了许许多多的弯路，也对开源有了许多的新的认识。突然对开源有了一些感悟，所以紧急插入一篇感悟。</p>
-<h2 id="开源--免费">“开源” ≠ “免费”</h2>
-<p>这是几乎所有没有从事过开源软件开发工作的人的一个基本认识错误。如果你问以前的我，“你认为开源软件是什么？”，那我肯定会回答你：“就是开放源代码的免费软件！”。</p>……
-        </div>
-        <p class="readmore"><a href="https://fredgan.com/post/thinking-to-open-source/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://fredgan.com/post/20200717-thinking-to-open-source/" title="开源的一些感悟">开源的一些感悟</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2020年7月17日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/%E5%BC%80%E6%BA%90'>开源</a></span>
-            
-            <span class="meta-category"><a href='/categories/%E6%84%9F%E6%82%9F'>感悟</a></span>
+            <span class="meta-category"><a href='/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6'>中间件</a></span>
             
         </div>
         
         <div class="post-content">
-            <p>从事开源软件开发已经有一年多了。从原来对开源一无所知，甚至是一些错误的认知，到现在已经能够深入参与到开源社区，并成为一些软件的Committer，走过了许许多多的弯路，也对开源有了许多的新的认识。突然对开源有了一些感悟，所以紧急插入一篇感悟。</p>
-<h2 id="开源--免费">“开源” ≠ “免费”</h2>
-<p>这是几乎所有没有从事过开源软件开发工作的人的一个基本认识错误。如果你问以前的我，“你认为开源软件是什么？”，那我肯定会回答你：“就是开放源代码的免费软件！”。</p>……
+            <h2 id="一-工具查看">一、 工具查看</h2>
+<p>可以直接使用 <code>redisClients</code> 软件界面操作查看</p>
+<h2 id="二-命令行">二、 命令行</h2>
+<p><code>redis-cli -h 127.0.0.1 -p 6379</code></p>
+<h3 id="21-基础命令">2.1 基础命令</h3>
+<ul>
+<li><code>keys *</code>      // 列举所有的key</li>
+<li><code>expire &lt;key&gt; &lt;seconds&gt;</code> // 设置某个key的过期时间（单位：秒）</li>
+<li><code>ttl &lt;key&gt;</code> // 显示key的过期时间（单位：秒）【返回<code>-1</code>表示永久 <code>-2</code>表示key不存在】</li>
+<li><code>persist &lt;key&gt;</code> // 将key的时间设置为永久
+<ul>
+<li><code>set</code> <code>getset</code> 都会将key设置为永久</li>
+</ul>
+</li>
+<li><code>expireat &lt;key&gt; &lt;1540000000&gt;</code> // 在某个时间点过期</li>
+</ul>
+<p><code>pexpire</code> <code>pttl</code> <code>pexpireat</code> 跟上面一样，只是单位是毫秒</p>……
         </div>
-        <p class="readmore"><a href="https://fredgan.com/post/20200717-thinking-to-open-source/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://fredgan.com/post/c-traps/c-traps-chapter-two/" title="《C陷阱和缺陷》读书笔记（2）- 语法”陷阱“">《C陷阱和缺陷》读书笔记（2）- 语法”陷阱“</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2020年7月15日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80'>编程语言</a></span>
-            
-            <span class="meta-category"><a href='/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0'>读书笔记</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            <p>词法、语法构成语言的一个基本条件。光有一个个的单词符号是不够的，这些符号的不同组合可以表达不同的含义。
-例如，声明是什么，表达式什么，语句是什么，程序是什么等等。</p>
-<h2 id="理解函数声明">理解函数声明</h2>
-<p>看看下面一个语句：</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>(<span style="color:#000;font-weight:bold">*</span>(<span style="color:#458;font-weight:bold">void</span>(<span style="color:#000;font-weight:bold">*</span>)())<span style="color:#099">0</span>)();
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>乍一看到这个语句，肯定当场吓尿！啥鬼玩儿意！</p>……
-        </div>
-        <p class="readmore"><a href="https://fredgan.com/post/c-traps/c-traps-chapter-two/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://fredgan.com/post/c-traps/20200715-c-traps-chapter-two/" title="《C陷阱和缺陷》读书笔记（2）- 语法”陷阱“">《C陷阱和缺陷》读书笔记（2）- 语法”陷阱“</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2020年7月15日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80'>编程语言</a></span>
-            
-            <span class="meta-category"><a href='/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0'>读书笔记</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            <p>词法、语法构成语言的一个基本条件。光有一个个的单词符号是不够的，这些符号的不同组合可以表达不同的含义。
-例如，声明是什么，表达式什么，语句是什么，程序是什么等等。</p>
-<h2 id="理解函数声明">理解函数声明</h2>
-<p>看看下面一个语句：</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>(<span style="color:#000;font-weight:bold">*</span>(<span style="color:#458;font-weight:bold">void</span>(<span style="color:#000;font-weight:bold">*</span>)())<span style="color:#099">0</span>)();
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>乍一看到这个语句，肯定当场吓尿！啥鬼玩儿意！</p>……
-        </div>
-        <p class="readmore"><a href="https://fredgan.com/post/c-traps/20200715-c-traps-chapter-two/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://fredgan.com/post/c-traps/c-traps-chapter-one/" title="《C陷阱和缺陷》读书笔记（1）- 词法”陷阱“">《C陷阱和缺陷》读书笔记（1）- 词法”陷阱“</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2020年7月13日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80'>编程语言</a></span>
-            
-            <span class="meta-category"><a href='/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0'>读书笔记</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            <p>为了敦促自己读书，特地开了一个读书笔记系列。</p>
-<p>自上大学学习了谭浩强版本的《C程序设计》以来，以及经过这么多年遭受的C/C++面试和工作的毒打，就有一个感觉，C/C++语言的设计处处充满了陷阱。编译器设计之复杂，条目细则之多，感觉远远超出了其他语言。掌握了越多的这些”细则“或者”陷阱“，就离大师就更近了一步。而这些大师们，也津津乐道于讲述自己所掌握的这些”陷阱”以彰显自己大师之风范，以在面试中能够用这些“陷阱”困住面试者为骄傲！难怪人们常说，“细节决定成败”！而程序员最需要掌握的更加是一些编程语言、编译器的细节。</p>……
-        </div>
-        <p class="readmore"><a href="https://fredgan.com/post/c-traps/c-traps-chapter-one/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://fredgan.com/post/c-traps/20200713-c-traps-chapter-one/" title="《C陷阱和缺陷》读书笔记（1）- 词法”陷阱“">《C陷阱和缺陷》读书笔记（1）- 词法”陷阱“</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2020年7月13日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80'>编程语言</a></span>
-            
-            <span class="meta-category"><a href='/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0'>读书笔记</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            <p>为了敦促自己读书，特地开了一个读书笔记系列。</p>
-<p>自上大学学习了谭浩强版本的《C程序设计》以来，以及经过这么多年遭受的C/C++面试和工作的毒打，就有一个感觉，C/C++语言的设计处处充满了陷阱。编译器设计之复杂，条目细则之多，感觉远远超出了其他语言。掌握了越多的这些”细则“或者”陷阱“，就离大师就更近了一步。而这些大师们，也津津乐道于讲述自己所掌握的这些”陷阱”以彰显自己大师之风范，以在面试中能够用这些“陷阱”困住面试者为骄傲！难怪人们常说，“细节决定成败”！而程序员最需要掌握的更加是一些编程语言、编译器的细节。</p>……
-        </div>
-        <p class="readmore"><a href="https://fredgan.com/post/c-traps/20200713-c-traps-chapter-one/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://fredgan.com/post/how-to-write-a-beautiful-markdown/" title="如何写一个漂亮的Markdown">如何写一个漂亮的Markdown</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2020年7月12日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/%E5%B7%A5%E5%85%B7'>工具</a></span>
-            
-            <span class="meta-category"><a href='/categories/%E6%95%88%E7%8E%87'>效率</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            <h1 id="如何写一个漂亮的markdown">如何写一个漂亮的Markdown</h1>
-<h2 id="一概述">一、概述</h2>
-<p>作为一个技术人员，善于利用工具提升生产效率是一个合格的技术人员的基本修养，也是提升效率的一个重要途径。作为一个程序员，有许许多多的工具来提升生产效率，使用规范化和大统一的规则规范是与优秀程序员世界接轨、交流和孜孜不倦的追求。</p>……
-        </div>
-        <p class="readmore"><a href="https://fredgan.com/post/how-to-write-a-beautiful-markdown/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://fredgan.com/post/20200712-how-to-write-a-beautiful-markdown/" title="如何写一个漂亮的Markdown">如何写一个漂亮的Markdown</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2020年7月12日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/%E5%B7%A5%E5%85%B7'>工具</a></span>
-            
-            <span class="meta-category"><a href='/categories/%E6%95%88%E7%8E%87'>效率</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            <h2 id="一概述">一、概述</h2>
-<p>作为一个技术人员，善于利用工具提升生产效率是一个合格的技术人员的基本修养，也是提升效率的一个重要途径。作为一个程序员，有许许多多的工具来提升生产效率，使用规范化和大统一的规则规范是与优秀程序员世界接轨、交流和孜孜不倦的追求。</p>
-<p>这里，想写很多工具和方法。但是，这里想先讲讲怎么将自己的内容完美呈现出来，让更多的人能够理解自己的思想。</p>……
-        </div>
-        <p class="readmore"><a href="https://fredgan.com/post/20200712-how-to-write-a-beautiful-markdown/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://fredgan.com/post/good_software/" title="优质软件列表">优质软件列表</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2020年7月8日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/%E6%8E%A8%E8%8D%90'>推荐</a></span>
-            
-            <span class="meta-category"><a href='/categories/%E8%BD%AF%E4%BB%B6'>软件</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            <h1 id="优质软件列表">优质软件列表</h1>
-<p>经过多年实践，总结的优质软件列表。持续更新中&hellip;</p>
-<h2 id="一windows">一、Windows</h2>
-<h3 id="11-directory-opus收费">1.1 Directory Opus（收费）</h3>
-<p>功能超强的资源管理器。比Windows自带的资源管理器好用太多，多Tab，正则表达式批量重命名，FTP连接器，多窗口操作，图片文本文件预览等。</p>……
-        </div>
-        <p class="readmore"><a href="https://fredgan.com/post/good_software/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://fredgan.com/post/20210218-good_software/" title="优质软件列表">优质软件列表</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2020年7月8日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/%E6%8E%A8%E8%8D%90'>推荐</a></span>
-            
-            <span class="meta-category"><a href='/categories/%E8%BD%AF%E4%BB%B6'>软件</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            <p>经过多年实践，总结的优质软件列表。持续更新中&hellip;</p>
-<h2 id="一windows">一、Windows</h2>
-<h3 id="11-directory-opus收费">1.1 Directory Opus（收费）</h3>
-<p>功能超强的资源管理器。比Windows自带的资源管理器好用太多，多Tab，正则表达式批量重命名，FTP连接器，多窗口操作，图片文本文件预览等。</p>……
-        </div>
-        <p class="readmore"><a href="https://fredgan.com/post/20210218-good_software/">阅读全文</a></p>
+        <p class="readmore"><a href="https://fredgan.com/post/20190103-redis/">阅读全文</a></p>
     </article>
     
     
@@ -418,19 +150,7 @@
         <a href="https://fredgan.com/post/page/5/">5</a>
     </li>
     
-    <li >
-        <a href="https://fredgan.com/post/page/6/">6</a>
-    </li>
-    
-    <li >
-        <a href="https://fredgan.com/post/page/7/">7</a>
-    </li>
-    
 
-    
-    <li class="next">
-        <a href="https://fredgan.com/post/page/6/">下一页</a>
-    </li>
     
 </ol>
 
@@ -440,7 +160,7 @@
 
                     <footer id="footer">
     <div>
-        &copy; 2024 <a href="https://fredgan.com/">FredGan&#39;s Blog</a>
+        &copy; 2025 <a href="https://fredgan.com/">FredGan的技术与人生</a>
         
         | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">粤ICP备2023125130号</a>
         
@@ -486,43 +206,43 @@
 <ul class="widget-list">
     
     <li>
+        <a href="https://fredgan.com/post/20251224-is-zodiac-scientific-or-superstitous/" title="星象还是气象？——我如何从星座怀疑论者转向“环境塑造论”">星象还是气象？——我如何从星座怀疑论者转向“环境塑造论”</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20251016-how-to-know-driving-level/" title="镜像里的救赎：从对双胞胎的执念，到与童年的自己重逢">镜像里的救赎：从对双胞胎的执念，到与童年的自己重逢</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20250404-qingming-festival/" title="又一年清明节">又一年清明节</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20250421-why-i-envy-twins/" title="镜像里的救赎：从对双胞胎的执念，到与童年的自己重逢">镜像里的救赎：从对双胞胎的执念，到与童年的自己重逢</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20250125-one-day-visiting-hongkong/" title="香港一日游">香港一日游</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20250113-thinking-to-bacon/" title="玩Bacon游戏有感">玩Bacon游戏有感</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20241231-annual-summary-2024/" title="2024年度总结">2024年度总结</a>
+    </li>
+    
+    <li>
+        <a href="https://fredgan.com/post/20241129-thinking-to-life/" title="人生的意义">人生的意义</a>
+    </li>
+    
+    <li>
         <a href="https://fredgan.com/post/20240218-annual-summary-2023/" title="2023年度总结">2023年度总结</a>
     </li>
     
     <li>
-        <a href="https://fredgan.com/post/annual-summary-2023/" title="2023年度总结">2023年度总结</a>
-    </li>
-    
-    <li>
         <a href="https://fredgan.com/post/20230802-analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
-    </li>
-    
-    <li>
-        <a href="https://fredgan.com/post/analysis-of-luochahaishi/" title="《罗刹海市》分析">《罗刹海市》分析</a>
-    </li>
-    
-    <li>
-        <a href="https://fredgan.com/post/20230406-thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
-    </li>
-    
-    <li>
-        <a href="https://fredgan.com/post/thinking-to-chatgpt/" title="说说ChatGPT">说说ChatGPT</a>
-    </li>
-    
-    <li>
-        <a href="https://fredgan.com/post/20230405-kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
-    </li>
-    
-    <li>
-        <a href="https://fredgan.com/post/kuangbiao-role-names-art/" title="《狂飙》取名的艺术">《狂飙》取名的艺术</a>
-    </li>
-    
-    <li>
-        <a href="https://fredgan.com/post/20230314-the-it-interpretation-of-life-philosophy/" title="人生哲理的计算机解释">人生哲理的计算机解释</a>
-    </li>
-    
-    <li>
-        <a href="https://fredgan.com/post/20230108-thinking-to-landlord-card-game/" title="连炸斗地主直播观感">连炸斗地主直播观感</a>
     </li>
     
 </ul>
@@ -534,37 +254,37 @@
         <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
-    <li><a href="https://fredgan.com/categories/LICENSE/">LICENSE (2)</a></li>
+    <li><a href="https://fredgan.com/categories/LICENSE/">LICENSE (1)</a></li>
     
-    <li><a href="https://fredgan.com/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件 (2)</a></li>
+    <li><a href="https://fredgan.com/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件 (1)</a></li>
     
-    <li><a href="https://fredgan.com/categories/%E5%AD%A6%E4%B9%A0/">学习 (4)</a></li>
+    <li><a href="https://fredgan.com/categories/%E5%AD%A6%E4%B9%A0/">学习 (2)</a></li>
     
-    <li><a href="https://fredgan.com/categories/%E5%B7%A5%E5%85%B7/">工具 (4)</a></li>
+    <li><a href="https://fredgan.com/categories/%E5%B7%A5%E5%85%B7/">工具 (2)</a></li>
     
-    <li><a href="https://fredgan.com/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">年度总结 (8)</a></li>
+    <li><a href="https://fredgan.com/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">年度总结 (5)</a></li>
     
-    <li><a href="https://fredgan.com/categories/%E5%BC%80%E5%8F%91/">开发 (7)</a></li>
+    <li><a href="https://fredgan.com/categories/%E5%BC%80%E5%8F%91/">开发 (4)</a></li>
     
-    <li><a href="https://fredgan.com/categories/%E5%BC%80%E6%BA%90/">开源 (6)</a></li>
+    <li><a href="https://fredgan.com/categories/%E5%BC%80%E6%BA%90/">开源 (3)</a></li>
     
-    <li><a href="https://fredgan.com/categories/%E6%84%9F%E6%82%9F/">感悟 (25)</a></li>
+    <li><a href="https://fredgan.com/categories/%E6%84%9F%E6%82%9F/">感悟 (20)</a></li>
     
-    <li><a href="https://fredgan.com/categories/%E6%8E%A8%E8%8D%90/">推荐 (4)</a></li>
+    <li><a href="https://fredgan.com/categories/%E6%8E%A8%E8%8D%90/">推荐 (2)</a></li>
     
-    <li><a href="https://fredgan.com/categories/%E6%95%88%E7%8E%87/">效率 (2)</a></li>
+    <li><a href="https://fredgan.com/categories/%E6%95%88%E7%8E%87/">效率 (1)</a></li>
     
-    <li><a href="https://fredgan.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式 (2)</a></li>
+    <li><a href="https://fredgan.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式 (1)</a></li>
     
-    <li><a href="https://fredgan.com/categories/%E7%94%9F%E6%B4%BB/">生活 (6)</a></li>
+    <li><a href="https://fredgan.com/categories/%E7%94%9F%E6%B4%BB/">生活 (3)</a></li>
     
-    <li><a href="https://fredgan.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言 (6)</a></li>
+    <li><a href="https://fredgan.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言 (5)</a></li>
     
-    <li><a href="https://fredgan.com/categories/%E8%8B%B1%E8%AF%AD/">英语 (2)</a></li>
+    <li><a href="https://fredgan.com/categories/%E8%8B%B1%E8%AF%AD/">英语 (1)</a></li>
     
     <li><a href="https://fredgan.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记 (4)</a></li>
     
-    <li><a href="https://fredgan.com/categories/%E8%BD%AF%E4%BB%B6/">软件 (4)</a></li>
+    <li><a href="https://fredgan.com/categories/%E8%BD%AF%E4%BB%B6/">软件 (2)</a></li>
     
 </ul>
     </section>

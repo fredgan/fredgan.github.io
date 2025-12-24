@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>软件 on FredGan&#39;s Blog</title>
+    <title>软件 on FredGan的技术与人生</title>
     <link>https://fredgan.com/categories/%E8%BD%AF%E4%BB%B6/</link>
-    <description>Recent content in 软件 on FredGan&#39;s Blog</description>
+    <description>Recent content in 软件 on FredGan的技术与人生</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 08 Feb 2021 10:21:58 +0800</lastBuildDate>
@@ -13,7 +13,7 @@
       <link>https://fredgan.com/post/20200819-database-software/</link>
       <pubDate>Wed, 19 Aug 2020 14:08:05 +0800</pubDate>
       <guid>https://fredgan.com/post/20200819-database-software/</guid>
-      <description>&lt;h2 id=&#34;question&#34;&gt;Question&lt;/h2&gt;&#xA;&lt;p&gt;科普类型：美国的数据库软件在什么地方先进，我们差距在哪？有什么卡脖子的？现在全球竞争格局是怎样的？&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-数据类型&#34;&gt;1 数据类型&lt;/h2&gt;&#xA;&lt;p&gt;数据库是用来存储数据的，先简单介绍一下数据有哪些类型。&lt;/p&gt;&#xA;&lt;p&gt;常见的数据类型有：&lt;/p&gt;&#xA;&lt;h3 id=&#34;11-关系型数据&#34;&gt;1.1 关系型数据&lt;/h3&gt;&#xA;&lt;p&gt;其实就类似于Excel表格通常所呈现的数据那样，每一行每一列整整齐齐，井井有条。同一个表之间有可能有唯一性关系，不同的表之间也可能存在一些关联。&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;question&#34;&gt;Question&lt;/h2&gt;&#xA;&lt;p&gt;科普类型：美国的数据库软件在什么地方先进，我们差距在哪？有什么卡脖子的？现在全球竞争格局是怎样的？&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-数据类型&#34;&gt;1 数据类型&lt;/h2&gt;&#xA;&lt;p&gt;数据库是用来存储数据的，先简单介绍一下数据有哪些类型。&lt;/p&gt;</description>
     </item>
     <item>
       <title>优质软件推荐</title>
